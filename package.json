@@ -1,0 +1,32 @@
+{
+  "name": "hydrotik",
+  "version": "1.0.0",
+  "description": "Website",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hydrotik/hydrotik.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hydrotik/hydrotik/issues"
+  },
+  "homepage": "https://github.com/hydrotik/hydrotik#readme",
+  "dependencies": {
+    "next": "^9.3.4",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@types/node": "^13.11.0",
+    "@types/react": "^16.9.32",
+    "typescript": "^3.8.3"
+  }
+}
