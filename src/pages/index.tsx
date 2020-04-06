@@ -19,7 +19,7 @@ const Home: NextPage<{ dynProp: string }> = ({ dynProp }) => (
 	  </div>
 
 	  <main className="flex-1 w-full max-w-4xl p-4 mx-auto md:px-8 md:py-16 text-white">
-	      <div className="flex flex-col items-center justify-left">
+	      <div className="flex flex-col md:items-center md:justify-center">
 	        <h2 className="font-bold my-8 p-3 text-lg md:text-2xl">
 	          Now more than ever, {dynProp} bring us together.
 	        </h2>
