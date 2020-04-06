@@ -18,7 +18,7 @@ const Footer: React.FunctionComponent<Props> = ({
         </li>
 
         <li>
-          <p>NYC <FontAwesomeIcon icon={faHeart} /></p>
+          <p>NYC <FontAwesomeIcon icon={faHeart} size="xs" /></p>
         </li>
       </ul>
   </footer>

@@ -7,6 +7,7 @@ type MyProps = {
   image: string;
   preview: string;
   alt?: string;
+  className?: string;
 };
 
 type MyState = {
@@ -18,6 +19,7 @@ type MyState = {
 
 export default class ProgressiveImage extends Component<MyProps, MyState> {
   
+  //TODO Add proper typing
   private loadingImage:any = null;
 
   state: MyState = {
@@ -29,7 +31,7 @@ export default class ProgressiveImage extends Component<MyProps, MyState> {
     this.fetchImage(this.props.image)
   }
 
-  componentWillReceiveProps(nextProps:MyProps) {
+  componentDidUpdate(nextProps:MyProps) {
     if (nextProps.image !== this.props.image) {
       this.setState({ currentImage: nextProps.preview, loading: true }, () => {
         this.fetchImage(nextProps.image)
@@ -59,8 +61,8 @@ export default class ProgressiveImage extends Component<MyProps, MyState> {
 
   render() {
     const { currentImage, loading } = this.state
-    const { alt } = this.props
-    return <img style={this.style(loading)} src={currentImage} alt={alt} />
+    const { alt, className} = this.props
+    return <img style={this.style(loading)} src={currentImage} alt={alt} className={className} />
   }
 }
 
