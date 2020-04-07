@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
-import Layout from "../components/layout";
-import ProgressiveImage from "../components/ProgressiveImage";
+import Layout from "../components/global/layout";
+import ProgressiveImage from "../components/ui/ProgressiveImage";
 
 
 const About: NextPage = () => (

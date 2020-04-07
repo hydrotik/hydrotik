@@ -1,9 +1,8 @@
 import { NextPage } from 'next';
 import Link from 'next/link';
-import Layout from "../components/layout";
-import TextLoop from "../components/TextLoop";
-import moment from 'moment';
-import ProgressiveImage from "../components/ProgressiveImage";
+import Layout from "../components/global/layout";
+import TextLoop from "../components/ui/TextLoop";
+import ProgressiveImage from "../components/ui/ProgressiveImage";
 
 
 
