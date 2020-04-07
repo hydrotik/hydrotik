@@ -1,6 +1,7 @@
-import * as React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHeart } from '@fortawesome/free-solid-svg-icons'
+import * as React from 'react';
+import Link from "next/link";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import CSS from 'csstype';
 
 type Props = {
@@ -18,7 +19,11 @@ const Footer: React.FunctionComponent<Props> = ({
         </li>
 
         <li>
-          <p>Made in NYC</p>
+          <Link href="https://github.com/hydrotik">
+            <a>
+              Github
+            </a>
+          </Link>
         </li>
       </ul>
   </footer>

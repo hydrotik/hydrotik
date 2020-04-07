@@ -1,4 +1,4 @@
-const env = require('./env-config')
+const env = require('./next.config')
 
 module.exports = {
   presets: ['next/babel'],
