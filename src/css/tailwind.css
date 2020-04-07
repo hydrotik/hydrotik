@@ -10,16 +10,10 @@
  */
 
 /* Tailwind's base styling */
+/* purgecss start ignore */
 @import 'tailwindcss/base';
+/* purgecss end ignore */
 
-/* App base styling */
-@import 'base.css';
-
-/* Tailwind's components */
 @import 'tailwindcss/components';
 
-/* App components */
-@import 'components.css';
-
-/* Tailwind utilities */
 @import 'tailwindcss/utilities';
