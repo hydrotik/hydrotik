@@ -49,8 +49,8 @@ function Header() {
           } md:flex flex-col md:flex-row md:items-center md:justify-center text-sm w-full md:w-auto`}
         >
           {[
-            { title: "Home", route: "/" },
-            { title: "About", route: "/about" }
+            { title: "Home", route: process.env.BACKEND_URL + "/" },
+            { title: "About", route: process.env.BACKEND_URL + "/about" }
           ].map(navigationItem => (
             <li className="mt-3 md:mt-0 md:ml-6" key={navigationItem.title}>
               <Link href={navigationItem.route}>
