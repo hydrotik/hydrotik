@@ -15,7 +15,7 @@ const About: NextPage = () => (
 	            },
 	            {
 	              heading: `Donovan Adams`,
-	              body: `Donovan has been leading teams of developers for over 10 years. Over his 20 year career, he has worked for Saks Fifth Avenue, Hudson's Bay, Macys.com, Syfy channel, and R/GA.`
+	              body: `Donovan has been leading teams of developers for over 10 years. Over his 20 year career, he has worked for Saks Fifth Avenue, Hudson's Bay, Macys.com, NBC/Universal, Syfy channel, and R/GA.`
 	            }
 	          ].map((section, index) => (
 	            <div key={index}>

@@ -62,13 +62,13 @@ export default class ProgressiveImage extends Component<MyProps, MyState> {
 
   render() {
     const { currentImage, loading } = this.state
-    const { alt, className} = this.props
+    const { alt, className, srcSet} = this.props
     return (<img 
       style={this.style(loading)} 
       src={currentImage} 
       alt={alt} 
       className={className} 
-      srcSet={srcSet}  />
+      srcSet={srcSet} />
     )
   }
 }

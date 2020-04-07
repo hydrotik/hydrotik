@@ -16,14 +16,14 @@ const Section: React.FC<WrapperProps> = p => (
 //TODO Abstract out the loop values as props and map to span
 const Masked = () => (
   <Section>
-    <Example className="font-bold my-8 p-3 text-lg md:text-2xl">
+    <Example>
       <TextLoop mask={true}>
         <span>Delight customers</span>
         <span>Increase ROI</span>
         <span>Exceed KPIs</span>
         <span>Tell stories</span>
         <span>Revolutionize multichannel</span>
-        <span>Maximise disruption</span>
+        <span>Maximize disruption</span>
       </TextLoop>{" "}
       with digital transformation.
     </Example>
