@@ -110,6 +110,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "virtual:cc698a02e1b7daf58376cb3cac455a34526f1250e3d5e6070467d3511db93c3e38ea9c231f4b1235a1814b9e929b76c64ba922b98765cd34eb92fefb2e60387b#npm:4.0.27"
       ],
       [
+        "rimraf",
+        "npm:3.0.2"
+      ],
+      [
         "sass",
         "npm:1.26.3"
       ],
@@ -149,6 +153,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-spring", "virtual:cc698a02e1b7daf58376cb3cac455a34526f1250e3d5e6070467d3511db93c3e38ea9c231f4b1235a1814b9e929b76c64ba922b98765cd34eb92fefb2e60387b#npm:8.0.27"],
             ["react-text-loop", "virtual:cc698a02e1b7daf58376cb3cac455a34526f1250e3d5e6070467d3511db93c3e38ea9c231f4b1235a1814b9e929b76c64ba922b98765cd34eb92fefb2e60387b#npm:2.3.0"],
             ["react-three-fiber", "virtual:cc698a02e1b7daf58376cb3cac455a34526f1250e3d5e6070467d3511db93c3e38ea9c231f4b1235a1814b9e929b76c64ba922b98765cd34eb92fefb2e60387b#npm:4.0.27"],
+            ["rimraf", "npm:3.0.2"],
             ["sass", "npm:1.26.3"],
             ["tailwindcss", "npm:1.2.0"],
             ["typescript", "patch:typescript@npm%3A3.8.3#builtin<compat/typescript>::version=3.8.3&hash=c79188"]
@@ -4484,6 +4489,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-spring", "virtual:cc698a02e1b7daf58376cb3cac455a34526f1250e3d5e6070467d3511db93c3e38ea9c231f4b1235a1814b9e929b76c64ba922b98765cd34eb92fefb2e60387b#npm:8.0.27"],
             ["react-text-loop", "virtual:cc698a02e1b7daf58376cb3cac455a34526f1250e3d5e6070467d3511db93c3e38ea9c231f4b1235a1814b9e929b76c64ba922b98765cd34eb92fefb2e60387b#npm:2.3.0"],
             ["react-three-fiber", "virtual:cc698a02e1b7daf58376cb3cac455a34526f1250e3d5e6070467d3511db93c3e38ea9c231f4b1235a1814b9e929b76c64ba922b98765cd34eb92fefb2e60387b#npm:4.0.27"],
+            ["rimraf", "npm:3.0.2"],
             ["sass", "npm:1.26.3"],
             ["tailwindcss", "npm:1.2.0"],
             ["typescript", "patch:typescript@npm%3A3.8.3#builtin<compat/typescript>::version=3.8.3&hash=c79188"]
@@ -7061,6 +7067,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/rimraf-npm-2.7.1-9a71f3cc37-2.zip/node_modules/rimraf/",
           "packageDependencies": [
             ["rimraf", "npm:2.7.1"],
+            ["glob", "npm:7.1.6"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:3.0.2", {
+          "packageLocation": "./.yarn/cache/rimraf-npm-3.0.2-2cb7dac69a-2.zip/node_modules/rimraf/",
+          "packageDependencies": [
+            ["rimraf", "npm:3.0.2"],
             ["glob", "npm:7.1.6"]
           ],
           "linkType": "HARD",
