@@ -8288,7 +8288,7 @@ function Header() {
       columnNumber: 11
     }
   }), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/",
+    href: "" + "/",
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -8300,7 +8300,7 @@ function Header() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26,
+      lineNumber: 28,
       columnNumber: 13
     }
   }, "Hydrotik"))), __jsx("button", {
@@ -8311,7 +8311,7 @@ function Header() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32,
+      lineNumber: 34,
       columnNumber: 9
     }
   }, __jsx("svg", {
@@ -8321,14 +8321,14 @@ function Header() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
+      lineNumber: 38,
       columnNumber: 11
     }
   }, __jsx("title", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41,
+      lineNumber: 43,
       columnNumber: 13
     }
   }, "Menu"), __jsx("path", {
@@ -8336,7 +8336,7 @@ function Header() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42,
+      lineNumber: 44,
       columnNumber: 13
     }
   }))), __jsx("ul", {
@@ -8344,15 +8344,15 @@ function Header() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
+      lineNumber: 48,
       columnNumber: 9
     }
   }, [{
     title: "Home",
-    route: "/"
+    route: "" + "/"
   }, {
     title: "About",
-    route: "/about"
+    route: "" + "/about"
   }].map(function (navigationItem) {
     return __jsx("li", {
       className: "mt-3 md:mt-0 md:ml-6",
@@ -8360,7 +8360,7 @@ function Header() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 55,
+        lineNumber: 57,
         columnNumber: 13
       }
     }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -8368,7 +8368,7 @@ function Header() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 56,
+        lineNumber: 58,
         columnNumber: 15
       }
     }, __jsx("a", {
@@ -8376,7 +8376,7 @@ function Header() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 57,
+        lineNumber: 59,
         columnNumber: 17
       }
     }, navigationItem.title)));
@@ -8969,7 +8969,7 @@ Home.getInitialProps = function _callee(_ref2) {
 
 /***/ }),
 
-/***/ 1:
+/***/ 2:
 /*!****************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fdadams%2FDesktop%2FCode%2Fhydrotik%2Fsrc%2Fpages%2Findex.tsx ***!
   \****************************************************************************************************************************************/
@@ -8992,5 +8992,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map
