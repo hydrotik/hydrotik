@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import CSS from 'csstype';
+import Button from "../ui/Button";
 
 type Props = {
   footerTitle?: string
@@ -19,11 +20,9 @@ const Footer: React.FunctionComponent<Props> = ({
         </li>
 
         <li>
-          <Link href="https://github.com/hydrotik">
-            <a>
-              Github
-            </a>
-          </Link>
+          
+
+          <Button />
         </li>
       </ul>
   </footer>

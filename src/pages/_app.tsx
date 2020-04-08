@@ -1,7 +1,11 @@
+
+import '../css/index.css'
+
+
 import React from 'react'
 import App from 'next/app'
 
-import '../css/tailwind.css'
+
 
 
 class MyApp extends App {

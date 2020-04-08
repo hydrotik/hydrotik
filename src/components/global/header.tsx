@@ -22,7 +22,9 @@ function Header() {
             className="mr-3 text-white w-10"
           />
 
-          <Link href="/">
+          <Link href={process.env.BACKEND_URL + "/"}>
+
+          
             <a className="text-white text-xl">
               Hydrotik
             </a>
