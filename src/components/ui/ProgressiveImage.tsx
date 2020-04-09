@@ -55,8 +55,8 @@ export default class ProgressiveImage extends Component<MyProps, MyState> {
 
   style = (loading: boolean) => {
     return {
-      transition: '0.5s filter linear',
-      filter: `${loading ? 'blur(50px)' : ''}`,
+      transition: '0s filter linear',
+      filter: `${loading ? 'blur(0px)' : ''}`,
     }
   }
 

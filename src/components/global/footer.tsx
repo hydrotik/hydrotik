@@ -22,7 +22,7 @@ const Footer: React.FunctionComponent<Props> = ({
         <li>
           
 
-          <Button />
+          <Button href="https://github.com/hydrotik/hydrotik">Github</Button>
         </li>
       </ul>
   </footer>

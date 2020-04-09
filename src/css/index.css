@@ -19,3 +19,6 @@
 /* Custom */
 @import './button.css';
 
+tspan {
+	font-size: 4px !important;
+}

@@ -10,6 +10,8 @@ module.exports = {
   exportPathMap: () => ({
     '/': { page: '/' },
     '/about': { page: '/about' },
+    '/visualization': { page: '/visualization' },
+
   }),
   assetPrefix: assetPrefix,
   webpack: config => {
