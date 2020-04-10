@@ -53,7 +53,7 @@ function Header() {
           {[
             { title: "Home", route: process.env.BACKEND_URL + "/" },
             { title: "About", route: process.env.BACKEND_URL + "/about" },
-            { title: "Visualization", route: process.env.BACKEND_URL + "/visualization" }
+            { title: "Covid Visualization", route: process.env.BACKEND_URL + "/visualization" }
           ].map(navigationItem => (
             <li className="mt-3 md:mt-0 md:ml-6" key={navigationItem.title}>
               <Link href={navigationItem.route}>
