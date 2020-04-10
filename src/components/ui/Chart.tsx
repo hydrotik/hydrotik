@@ -21,6 +21,13 @@ import {
 
 import ChartTheme from "./ChartTheme";
 
+
+
+const colorDark:string = '#455A64';
+const colorMed:string = '#90A4AE';
+const colorLight:string = '#bdc6cb';
+
+
 type MyProps = {
 
 };
@@ -86,70 +93,76 @@ class Chart extends React.Component<MyProps, MyState>{
                   width={600}
                   height={350}
                   scale={{ x: "time" }}
+                  
                   //singleQuadrantDomainPadding={{ x: false }}
-                >    
-                <VictoryAxis crossAxis
-                    theme={VictoryTheme.material}
-                    standalone={false}
-                    tickLabelComponent={
-                        <VictoryLabel 
-                            angle={45} 
-                            renderInPortal={true} 
-                            dy={-10}
-                            dx={12}
-                        />
-                    }
-                    // new Date() for https://momentjs.com/guides/#/warnings/js-date/ [CLEANUP]
-                    tickFormat={(t) => moment(new Date(t)).format('M/DD/YY')}
-                  />
-                  <VictoryAxis dependentAxis crossAxis
-                    theme={VictoryTheme.material}
-                    standalone={false}
-                    tickLabelComponent={
-                        <VictoryLabel renderInPortal={true} />
-                    }
-                  />
-                   <VictoryLegend x={75} y={50}
-                    title="Legend"
-                    centerTitle
-                    orientation="horizontal"
-                    gutter={10}
-                    style={{ border: { stroke: "black" }, title: {fontSize: 10 } }}
-                    data={[
-                      { name: "New Cases", symbol: { fill: "#455A64", type: "square" } },
-                      { name: "Hospitalizations", symbol: { fill: "#90A4AE", type: "square" } },
-                      { name: "Deaths", symbol: { fill: "#ECEFF1", type: "square" } }
-                    ]}
-                  />
-                  <VictoryLine
-                    style={{
-                      data: { stroke: "#455A64" },
-                      parent: { border: "1px solid #ccc"}
-                    }}
-                    data={this.state.data}
-                    x = {(d) => moment(d.DATE_OF_INTEREST, 'MM/DD/YY').toDate().toString()}
-                    y = "NEW_COVID_CASE_COUNT"
-                  />
-                  
-                  <VictoryLine
-                    style={{
-                      data: { stroke: "#90A4AE" },
-                      parent: { border: "1px solid #ccc"}
-                    }}
-                    data={this.state.data}
-                    x = {(d) => moment(d.DATE_OF_INTEREST, 'MM/DD/YY').toDate().toString()}
-                    y = "HOSPITALIZED_CASE_COUNT"
-                  />
-                  <VictoryLine
-                    style={{
-                      data: { stroke: "#ECEFF1" },
-                      parent: { border: "1px solid #ccc"}
-                    }}
-                    data={this.state.data}
-                    x = {(d) => moment(d.DATE_OF_INTEREST, 'MM/DD/YY').toDate().toString()}
-                    y = "DEATH_COUNT"
-                  />
-                  
+                >   
+                      <VictoryAxis crossAxis
+                        theme={VictoryTheme.material}
+                        standalone={false}
+                        tickLabelComponent={
+                            <VictoryLabel 
+                                //angle={45} 
+                                renderInPortal={true} 
+                                //dy={-10}
+                                //dx={12}
+                            />
+                        }
+                        // new Date() for https://momentjs.com/guides/#/warnings/js-date/ [CLEANUP]
+                        tickFormat={(t) => moment(new Date(t)).format('M/D/YY')}
+                        fixLabelOverlap={true}
+                      />
+                      <VictoryAxis dependentAxis crossAxis
+                        theme={VictoryTheme.material}
+                        standalone={false}
+                        tickLabelComponent={
+                            <VictoryLabel renderInPortal={true} />
+                        }
+                      />
+                       <VictoryLegend x={75} y={50}
+                        title="Legend"
+                        centerTitle
+                        orientation="horizontal"
+                        gutter={10}
+                        style={{ border: { stroke: "black" }, title: {fontSize: 10 } }}
+                        data={[
+                          { name: "New Cases", symbol: { fill: colorDark, type: "square" } },
+                          { name: "Hospitalizations", symbol: { fill: colorMed, type: "square" } },
+                          { name: "Deaths", symbol: { fill: colorLight, type: "square" } }
+                        ]}
+                      />
+                  <VictoryGroup
+                      animate={{ duration: 2000 }} 
+                      colorScale={[colorDark, colorMed, colorLight]}
+                      >
+                      <VictoryArea
+                        style={{
+                          data: { stroke: colorDark },
+                          parent: { border: "1px solid #ccc"}
+                        }}
+                        data={this.state.data}
+                        x = {(d) => moment(d.DATE_OF_INTEREST, 'MM/DD/YY').toDate().toString()}
+                        y = "NEW_COVID_CASE_COUNT"
+                      />
+                      
+                      <VictoryArea
+                        style={{
+                          data: { stroke: colorMed },
+                          parent: { border: "1px solid #ccc"}
+                        }}
+                        data={this.state.data}
+                        x = {(d) => moment(d.DATE_OF_INTEREST, 'MM/DD/YY').toDate().toString()}
+                        y = "HOSPITALIZED_CASE_COUNT"
+                      />
+                      <VictoryArea
+                        style={{
+                          data: { stroke: colorLight },
+                          parent: { border: "1px solid #ccc"}
+                        }}
+                        data={this.state.data}
+                        x = {(d) => moment(d.DATE_OF_INTEREST, 'MM/DD/YY').toDate().toString()}
+                        y = "DEATH_COUNT"
+                      />
+                  </VictoryGroup>
                   
             </VictoryChart>
         );

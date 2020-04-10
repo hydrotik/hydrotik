@@ -11,18 +11,21 @@ import { Controller, Scene } from 'react-scrollmagic';
 import { merge, random, range } from "lodash";
 
 
+const colorDark:string = '';
+const colorMed:string = '';
+const colorLight:string = '';
+
 type MyProps = {
 
 };
 
-type PDFProps = {
-  heading: string;
-  body: string;
+type CovidProps = {
+  
 };
 
 type MyState = {
   github: string;
-  pdf: PDFProps[];
+  covid: CovidProps[];
   totals: Array<object>;
 };
 
@@ -45,7 +48,7 @@ class Visualization extends React.Component<MyProps, MyState>{
 
         this.state = {
             github: '',
-            pdf: [],
+            covid: [],
             totals:[]
         };
 
@@ -54,7 +57,7 @@ class Visualization extends React.Component<MyProps, MyState>{
 
     componentDidMount() {
         this.fetchGithub();
-        //this.fetchPDF();
+        this.fetchCovidData();
         this.getCsvData();
     }
 
@@ -66,6 +69,10 @@ class Visualization extends React.Component<MyProps, MyState>{
             dynamicTyping: true
         });
     }
+
+
+    // TODO State
+    // https://raw.githubusercontent.com/chazeon/NYState-COVID-19-Tracker/master/data/NYC-covid-19-daily-data-summary.csv
 
     fetchCsv() {
         return fetch('https://raw.githubusercontent.com/nychealth/coronavirus-data/master/summary.csv?cache-control=' + (new Date()).getTime()).then(function (response:any) {
@@ -87,7 +94,7 @@ class Visualization extends React.Component<MyProps, MyState>{
         .then(res => res.json())
         .then((data) => {
             let d = data[0].commit.author.date;
-            let n = moment(d).format('LLLL');
+            let n = moment(d).format('MM/DD/YYYY, hh:hh a');
             let f = moment(d).fromNow();
             let s = `Chart updated ${f} on ${n}`;
             this.setState({ github: s })
@@ -95,45 +102,41 @@ class Visualization extends React.Component<MyProps, MyState>{
         .catch(console.log)
     }
 
-    fetchPDF(){
-        fetch('/api/pdf')
+    fetchCovidData(){
+        fetch('/api/covid')
         .then(res => res.json())
-        .then((d) => {
-            this.setState({ pdf: d.data })
+        .then((res) => {
+        	console.log(res.success)
+            this.setState({ covid: res.data })
         })
         .catch(console.log)
     }
 
     
-    
-
     render() {
         return (
             <Layout>
-	    	
 				<main className="flex-1 w-full max-w-4xl p-4 mx-auto md:px-8 md:py-16">
-					
 					<div className="bg-gray-100 mb-16">
-			    		<Chart />
-				  	</div>
-
-
-			      <div className="flex flex-col md:flex-row">
-			      	<div className="md:ml-6 md:w-2/3">
-			      		<h2 className="font-bold mb-3 text-xl">New Covid cases by day in NYC</h2>
-		              	<p className="mb-6">{this.state.github}</p>
-		              	<Button href="https://github.com/nychealth/coronavirus-data">NYC Health Github</Button>
-			        </div>
-			      	<div className="md:w-1/3">
-			      			<h2 className="font-bold mb-3 text-xl" >NYC:</h2>
-			      			<div className="mb-6">
-					          {this.state.totals.map((section:any, index) => (
-					            <div key={index}><strong>{section[0]}</strong> <NumberValue value={section[1]} /></div>
-					          ))}
-					          </div>
-			        </div>
-			      </div>
-			     </main>
+						<Chart />
+					</div>
+					<div className="flex flex-col md:flex-row">
+						<div className="md:ml-6 md:w-2/3 mb-16">
+							<h2 className="font-bold mb-3 text-xl">New Covid cases by day in NYC</h2>
+							<p className="mb-6">{this.state.github}</p>
+							<Button href="https://github.com/nychealth/coronavirus-data">NYC Health Github</Button>
+						</div>
+						<div className="md:w-1/3">
+							<h2 className="font-bold mb-3 text-xl">New York State:</h2>
+							<div className="mb-6">
+								{this.state.totals.map((section:any, index) => (
+								<div key={index}><strong>{section[0].replace('*', '')}</strong> <NumberValue value={section[1]} /></div>
+								))}
+							</div>
+							<h2 className="font-bold mb-3 text-xl">United States:</h2>
+						</div>
+					</div>
+				</main>
 		    </Layout>
         );
     }
