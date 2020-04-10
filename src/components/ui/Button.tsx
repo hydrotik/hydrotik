@@ -12,11 +12,9 @@ const Button: React.FunctionComponent<Props> = ({
   href,
   target = "_blank"
 }) => (
-  <Link href={href}>
-      <a className="btn-blue no-underline"target={target}>
+      <a href={href} className="btn-blue no-underline" target={target}>
         {children}
       </a>
-  </Link>
 )
 
 export default Button;

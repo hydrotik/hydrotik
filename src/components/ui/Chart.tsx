@@ -13,7 +13,10 @@ import {
     VictoryStack,
     VictoryGroup,
     VictoryArea,
-    VictoryPortal
+    VictoryPortal,
+    VictoryLabel,
+    VictoryAxis,
+    VictoryLegend
 } from "victory";
 
 import ChartTheme from "./ChartTheme";
@@ -23,9 +26,13 @@ type MyProps = {
 };
 
 type MyState = {
-  data: Array<object>;
+  data: Array<object>
 };
 
+type LabelProp = {
+    x:string;
+    y:string;
+}
 
 class Chart extends React.Component<MyProps, MyState>{
 
@@ -36,7 +43,7 @@ class Chart extends React.Component<MyProps, MyState>{
             data: []
         };
 
-        this.getData = this.getData.bind(this);
+        this.resolveCsvData = this.resolveCsvData.bind(this);
     }
 
     componentDidMount() {
@@ -44,7 +51,7 @@ class Chart extends React.Component<MyProps, MyState>{
     }
 
     fetchCsv() {
-        return fetch('https://raw.githubusercontent.com/nychealth/coronavirus-data/master/case-hosp-death.csv').then(function (response:any) {
+        return fetch('https://raw.githubusercontent.com/nychealth/coronavirus-data/master/case-hosp-death.csv?cache-control=' + (new Date()).getTime()).then(function (response:any) {
             let reader = response.body.getReader();
             let decoder = new TextDecoder('utf-8');
 
@@ -54,51 +61,65 @@ class Chart extends React.Component<MyProps, MyState>{
         });
     }
 
-    getData(result:any) {
+    resolveCsvData(result:any) {
+        result.data.splice(-2, 2);
         this.setState({data: result.data});
     }
 
     async getCsvData() {
         let csvData = await this.fetchCsv();
-
         Papa.parse(csvData, {
             header: true,
-            complete: this.getData,
+            complete: this.resolveCsvData,
             dynamicTyping: true
         });
     }
 
-
+    
 
     render() {
+
         return (
             <VictoryChart
                   theme={VictoryTheme.material}
-                  height={200}
                   domain={{y: [0, 6000]}}
-                >
-                  <VictoryLine
-                    style={{
-                      data: { stroke: "#ECEFF1" },
-                      parent: { border: "1px solid #ccc"}
-                    }}
-                    data={this.state.data}
-                    x = {(d) => moment(d.DATE_OF_INTEREST, 'MM/DD/YYYY').format('M/D')}
-                    //x = "DATE_OF_INTEREST"
-                    //y = {(d) => d.NEW_COVID_CASE_COUNT}
-                    y = "NEW_COVID_CASE_COUNT"
+                  width={600}
+                  height={350}
+                  scale={{ x: "time" }}
+                  //singleQuadrantDomainPadding={{ x: false }}
+                >    
+                <VictoryAxis crossAxis
+                    theme={VictoryTheme.material}
+                    standalone={false}
+                    tickLabelComponent={
+                        <VictoryLabel 
+                            angle={45} 
+                            renderInPortal={true} 
+                            dy={-10}
+                            dx={12}
+                        />
+                    }
+                    // new Date() for https://momentjs.com/guides/#/warnings/js-date/ [CLEANUP]
+                    tickFormat={(t) => moment(new Date(t)).format('M/DD/YY')}
                   />
-
-                  <VictoryLine
-                    style={{
-                      data: { stroke: "#90A4AE" },
-                      parent: { border: "1px solid #ccc"}
-                    }}
-                    data={this.state.data}
-                    x = {(d) => moment(d.DATE_OF_INTEREST, 'MM/DD/YYYY').format('M/D')}
-                    //x = "DATE_OF_INTEREST"
-                    //y = {(d) => d.NEW_COVID_CASE_COUNT}
-                    y = "HOSPITALIZED_CASE_COUNT"
+                  <VictoryAxis dependentAxis crossAxis
+                    theme={VictoryTheme.material}
+                    standalone={false}
+                    tickLabelComponent={
+                        <VictoryLabel renderInPortal={true} />
+                    }
+                  />
+                   <VictoryLegend x={75} y={50}
+                    title="Legend"
+                    centerTitle
+                    orientation="horizontal"
+                    gutter={10}
+                    style={{ border: { stroke: "black" }, title: {fontSize: 10 } }}
+                    data={[
+                      { name: "New Cases", symbol: { fill: "#455A64", type: "square" } },
+                      { name: "Hospitalizations", symbol: { fill: "#90A4AE", type: "square" } },
+                      { name: "Deaths", symbol: { fill: "#ECEFF1", type: "square" } }
+                    ]}
                   />
                   <VictoryLine
                     style={{
@@ -106,11 +127,30 @@ class Chart extends React.Component<MyProps, MyState>{
                       parent: { border: "1px solid #ccc"}
                     }}
                     data={this.state.data}
-                    x = {(d) => moment(d.DATE_OF_INTEREST, 'MM/DD/YYYY').format('M/D')}
-                    //x = "DATE_OF_INTEREST"
-                    //y = {(d) => d.NEW_COVID_CASE_COUNT}
+                    x = {(d) => moment(d.DATE_OF_INTEREST, 'MM/DD/YY').toDate().toString()}
+                    y = "NEW_COVID_CASE_COUNT"
+                  />
+                  
+                  <VictoryLine
+                    style={{
+                      data: { stroke: "#90A4AE" },
+                      parent: { border: "1px solid #ccc"}
+                    }}
+                    data={this.state.data}
+                    x = {(d) => moment(d.DATE_OF_INTEREST, 'MM/DD/YY').toDate().toString()}
+                    y = "HOSPITALIZED_CASE_COUNT"
+                  />
+                  <VictoryLine
+                    style={{
+                      data: { stroke: "#ECEFF1" },
+                      parent: { border: "1px solid #ccc"}
+                    }}
+                    data={this.state.data}
+                    x = {(d) => moment(d.DATE_OF_INTEREST, 'MM/DD/YY').toDate().toString()}
                     y = "DEATH_COUNT"
                   />
+                  
+                  
             </VictoryChart>
         );
     }
