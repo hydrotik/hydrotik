@@ -57,7 +57,7 @@ class Visualization extends React.Component<MyProps, MyState>{
 
     componentDidMount() {
         this.fetchGithub();
-        this.fetchCovidData();
+        //this.fetchCovidData();
         this.getCsvData();
     }
 
