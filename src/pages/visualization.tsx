@@ -3,12 +3,15 @@ import fetch from 'node-fetch';
 import Papa from 'papaparse';
 import moment from 'moment';
 import { NextPage } from 'next';
+import { Controller, Scene } from 'react-scrollmagic';
+import { merge, random, range } from "lodash";
+
 import Layout from "../components/global/layout";
 import ProgressiveImage from "../components/ui/ProgressiveImage";
 import Chart from "../components/ui/Chart";
 import Button from "../components/ui/Button";
-import { Controller, Scene } from 'react-scrollmagic';
-import { merge, random, range } from "lodash";
+
+import DataHelper from "../utils/DataHelper";
 
 
 const colorDark:string = '';
@@ -16,7 +19,7 @@ const colorMed:string = '';
 const colorLight:string = '';
 
 type MyProps = {
-
+	dc: DataHelper;
 };
 
 type CovidProps = {
@@ -27,6 +30,7 @@ type MyState = {
   github: string;
   covid: CovidProps[];
   totals: Array<object>;
+  stateData: Array<object>;
 };
 
 function numberWithCommas(x:string) {
@@ -41,7 +45,10 @@ function NumberValue(props:any) {
 	return numberWithCommas(v);
 }
 
+const dc = new DataHelper()
+
 class Visualization extends React.Component<MyProps, MyState>{
+
 
     constructor(props:MyProps) {
         super(props);
@@ -49,59 +56,82 @@ class Visualization extends React.Component<MyProps, MyState>{
         this.state = {
             github: '',
             covid: [],
-            totals:[]
+            totals:[],
+            stateData:[]
         };
 
         this.resolveCsvData = this.resolveCsvData.bind(this);
+        this.resolveStateData = this.resolveStateData.bind(this);
+        this.resolveGithubData = this.resolveGithubData.bind(this);
+        this.parseGithubData = this.parseGithubData.bind(this);
+        //dc.getData(this.resolveCsvData);
     }
 
     componentDidMount() {
-        this.fetchGithub();
-        //this.fetchCovidData();
-        this.getCsvData();
-    }
+        const rdcb = this.resolveStateData;
 
-    async getCsvData() {
-        let csvData = await this.fetchCsv();
-        Papa.parse(csvData, {
-            header: false,
-            complete: this.resolveCsvData,
-            dynamicTyping: true
-        });
-    }
+        dc.getData(
+        	'https://raw.githubusercontent.com/chazeon/NYState-COVID-19-Tracker/master/data/NYC-covid-19-daily-data-summary.csv', 
+        	function(data:any){
+		        Papa.parse(data, {
+			        header: false,
+			        complete: rdcb,
+			        dynamicTyping: true
+			    })
+		    }
+	    )
 
+	    const cvcb = this.resolveCsvData;
 
-    // TODO State
-    // https://raw.githubusercontent.com/chazeon/NYState-COVID-19-Tracker/master/data/NYC-covid-19-daily-data-summary.csv
+	    dc.getData(
+        	'https://raw.githubusercontent.com/nychealth/coronavirus-data/master/summary.csv', 
+        	function(data:any){
+		        Papa.parse(data, {
+			        header: false,
+			        complete: cvcb,
+			        dynamicTyping: true
+			    })
+		    }
+	    )
 
-    fetchCsv() {
-        return fetch('https://raw.githubusercontent.com/nychealth/coronavirus-data/master/summary.csv?cache-control=' + (new Date()).getTime()).then(function (response:any) {
-            let reader = response.body.getReader();
-            let decoder = new TextDecoder('utf-8');
+	    const cghcb = this.resolveGithubData;
+	    const ParseGithub = this.parseGithubData;
 
-            return reader.read().then(function (result:any) {
-                return decoder.decode(result.value);
-            });
-        });
+	    dc.getData(
+        	'https://api.github.com/repos/nychealth/coronavirus-data/commits', 
+        	function(data:any){
+		        ParseGithub(data, {
+			        complete: cghcb
+			    })
+		    }
+	    )
     }
 
     resolveCsvData(result:any) {
         this.setState({totals: result.data});
     }
 
-    fetchGithub(){
-        fetch('https://api.github.com/repos/nychealth/coronavirus-data/commits?cache-control=' + (new Date()).getTime())
-        .then(res => res.json())
-        .then((data) => {
-            let d = data[0].commit.author.date;
-            let n = moment(d).format('MM/DD/YYYY, hh:hh a');
-            let f = moment(d).fromNow();
-            let s = `Chart updated ${f} on ${n}`;
-            this.setState({ github: s })
-        })
-        .catch(console.log)
+    resolveStateData(result:any) {
+    	console.log('Visualization :: resolveStateData()');
+    	console.log(result);
+        //
+    	this.setState({stateData: result.data});
     }
 
+    resolveGithubData(result:any) {
+        this.setState({ github: result })
+    }
+
+    parseGithubData(result:any, config:any) {
+    	let d = JSON.parse(result)[0].commit.author.date;
+	    let n = moment(d).format('MM/DD/YYYY, hh:hh a');
+	    let f = moment(d).fromNow();
+	    let s = `Chart updated ${f} on ${n}`;
+	    config.complete.apply(this, [s]);
+    }
+
+
+    /*
     fetchCovidData(){
         fetch('/api/covid')
         .then(res => res.json())
@@ -111,7 +141,7 @@ class Visualization extends React.Component<MyProps, MyState>{
         })
         .catch(console.log)
     }
-
+	*/
     
     render() {
         return (

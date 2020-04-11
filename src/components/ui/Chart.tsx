@@ -127,7 +127,7 @@ class Chart extends React.Component<MyProps, MyState>{
                         data={[
                           { name: "New Cases", symbol: { fill: colorDark, type: "square" } },
                           { name: "Hospitalizations", symbol: { fill: colorMed, type: "square" } },
-                          { name: "Deaths", symbol: { fill: colorLight, type: "square" } }
+                          { name: "New Deaths", symbol: { fill: colorLight, type: "square" } }
                         ]}
                       />
                   <VictoryGroup
