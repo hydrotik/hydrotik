@@ -5,20 +5,20 @@ import Header from "./header";
 import Footer from "./footer";
 
 type Props = {
-  title?: string;
-  className?: string;
+	title?: string;
+	className?: string;
 }
 
 const Layout: React.FunctionComponent<Props> = ({
-  children,
-  title = 'This is the default title',
-  className
+	children,
+	title = 'This is the default title',
+	className
 }) => (
-  <div className={classnames('flex flex-col min-h-screen', className)}>
-      <Header />
-      {children}
-      <Footer />
-    </div>
+	<div className={classnames('flex flex-col min-h-screen', className)}>
+		<Header />
+			{children}
+		<Footer />
+	</div>
 )
 
 export default Layout

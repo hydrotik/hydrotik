@@ -27,10 +27,10 @@ type CovidProps = {
 };
 
 type MyState = {
-  github: string;
-  covid: CovidProps[];
-  totals: Array<object>;
-  stateData: Array<object>;
+	github: string;
+	covid: CovidProps[];
+	totals: Array<object>;
+	stateData: Array<object>;
 };
 
 function numberWithCommas(x:string) {
@@ -160,7 +160,7 @@ class Visualization extends React.Component<MyProps, MyState>{
 							<h2 className="font-bold mb-3 text-xl">New York State:</h2>
 							<div className="mb-6">
 								{this.state.totals.map((section:any, index) => (
-								<div key={index}><strong>{section[0].replace('*', '')}</strong> <NumberValue value={section[1]} /></div>
+									<div key={index}><strong>{section[0].replace('*', '')}</strong> <NumberValue value={section[1]} /></div>
 								))}
 							</div>
 							<h2 className="font-bold mb-3 text-xl">United States:</h2>

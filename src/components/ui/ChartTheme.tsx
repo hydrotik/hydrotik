@@ -10,12 +10,12 @@ const lightGreen500 = "#8BC34A";
 const teal700 = "#00796B";
 const cyan900 = "#006064";
 const colors = [
-  deepOrange600,
-  yellow200,
-  lime300,
-  lightGreen500,
-  teal700,
-  cyan900
+	deepOrange600,
+	yellow200,
+	lime300,
+	lightGreen500,
+	teal700,
+	cyan900
 ];
 const blueGrey50 = "#ECEFF1";
 const blueGrey300 = "#90A4AE";
@@ -35,33 +35,33 @@ const baseProps = {
 
 // * Labels
 const baseLabelStyles = {
-  fontFamily: sansSerif,
-  fontSize,
-  letterSpacing,
-  padding,
-  fill: blueGrey700,
-  stroke: "transparent",
-  strokeWidth: 0
+	fontFamily: sansSerif,
+	fontSize,
+	letterSpacing,
+	padding,
+	fill: blueGrey700,
+	stroke: "transparent",
+	strokeWidth: 0
 };
 
 const centeredLabelStyles = extend({ textAnchor: "middle" }, baseLabelStyles);
 
 
 const ChartTheme: any = {
-  line: extend(
-    {
-      style: {
-        data: {
-          fill: "transparent",
-          opacity: 1,
-          stroke: blueGrey700,
-          strokeWidth: 2
-        },
-        labels: centeredLabelStyles
-      }
-    },
-    baseProps
-  )
+	line: extend(
+		{
+			style: {
+				data: {
+					fill: "transparent",
+					opacity: 1,
+					stroke: blueGrey700,
+					strokeWidth: 2
+				},
+				labels: centeredLabelStyles
+			}
+		},
+		baseProps
+	)
 };
 
 export default ChartTheme;

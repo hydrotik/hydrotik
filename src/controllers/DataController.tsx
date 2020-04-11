@@ -2,7 +2,7 @@ import Papa from 'papaparse';
 
 
 type Props = {
-  path: string;
+	path: string;
 };
 
 
@@ -10,16 +10,16 @@ type Props = {
 
 export default class DataController {
 
-  /**
-   * Main DataController constructor
-   */
+	/**
+	* Main DataController constructor
+	*/
 
-  constructor(opts:Props) {
-    if (this instanceof DataController) {
-      opts = opts || {};
-      return this;
-    }
+	constructor(opts:Props) {
+		if (this instanceof DataController) {
+			opts = opts || {};
+			return this;
+		}
 
-    return new DataController(opts);
-  }
+		return new DataController(opts);
+	}
 };

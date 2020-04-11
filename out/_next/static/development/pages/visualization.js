@@ -208,6 +208,33 @@ function _createClass(Constructor, protoProps, staticProps) {
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/defineProperty.js ***!
+  \*******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _defineProperty; });
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js":
 /*!*******************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js ***!
@@ -69397,7 +69424,7 @@ var Chart = /*#__PURE__*/function (_React$Component) {
             type: "square"
           }
         }, {
-          name: "Deaths",
+          name: "New Deaths",
           symbol: {
             fill: colorLight,
             type: "square"
@@ -69500,26 +69527,22 @@ var Chart = /*#__PURE__*/function (_React$Component) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
-/* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
-/* harmony import */ var _babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js");
-/* harmony import */ var _babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime/helpers/esm/inherits */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var node_fetch__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! node-fetch */ "./node_modules/node-fetch/browser.js");
-/* harmony import */ var node_fetch__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(node_fetch__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var papaparse__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! papaparse */ "./node_modules/papaparse/papaparse.min.js");
-/* harmony import */ var papaparse__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(papaparse__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _components_global_layout__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/global/layout */ "./src/components/global/layout.tsx");
-/* harmony import */ var _components_ui_Chart__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../components/ui/Chart */ "./src/components/ui/Chart.tsx");
-/* harmony import */ var _components_ui_Button__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../components/ui/Button */ "./src/components/ui/Button.tsx");
-
+/* harmony import */ var _babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/esm/inherits */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var papaparse__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! papaparse */ "./node_modules/papaparse/papaparse.min.js");
+/* harmony import */ var papaparse__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(papaparse__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _components_global_layout__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/global/layout */ "./src/components/global/layout.tsx");
+/* harmony import */ var _components_ui_Chart__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/ui/Chart */ "./src/components/ui/Chart.tsx");
+/* harmony import */ var _components_ui_Button__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/ui/Button */ "./src/components/ui/Button.tsx");
+/* harmony import */ var _utils_DataHelper__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../utils/DataHelper */ "./src/utils/DataHelper.tsx");
 
 
 
@@ -69527,9 +69550,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _jsxFileName = "/Users/dadams/Desktop/Code/hydrotik/src/pages/visualization.tsx";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
 
-function _createSuper(Derived) { return function () { var Super = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__["default"])(this, result); }; }
+function _createSuper(Derived) { return function () { var Super = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__["default"])(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
@@ -69558,69 +69581,57 @@ function NumberValue(props) {
   return numberWithCommas(v);
 }
 
+var dc = new _utils_DataHelper__WEBPACK_IMPORTED_MODULE_12__["default"]();
+
 var Visualization = /*#__PURE__*/function (_React$Component) {
-  Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__["default"])(Visualization, _React$Component);
+  Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(Visualization, _React$Component);
 
   var _super = _createSuper(Visualization);
 
   function Visualization(props) {
     var _this;
 
-    Object(_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, Visualization);
+    Object(_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Visualization);
 
     _this = _super.call(this, props);
     _this.state = {
       github: '',
       covid: [],
-      totals: []
+      totals: [],
+      stateData: []
     };
-    _this.resolveCsvData = _this.resolveCsvData.bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3__["default"])(_this));
+    _this.resolveCsvData = _this.resolveCsvData.bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this));
+    _this.resolveStateData = _this.resolveStateData.bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this));
+    _this.resolveGithubData = _this.resolveGithubData.bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this));
+    _this.parseGithubData = _this.parseGithubData.bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this)); //dc.getData(this.resolveCsvData);
+
     return _this;
   }
 
-  Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(Visualization, [{
+  Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Visualization, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.fetchGithub(); //this.fetchCovidData();
-
-      this.getCsvData();
-    }
-  }, {
-    key: "getCsvData",
-    value: function getCsvData() {
-      var csvData;
-      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function getCsvData$(_context) {
-        while (1) {
-          switch (_context.prev = _context.next) {
-            case 0:
-              _context.next = 2;
-              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(this.fetchCsv());
-
-            case 2:
-              csvData = _context.sent;
-              papaparse__WEBPACK_IMPORTED_MODULE_9___default.a.parse(csvData, {
-                header: false,
-                complete: this.resolveCsvData,
-                dynamicTyping: true
-              });
-
-            case 4:
-            case "end":
-              return _context.stop();
-          }
-        }
-      }, null, this, null, Promise);
-    } // TODO State
-    // https://raw.githubusercontent.com/chazeon/NYState-COVID-19-Tracker/master/data/NYC-covid-19-daily-data-summary.csv
-
-  }, {
-    key: "fetchCsv",
-    value: function fetchCsv() {
-      return node_fetch__WEBPACK_IMPORTED_MODULE_8___default()('https://raw.githubusercontent.com/nychealth/coronavirus-data/master/summary.csv?cache-control=' + new Date().getTime()).then(function (response) {
-        var reader = response.body.getReader();
-        var decoder = new TextDecoder('utf-8');
-        return reader.read().then(function (result) {
-          return decoder.decode(result.value);
+      var rdcb = this.resolveStateData;
+      dc.getData('https://raw.githubusercontent.com/chazeon/NYState-COVID-19-Tracker/master/data/NYC-covid-19-daily-data-summary.csv', function (data) {
+        papaparse__WEBPACK_IMPORTED_MODULE_7___default.a.parse(data, {
+          header: false,
+          complete: rdcb,
+          dynamicTyping: true
+        });
+      });
+      var cvcb = this.resolveCsvData;
+      dc.getData('https://raw.githubusercontent.com/nychealth/coronavirus-data/master/summary.csv', function (data) {
+        papaparse__WEBPACK_IMPORTED_MODULE_7___default.a.parse(data, {
+          header: false,
+          complete: cvcb,
+          dynamicTyping: true
+        });
+      });
+      var cghcb = this.resolveGithubData;
+      var ParseGithub = this.parseGithubData;
+      dc.getData('https://api.github.com/repos/nychealth/coronavirus-data/commits', function (data) {
+        ParseGithub(data, {
+          complete: cghcb
         });
       });
     }
@@ -69632,48 +69643,53 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
       });
     }
   }, {
-    key: "fetchGithub",
-    value: function fetchGithub() {
-      var _this2 = this;
+    key: "resolveStateData",
+    value: function resolveStateData(result) {
+      console.log('Visualization :: resolveStateData()');
+      console.log(result); //
 
-      node_fetch__WEBPACK_IMPORTED_MODULE_8___default()('https://api.github.com/repos/nychealth/coronavirus-data/commits?cache-control=' + new Date().getTime()).then(function (res) {
-        return res.json();
-      }).then(function (data) {
-        var d = data[0].commit.author.date;
-        var n = moment__WEBPACK_IMPORTED_MODULE_10___default()(d).format('MM/DD/YYYY, hh:hh a');
-        var f = moment__WEBPACK_IMPORTED_MODULE_10___default()(d).fromNow();
-        var s = "Chart updated ".concat(f, " on ").concat(n);
-
-        _this2.setState({
-          github: s
-        });
-      })["catch"](console.log);
+      this.setState({
+        stateData: result.data
+      });
     }
   }, {
-    key: "fetchCovidData",
-    value: function fetchCovidData() {
-      var _this3 = this;
-
-      node_fetch__WEBPACK_IMPORTED_MODULE_8___default()('/api/covid').then(function (res) {
-        return res.json();
-      }).then(function (res) {
-        console.log(res.success);
-
-        _this3.setState({
-          covid: res.data
-        });
-      })["catch"](console.log);
+    key: "resolveGithubData",
+    value: function resolveGithubData(result) {
+      this.setState({
+        github: result
+      });
     }
+  }, {
+    key: "parseGithubData",
+    value: function parseGithubData(result, config) {
+      var d = JSON.parse(result)[0].commit.author.date;
+      var n = moment__WEBPACK_IMPORTED_MODULE_8___default()(d).format('MM/DD/YYYY, hh:hh a');
+      var f = moment__WEBPACK_IMPORTED_MODULE_8___default()(d).fromNow();
+      var s = "Chart updated ".concat(f, " on ").concat(n);
+      config.complete.apply(this, [s]);
+    }
+    /*
+    fetchCovidData(){
+        fetch('/api/covid')
+        .then(res => res.json())
+        .then((res) => {
+        	console.log(res.success)
+            this.setState({ covid: res.data })
+        })
+        .catch(console.log)
+    }
+    */
+
   }, {
     key: "render",
     value: function render() {
-      var _this4 = this;
+      var _this2 = this;
 
-      return __jsx(_components_global_layout__WEBPACK_IMPORTED_MODULE_11__["default"], {
+      return __jsx(_components_global_layout__WEBPACK_IMPORTED_MODULE_9__["default"], {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 118,
+          lineNumber: 148,
           columnNumber: 13
         }
       }, __jsx("main", {
@@ -69681,7 +69697,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 119,
+          lineNumber: 149,
           columnNumber: 5
         }
       }, __jsx("div", {
@@ -69689,14 +69705,14 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 120,
+          lineNumber: 150,
           columnNumber: 6
         }
-      }, __jsx(_components_ui_Chart__WEBPACK_IMPORTED_MODULE_12__["default"], {
+      }, __jsx(_components_ui_Chart__WEBPACK_IMPORTED_MODULE_10__["default"], {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 121,
+          lineNumber: 151,
           columnNumber: 7
         }
       })), __jsx("div", {
@@ -69704,7 +69720,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 123,
+          lineNumber: 153,
           columnNumber: 6
         }
       }, __jsx("div", {
@@ -69712,7 +69728,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 124,
+          lineNumber: 154,
           columnNumber: 7
         }
       }, __jsx("h2", {
@@ -69720,7 +69736,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 125,
+          lineNumber: 155,
           columnNumber: 8
         }
       }, "New Covid cases by day in NYC"), __jsx("p", {
@@ -69728,15 +69744,15 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 126,
+          lineNumber: 156,
           columnNumber: 8
         }
-      }, this.state.github), __jsx(_components_ui_Button__WEBPACK_IMPORTED_MODULE_13__["default"], {
+      }, this.state.github), __jsx(_components_ui_Button__WEBPACK_IMPORTED_MODULE_11__["default"], {
         href: "https://github.com/nychealth/coronavirus-data",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 127,
+          lineNumber: 157,
           columnNumber: 8
         }
       }, "NYC Health Github")), __jsx("div", {
@@ -69744,7 +69760,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 129,
+          lineNumber: 159,
           columnNumber: 7
         }
       }, __jsx("h2", {
@@ -69752,7 +69768,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 130,
+          lineNumber: 160,
           columnNumber: 8
         }
       }, "New York State:"), __jsx("div", {
@@ -69760,31 +69776,31 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 131,
+          lineNumber: 161,
           columnNumber: 8
         }
       }, this.state.totals.map(function (section, index) {
         return __jsx("div", {
           key: index,
-          __self: _this4,
+          __self: _this2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 133,
+            lineNumber: 163,
             columnNumber: 9
           }
         }, __jsx("strong", {
-          __self: _this4,
+          __self: _this2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 133,
+            lineNumber: 163,
             columnNumber: 26
           }
         }, section[0].replace('*', '')), " ", __jsx(NumberValue, {
           value: section[1],
-          __self: _this4,
+          __self: _this2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 133,
+            lineNumber: 163,
             columnNumber: 73
           }
         }));
@@ -69793,7 +69809,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 136,
+          lineNumber: 166,
           columnNumber: 8
         }
       }, "United States:")))));
@@ -69801,13 +69817,118 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
   }]);
 
   return Visualization;
-}(react__WEBPACK_IMPORTED_MODULE_7___default.a.Component);
+}(react__WEBPACK_IMPORTED_MODULE_6___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (Visualization);
 
 /***/ }),
 
-/***/ 1:
+/***/ "./src/utils/DataHelper.tsx":
+/*!**********************************!*\
+  !*** ./src/utils/DataHelper.tsx ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return DataHelper; });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+
+
+
+
+
+var DataHelper = /*#__PURE__*/function () {
+  /**
+   * Main DataHelper constructor
+   */
+  function DataHelper(opts) {
+    Object(_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, DataHelper);
+
+    Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_3__["default"])(this, "data", {});
+
+    Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_3__["default"])(this, "path", '');
+
+    if (this instanceof DataHelper) {
+      opts = opts || {};
+      this.data = {};
+      this.path = opts.path;
+      return this;
+    }
+
+    return new DataHelper(opts);
+  }
+  /**
+   * 
+   *
+   * @api private
+   */
+
+
+  Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(DataHelper, [{
+    key: "fetchData",
+    value: function fetchData() {
+      var datahelper = this;
+      return fetch(datahelper.path + '?cache-control=' + new Date().getTime()).then(function (response) {
+        var reader = response.body.getReader();
+        var decoder = new TextDecoder('utf-8');
+        return reader.read().then(function (result) {
+          return decoder.decode(result.value);
+        });
+      });
+    }
+    /**
+     * 
+     *
+     * @api private
+     */
+
+  }, {
+    key: "resolveData",
+    value: function resolveData(result) {
+      this.data = result;
+      console.log('DatCon DONE');
+      console.log(this.data);
+    }
+  }, {
+    key: "getData",
+    value: function getData(path, fn) {
+      var d;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function getData$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              this.path = path;
+              _context.next = 3;
+              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(this.fetchData());
+
+            case 3:
+              d = _context.sent;
+              fn.call(this, d);
+
+            case 5:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, null, this, null, Promise);
+    }
+  }]);
+
+  return DataHelper;
+}();
+
+
+;
+
+/***/ }),
+
+/***/ 2:
 /*!*************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fvisualization&absolutePagePath=%2FUsers%2Fdadams%2FDesktop%2FCode%2Fhydrotik%2Fsrc%2Fpages%2Fvisualization.tsx ***!
   \*************************************************************************************************************************************************************/
@@ -69830,5 +69951,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[1,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=visualization.js.map
