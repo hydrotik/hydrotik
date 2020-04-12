@@ -7,11 +7,7 @@
     "dev": "next",
     "build": "rm -rf node_modules/.cache && rimraf out && next build && next export && touch out/.nojekyll && production -d out -t true && curl -k https://api.zeit.co/v1/integrations/deploy/QmdcQ5CQEGdo3HStxyhRv9uGC1jPW9TZQQQxW2EWzP9WpT/0phg9WvIsI",
     "start": "next start",
-<<<<<<< HEAD
-    "deploy-gh-pages": "cross-env GHPAGES_ENV=true rm -rf node_modules/.cache && rimraf out && next build && next export && touch out/.nojekyll && gh-pages -d out -t true"
-=======
     "deploy-gh-pages": "env GHPAGES_ENV=true rm -rf node_modules/.cache && rimraf out && next build && next export && touch out/.nojekyll && gh-pages -d out -t true"
->>>>>>> 6c0125f2ae74a113b6e3d0527b35c882388cf001
   },
   "repository": {
     "type": "git",
