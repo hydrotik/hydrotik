@@ -112,9 +112,6 @@ class Visualization extends React.Component<MyProps, MyState>{
     }
 
     resolveStateData(result:any) {
-    	console.log('Visualization :: resolveStateData()');
-    	console.log(result);
-        //
     	this.setState({stateData: result.data});
     }
 
@@ -123,10 +120,10 @@ class Visualization extends React.Component<MyProps, MyState>{
     }
 
     parseGithubData(result:any, config:any) {
-    	let d = JSON.parse(result)[0].commit.author.date;
-	    let n = moment(d).format('MM/DD/YYYY, hh:hh a');
-	    let f = moment(d).fromNow();
-	    let s = `Chart updated ${f} on ${n}`;
+    	const r = JSON.parse(result)[0];
+    	const d = r.commit.author.date;
+	    const n = moment(d).format('MM/DD/YYYY, hh:hh a');
+	    const s = `Chart updated on ${n}`;
 	    config.complete.apply(this, [s]);
     }
 
