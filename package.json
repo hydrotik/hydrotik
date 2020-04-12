@@ -32,7 +32,6 @@
     "moment": "^2.24.0",
     "next": "^9.3.4",
     "node-fetch": "^2.6.0",
-    "pdfreader": "^1.0.6",
     "react": "^16.13.1",
     "react-csv-reader": "^3.0.5",
     "react-dom": "^16.13.1",
@@ -42,7 +41,6 @@
     "react-scrollmagic": "^2.2.0",
     "react-spring": "^8.0.27",
     "react-text-loop": "^2.3.0",
-    "react-three-fiber": "^4.0.27",
     "strip-ansi": "^6.0.0",
     "victory": "^34.1.3"
   },
