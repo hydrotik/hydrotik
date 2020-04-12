@@ -4004,8 +4004,8 @@ var MyApp = /*#__PURE__*/function (_App) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 14,
-          columnNumber: 12
+          lineNumber: 11,
+          columnNumber: 10
         }
       }));
     }
