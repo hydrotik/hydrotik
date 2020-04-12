@@ -7,7 +7,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "deploy": "rm -rf node_modules/.cache && rimraf out && next build && next export && touch out/.nojekyll && gh-pages -d out -t true"
+    "deploy-gh-pages": "cross-env GHPAGES_ENV=true rm -rf node_modules/.cache && rimraf out && next build && next export && touch out/.nojekyll && gh-pages -d out -t true"
   },
   "repository": {
     "type": "git",
@@ -57,6 +57,7 @@
     "babel-plugin-emotion": "^10.0.33",
     "babel-plugin-macros": "^2.8.0",
     "classnames": "^2.2.6",
+    "cross-env": "^7.0.2",
     "gh-pages": "^2.2.0",
     "postcss-import": "^12.0.1",
     "postcss-preset-env": "^6.7.0",

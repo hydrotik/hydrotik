@@ -1,7 +1,6 @@
 var moment  = require('moment');
 var fs = require('fs');
 var http = require('http');
-var pdfreader = require("pdfreader");
 
 
 export default (req, res) => {
