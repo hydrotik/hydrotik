@@ -3,7 +3,11 @@ const purgecss = require('@fullhuman/postcss-purgecss')
 
 const isProd = (process.env.NODE_ENV || 'production') === 'production'
 const isGHProd = (process.env.GHPAGES_ENV) === 'true'
+<<<<<<< HEAD
 const assetPrefix = (isProd && isGHProd) ? '/hydrotik' : ''
+=======
+const assetPrefix = (isProd && !isGHProd) ? '/hydrotik' : ''
+>>>>>>> 6c0125f2ae74a113b6e3d0527b35c882388cf001
 
 
 
