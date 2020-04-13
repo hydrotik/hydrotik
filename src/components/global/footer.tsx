@@ -18,11 +18,11 @@ const Footer: React.FunctionComponent<Props> = ({
 				<li>
 					{footerTitle}
 				</li>
-
 				<li>
-					
-
 					<Button href="https://github.com/hydrotik/hydrotik">Github</Button>
+				</li>
+				<li>
+					<Button href="https://www.linkedin.com/in/donovanadams/">Linkedin</Button>
 				</li>
 			</ul>
 	</footer>
