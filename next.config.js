@@ -5,6 +5,7 @@ const isProd = (process.env.NODE_ENV || 'production') === 'production'
 const isGHProd = (process.env.GHPAGES_ENV) === 'true'
 const assetPrefix = (isProd && isGHProd) ? '/hydrotik' : ''
 
+console.log('isGHProd: ' + isGHProd);
 
 module.exports = {
   'process.env.BACKEND_URL': assetPrefix,
