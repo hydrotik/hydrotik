@@ -59,13 +59,9 @@ const PDFItem: React.FunctionComponent<PDFItemProps> = ({
 	children
 }) => {
 	if(children.includes('-')){
-		return (
-			<div>{children.replace('-', '\u2022')}</div>
-		);
+		return <div>{children.replace('-', '\u2022')}</div>
 	}else{
-		return (
-			<div className="mt-4 -mb-4"><strong>{children}</strong></div>
-		);
+		return <div className="mt-4 -mb-4"><strong>{children}</strong></div>
 	}
 }
 
