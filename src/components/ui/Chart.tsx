@@ -89,7 +89,8 @@ class Chart extends React.Component<MyProps, MyState>{
 		return (
 			<VictoryChart
 				theme={VictoryTheme.material}
-				domain={{y: [0, 6000]}}
+				//domain={{y: [0, 6000]}}
+				domainPadding={{y: [0, 50]}}
 				width={600}
 				height={350}
 				scale={{ x: "time" }}

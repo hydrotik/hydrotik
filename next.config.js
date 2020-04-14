@@ -19,6 +19,7 @@ module.exports = {
     config.plugins.push(
       new webpack.DefinePlugin({
         'process.env.ASSET_PREFIX': JSON.stringify(assetPrefix),
+        'process.env.IS_GITHUBPAGES' : isGHProd,
         'process.env.BACKEND_URL' : JSON.stringify(assetPrefix)
       }),
     )

@@ -31,6 +31,7 @@ type MyState = {
 	covid: CovidProps[];
 	totals: Array<object>;
 	stateData: Array<object>;
+	apiData: Array<string>;
 };
 
 function numberWithCommas(x:string) {
@@ -47,6 +48,37 @@ function NumberValue(props:any) {
 
 const dc = new DataHelper()
 
+
+
+function PDFItem(props:any) {
+	if(props.children.includes('-')){
+		return (
+			<div key={props.index}>{props.children.replace('-', '\u2022')}</div>
+		);
+	}else{
+		return (
+			<div key={props.index} className="mt-4 -mb-4"><strong>{props.children}</strong></div>
+		);
+	}
+}
+
+function PDFSection(props:any) {
+	if(!process.env.IS_GITHUBPAGES){
+		return (
+			<div className="mb-6">
+			<h2 className="font-bold mb-3 text-xl">New York City Details:</h2>
+				{props.apiData.map((section:any, index:number) => (
+					<PDFItem key={index}>{section}</PDFItem>
+				))}
+			</div>
+		);
+	}else{
+		return (
+			<></>
+		);
+	}
+}
+
 class Visualization extends React.Component<MyProps, MyState>{
 
 
@@ -54,17 +86,18 @@ class Visualization extends React.Component<MyProps, MyState>{
         super(props);
 
         this.state = {
-            github: '',
+            github: 'Loading data...',
             covid: [],
-            totals:[],
-            stateData:[]
+            totals:[['Loading data...', '']],
+            stateData:[],
+            apiData:['Loading data...']
         };
 
         this.resolveCsvData = this.resolveCsvData.bind(this);
         this.resolveStateData = this.resolveStateData.bind(this);
         this.resolveGithubData = this.resolveGithubData.bind(this);
         this.parseGithubData = this.parseGithubData.bind(this);
-        //dc.getData(this.resolveCsvData);
+        this.parseAPIData = this.parseAPIData.bind(this);
     }
 
     componentDidMount() {
@@ -105,6 +138,20 @@ class Visualization extends React.Component<MyProps, MyState>{
 			    })
 		    }
 	    )
+
+	    if(!process.env.IS_GITHUBPAGES){
+		    const apicb = this.resolveAPIData;
+		    const ParseAPI = this.parseAPIData;
+
+		    dc.getData(
+	        	'/api/covid', 
+	        	function(data:any){
+			        ParseAPI(data, {
+				        complete: apicb
+				    })
+			    }
+		    )
+		}
     }
 
     resolveCsvData(result:any) {
@@ -128,17 +175,17 @@ class Visualization extends React.Component<MyProps, MyState>{
     }
 
 
-    /*
-    fetchCovidData(){
-        fetch('/api/covid')
-        .then(res => res.json())
-        .then((res) => {
-        	console.log(res.success)
-            this.setState({ covid: res.data })
-        })
-        .catch(console.log)
+    
+    resolveAPIData(result:any) {
+        this.setState({ apiData: result.data })
     }
-	*/
+
+    parseAPIData(result:any, config:any) {
+	    config.complete.apply(this, [JSON.parse(result)]);
+    }
+
+	
+	
     
     render() {
         return (
@@ -151,16 +198,17 @@ class Visualization extends React.Component<MyProps, MyState>{
 						<div className="md:ml-6 md:w-2/3 mb-16">
 							<h2 className="font-bold mb-3 text-xl">New Covid cases by day in NYC</h2>
 							<p className="mb-6">{this.state.github}</p>
+							<PDFSection apiData={this.state.apiData} />
 							<Button href="https://github.com/nychealth/coronavirus-data">NYC Health Github</Button>
 						</div>
 						<div className="md:w-1/3">
-							<h2 className="font-bold mb-3 text-xl">New York State:</h2>
+							<h2 className="font-bold mb-3 text-xl">New York City:</h2>
 							<div className="mb-6">
 								{this.state.totals.map((section:any, index) => (
 									<div key={index}><strong>{section[0].replace('*', '')}</strong> <NumberValue value={section[1]} /></div>
 								))}
 							</div>
-							<h2 className="font-bold mb-3 text-xl">United States:</h2>
+							{/*<h2 className="font-bold mb-3 text-xl">New York State:</h2>*/}
 						</div>
 					</div>
 				</main>

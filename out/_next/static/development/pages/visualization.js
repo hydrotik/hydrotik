@@ -68905,7 +68905,7 @@ var Footer = function Footer(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
+      lineNumber: 21,
       columnNumber: 5
     }
   }, __jsx(_ui_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -68913,10 +68913,25 @@ var Footer = function Footer(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
+      lineNumber: 22,
+      columnNumber: 6
+    }
+  }, "Github")), __jsx("li", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24,
+      columnNumber: 5
+    }
+  }, __jsx(_ui_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    href: "https://www.linkedin.com/in/donovanadams/",
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
       lineNumber: 25,
       columnNumber: 6
     }
-  }, "Github"))));
+  }, "Linkedin"))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Footer);
@@ -69921,7 +69936,7 @@ var DataHelper = /*#__PURE__*/function () {
 
 /***/ }),
 
-/***/ 3:
+/***/ 2:
 /*!*************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fvisualization&absolutePagePath=%2FUsers%2Fdadams%2FDesktop%2FCode%2Fhydrotik%2Fsrc%2Fpages%2Fvisualization.tsx ***!
   \*************************************************************************************************************************************************************/
@@ -69944,5 +69959,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=visualization.js.map
