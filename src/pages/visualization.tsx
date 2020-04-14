@@ -79,6 +79,13 @@ function PDFSection(props:any) {
 	}
 }
 
+
+function isGHPages(){
+	const url = window.location.hostname;
+
+	return (url.search('github.io') != -1) ? true : false;
+}
+
 class Visualization extends React.Component<MyProps, MyState>{
 
 
@@ -90,7 +97,7 @@ class Visualization extends React.Component<MyProps, MyState>{
             covid: [],
             totals:[['Loading data...', '']],
             stateData:[],
-            apiData:['Loading data...']
+            apiData:[]
         };
 
         this.resolveCsvData = this.resolveCsvData.bind(this);
@@ -139,7 +146,9 @@ class Visualization extends React.Component<MyProps, MyState>{
 		    }
 	    )
 
-	    if(!process.env.IS_GITHUBPAGES){
+	    if(!isGHPages()){
+	    	this.setState({ apiData: ['Loading data...'] })
+
 		    const apicb = this.resolveAPIData;
 		    const ParseAPI = this.parseAPIData;
 

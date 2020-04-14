@@ -7,7 +7,7 @@
     "dev": "next",
     "build": "cross-env ZEIT_ENV=true next build",
     "start": "next start",
-    "deploy-gh-pages": "rm -rf node_modules/.cache && rimraf out &&next build &&next export && touch out/.nojekyll && gh-pages -d out -t true"
+    "deploy-gh-pages": "rm -rf node_modules/.cache && rimraf out && cross-env GHPAGES_ENV=true next build && cross-env GHPAGES_ENV=true next export && touch out/.nojekyll && gh-pages -d out -t true"
   },
   "repository": {
     "type": "git",
