@@ -1,6 +1,6 @@
 # Hydrotik
 
-##Website code for **hydrotik.github.io/hydrotik/** using:
+## Website code for **hydrotik.github.io/hydrotik/** using:
 
 - **Next.js** Node/React framework
 - **TypesScript** Strongly typed JavaScript
@@ -23,7 +23,7 @@ To deploy to production which includes the API functionality push to master with
 npm run build
 ```
 
-##License
+## License
 
 Copyright 2020 Hydrotik LLC
 
