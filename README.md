@@ -14,7 +14,7 @@ This is a personal playground of my work that allows me to test ideas, explore m
 npm install
 npm run dev
 ```
-To deploy static site to Github pages. Have a branch setup in Github such as **gh-pages** and run:
+To deploy static site to Github pages, have a branch setup in Github such as **gh-pages** and run:
 ```bash
 npm deploy gh-pages
 ```
