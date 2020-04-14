@@ -11,11 +11,11 @@ const About: NextPage = () => (
 					{[
 						{
 							heading: `What is Hydrotik?`,
-							body: `Hydrotik is an experiential digital consultancy with a focus on retail and entertainment. Engaging customer experiences, digital transformation, user experience, and multimedia design are just a few of the things we excel at.`
+							body: `Hydrotik is an experiential digital consultancy with a focus on retail and entertainment brands. Engaging customer experiences, digital transformation, user experience, and multimedia/sound design are just a few of the things we specialize in.`
 						},
 						{
 							heading: `Donovan Adams`,
-							body: `Donovan has been leading teams of developers for over 10 years. Over his 20 year career, he has worked for Saks Fifth Avenue, Hudson's Bay, Macys.com, NBC/Universal, Syfy channel, and R/GA.`
+							body: `Donovan has been leading teams of developers and creative technologists for over 10 years. Over his 20 year career, he has worked for Saks Fifth Avenue, Hudson's Bay, Macys.com, NBC/Universal, Syfy channel, and R/GA.`
 						}
 					].map((section, index) => (
 						<div key={index}>

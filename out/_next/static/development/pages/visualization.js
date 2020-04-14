@@ -69348,9 +69348,10 @@ var Chart = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       return __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryChart"], {
-        theme: victory__WEBPACK_IMPORTED_MODULE_11__["VictoryTheme"].material,
-        domain: {
-          y: [0, 6000]
+        theme: victory__WEBPACK_IMPORTED_MODULE_11__["VictoryTheme"].material //domain={{y: [0, 6000]}}
+        ,
+        domainPadding: {
+          y: [0, 50]
         },
         width: 600,
         height: 350,
@@ -69372,7 +69373,7 @@ var Chart = /*#__PURE__*/function (_React$Component) {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 101,
+            lineNumber: 102,
             columnNumber: 7
           }
         }) // new Date() for https://momentjs.com/guides/#/warnings/js-date/ [CLEANUP]
@@ -69384,7 +69385,7 @@ var Chart = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 97,
+          lineNumber: 98,
           columnNumber: 5
         }
       }), __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryAxis"], {
@@ -69397,14 +69398,14 @@ var Chart = /*#__PURE__*/function (_React$Component) {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 113,
+            lineNumber: 114,
             columnNumber: 7
           }
         }),
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 109,
+          lineNumber: 110,
           columnNumber: 5
         }
       }), __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryLegend"], {
@@ -69444,7 +69445,7 @@ var Chart = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 116,
+          lineNumber: 117,
           columnNumber: 6
         }
       }), __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryGroup"], {
@@ -69455,7 +69456,7 @@ var Chart = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 128,
+          lineNumber: 129,
           columnNumber: 5
         }
       }, __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryArea"], {
@@ -69475,7 +69476,7 @@ var Chart = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 132,
+          lineNumber: 133,
           columnNumber: 6
         }
       }), __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryArea"], {
@@ -69495,7 +69496,7 @@ var Chart = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 142,
+          lineNumber: 143,
           columnNumber: 6
         }
       }), __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryArea"], {
@@ -69515,7 +69516,7 @@ var Chart = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 151,
+          lineNumber: 152,
           columnNumber: 6
         }
       })));
@@ -69594,29 +69595,96 @@ function NumberValue(props) {
 
 var dc = new _utils_DataHelper__WEBPACK_IMPORTED_MODULE_12__["default"]();
 
+function PDFItem(props) {
+  if (props.children.includes('-')) {
+    return __jsx("div", {
+      key: props.index,
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 56,
+        columnNumber: 4
+      }
+    }, props.children.replace('-', "\u2022"));
+  } else {
+    return __jsx("div", {
+      key: props.index,
+      className: "mt-4 -mb-4",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 60,
+        columnNumber: 4
+      }
+    }, __jsx("strong", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 60,
+        columnNumber: 50
+      }
+    }, props.children));
+  }
+}
+
+function PDFSection(props) {
+  var _this = this;
+
+  if (true) {
+    return __jsx("div", {
+      className: "mb-6",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 68,
+        columnNumber: 4
+      }
+    }, __jsx("h2", {
+      className: "font-bold mb-3 text-xl",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 69,
+        columnNumber: 4
+      }
+    }, "New York City Details:"), props.apiData.map(function (section, index) {
+      return __jsx(PDFItem, {
+        key: index,
+        __self: _this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 71,
+          columnNumber: 6
+        }
+      }, section);
+    }));
+  } else {}
+}
+
 var Visualization = /*#__PURE__*/function (_React$Component) {
   Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(Visualization, _React$Component);
 
   var _super = _createSuper(Visualization);
 
   function Visualization(props) {
-    var _this;
+    var _this2;
 
     Object(_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Visualization);
 
-    _this = _super.call(this, props);
-    _this.state = {
-      github: '',
+    _this2 = _super.call(this, props);
+    _this2.state = {
+      github: 'Loading data...',
       covid: [],
-      totals: [],
-      stateData: []
+      totals: [['Loading data...', '']],
+      stateData: [],
+      apiData: ['Loading data...']
     };
-    _this.resolveCsvData = _this.resolveCsvData.bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this));
-    _this.resolveStateData = _this.resolveStateData.bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this));
-    _this.resolveGithubData = _this.resolveGithubData.bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this));
-    _this.parseGithubData = _this.parseGithubData.bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this)); //dc.getData(this.resolveCsvData);
-
-    return _this;
+    _this2.resolveCsvData = _this2.resolveCsvData.bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this2));
+    _this2.resolveStateData = _this2.resolveStateData.bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this2));
+    _this2.resolveGithubData = _this2.resolveGithubData.bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this2));
+    _this2.parseGithubData = _this2.parseGithubData.bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this2));
+    _this2.parseAPIData = _this2.parseAPIData.bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this2));
+    return _this2;
   }
 
   Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Visualization, [{
@@ -69645,6 +69713,16 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
           complete: cghcb
         });
       });
+
+      if (true) {
+        var apicb = this.resolveAPIData;
+        var ParseAPI = this.parseAPIData;
+        dc.getData('/api/covid', function (data) {
+          ParseAPI(data, {
+            complete: apicb
+          });
+        });
+      }
     }
   }, {
     key: "resolveCsvData",
@@ -69676,28 +69754,28 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
       var s = "Chart updated on ".concat(n);
       config.complete.apply(this, [s]);
     }
-    /*
-    fetchCovidData(){
-        fetch('/api/covid')
-        .then(res => res.json())
-        .then((res) => {
-        	console.log(res.success)
-            this.setState({ covid: res.data })
-        })
-        .catch(console.log)
+  }, {
+    key: "resolveAPIData",
+    value: function resolveAPIData(result) {
+      this.setState({
+        apiData: result.data
+      });
     }
-    */
-
+  }, {
+    key: "parseAPIData",
+    value: function parseAPIData(result, config) {
+      config.complete.apply(this, [JSON.parse(result)]);
+    }
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
+      var _this3 = this;
 
       return __jsx(_components_global_layout__WEBPACK_IMPORTED_MODULE_9__["default"], {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 145,
+          lineNumber: 192,
           columnNumber: 13
         }
       }, __jsx("main", {
@@ -69705,7 +69783,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 146,
+          lineNumber: 193,
           columnNumber: 5
         }
       }, __jsx("div", {
@@ -69713,14 +69791,14 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 147,
+          lineNumber: 194,
           columnNumber: 6
         }
       }, __jsx(_components_ui_Chart__WEBPACK_IMPORTED_MODULE_10__["default"], {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 148,
+          lineNumber: 195,
           columnNumber: 7
         }
       })), __jsx("div", {
@@ -69728,7 +69806,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 150,
+          lineNumber: 197,
           columnNumber: 6
         }
       }, __jsx("div", {
@@ -69736,7 +69814,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 151,
+          lineNumber: 198,
           columnNumber: 7
         }
       }, __jsx("h2", {
@@ -69744,7 +69822,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 152,
+          lineNumber: 199,
           columnNumber: 8
         }
       }, "New Covid cases by day in NYC"), __jsx("p", {
@@ -69752,15 +69830,23 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 153,
+          lineNumber: 200,
           columnNumber: 8
         }
-      }, this.state.github), __jsx(_components_ui_Button__WEBPACK_IMPORTED_MODULE_11__["default"], {
+      }, this.state.github), __jsx(PDFSection, {
+        apiData: this.state.apiData,
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 201,
+          columnNumber: 8
+        }
+      }), __jsx(_components_ui_Button__WEBPACK_IMPORTED_MODULE_11__["default"], {
         href: "https://github.com/nychealth/coronavirus-data",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 154,
+          lineNumber: 202,
           columnNumber: 8
         }
       }, "NYC Health Github")), __jsx("div", {
@@ -69768,7 +69854,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 156,
+          lineNumber: 204,
           columnNumber: 7
         }
       }, __jsx("h2", {
@@ -69776,51 +69862,43 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 157,
+          lineNumber: 205,
           columnNumber: 8
         }
-      }, "New York State:"), __jsx("div", {
+      }, "New York City:"), __jsx("div", {
         className: "mb-6",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 158,
+          lineNumber: 206,
           columnNumber: 8
         }
       }, this.state.totals.map(function (section, index) {
         return __jsx("div", {
           key: index,
-          __self: _this2,
+          __self: _this3,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 160,
+            lineNumber: 208,
             columnNumber: 10
           }
         }, __jsx("strong", {
-          __self: _this2,
+          __self: _this3,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 160,
+            lineNumber: 208,
             columnNumber: 27
           }
         }, section[0].replace('*', '')), " ", __jsx(NumberValue, {
           value: section[1],
-          __self: _this2,
+          __self: _this3,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 160,
+            lineNumber: 208,
             columnNumber: 74
           }
         }));
-      })), __jsx("h2", {
-        className: "font-bold mb-3 text-xl",
-        __self: this,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 163,
-          columnNumber: 8
-        }
-      }, "United States:")))));
+      }))))));
     }
   }]);
 
