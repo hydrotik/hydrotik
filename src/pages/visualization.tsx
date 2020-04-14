@@ -31,7 +31,10 @@ type MyState = {
 	covid: CovidProps[];
 	totals: Array<object>;
 	stateData: Array<object>;
-	apiData: Array<string>;
+	//apiData: Array<string>;
+	borough: Array<string>;
+	age: Array<string>;
+	sex: Array<string>;
 };
 
 function numberWithCommas(x:string) {
@@ -48,41 +51,44 @@ function NumberValue(props:any) {
 
 const dc = new DataHelper()
 
+interface PDFItemProps {
+	children:string
+}
 
-
-function PDFItem(props:any) {
-	if(props.children.includes('-')){
+const PDFItem: React.FunctionComponent<PDFItemProps> = ({
+	children
+}) => {
+	if(children.includes('-')){
 		return (
-			<div key={props.index}>{props.children.replace('-', '\u2022')}</div>
+			<div>{children.replace('-', '\u2022')}</div>
 		);
 	}else{
 		return (
-			<div key={props.index} className="mt-4 -mb-4"><strong>{props.children}</strong></div>
+			<div className="mt-4 -mb-4"><strong>{children}</strong></div>
 		);
 	}
 }
 
-function PDFSection(props:any) {
-	if(!process.env.IS_GITHUBPAGES){
-		return (
-			<div className="mb-6">
-			<h2 className="font-bold mb-3 text-xl">New York City Details:</h2>
-				{props.apiData.map((section:any, index:number) => (
-					<PDFItem key={index}>{section}</PDFItem>
-				))}
-			</div>
-		);
-	}else{
-		return (
-			<></>
-		);
-	}
-}
+// function PDFSection(props:any) {
+// 	if(!process.env.IS_GITHUBPAGES){
+// 		return (
+// 			<div className="mb-6">
+// 			<h2 className="font-bold mb-3 text-xl">New York City Details:</h2>
+// 				{props.apiData.map((section:any, index:number) => (
+// 					<PDFItem key={index}>{section}</PDFItem>
+// 				))}
+// 			</div>
+// 		);
+// 	}else{
+// 		return (
+// 			<></>
+// 		);
+// 	}
+// }
 
 
 function isGHPages(){
 	const url = window.location.hostname;
-
 	return (url.search('github.io') != -1) ? true : false;
 }
 
@@ -97,14 +103,20 @@ class Visualization extends React.Component<MyProps, MyState>{
             covid: [],
             totals:[['Loading data...', '']],
             stateData:[],
-            apiData:[]
+            //apiData:[],
+            borough:[],
+            age:[],
+            sex:[]
         };
 
         this.resolveCsvData = this.resolveCsvData.bind(this);
         this.resolveStateData = this.resolveStateData.bind(this);
         this.resolveGithubData = this.resolveGithubData.bind(this);
         this.parseGithubData = this.parseGithubData.bind(this);
-        this.parseAPIData = this.parseAPIData.bind(this);
+        //this.parseAPIData = this.parseAPIData.bind(this);
+        this.resolveBoroughData = this.resolveBoroughData.bind(this);
+        this.resolveAgeData = this.resolveAgeData.bind(this);
+        this.resolveSexData = this.resolveSexData.bind(this);
     }
 
     componentDidMount() {
@@ -146,21 +158,60 @@ class Visualization extends React.Component<MyProps, MyState>{
 		    }
 	    )
 
-	    if(!isGHPages()){
-	    	this.setState({ apiData: ['Loading data...'] })
+	    const boroughcb = this.resolveBoroughData;
 
-		    const apicb = this.resolveAPIData;
-		    const ParseAPI = this.parseAPIData;
+	    dc.getData(
+        	'https://raw.githubusercontent.com/nychealth/coronavirus-data/master/boro.csv', 
+        	function(data:any){
+		        Papa.parse(data, {
+			        header: false,
+			        complete: boroughcb,
+			        dynamicTyping: true
+			    })
+		    }
+	    )
 
-		    dc.getData(
-	        	'/api/covid', 
-	        	function(data:any){
-			        ParseAPI(data, {
-				        complete: apicb
-				    })
-			    }
-		    )
-		}
+	    const agecb = this.resolveAgeData;
+
+	    dc.getData(
+        	'https://raw.githubusercontent.com/nychealth/coronavirus-data/master/by-age.csv', 
+        	function(data:any){
+		        Papa.parse(data, {
+			        header: false,
+			        complete: agecb,
+			        dynamicTyping: true
+			    })
+		    }
+	    )
+
+	    const sexcb = this.resolveSexData;
+
+	    dc.getData(
+        	'https://raw.githubusercontent.com/nychealth/coronavirus-data/master/by-sex.csv', 
+        	function(data:any){
+		        Papa.parse(data, {
+			        header: false,
+			        complete: sexcb,
+			        dynamicTyping: true
+			    })
+		    }
+	    )
+
+	 //    if(!isGHPages()){
+	 //    	this.setState({ apiData: ['Loading data...'] })
+
+		//     const apicb = this.resolveAPIData;
+		//     const ParseAPI = this.parseAPIData;
+
+		//     dc.getData(
+	 //        	'/api/covid', 
+	 //        	function(data:any){
+		// 	        ParseAPI(data, {
+		// 		        complete: apicb
+		// 		    })
+		// 	    }
+		//     )
+		// }
     }
 
     resolveCsvData(result:any) {
@@ -175,6 +226,21 @@ class Visualization extends React.Component<MyProps, MyState>{
         this.setState({ github: result })
     }
 
+    resolveBoroughData(result:any) {
+    	result.data.shift()
+        this.setState({ borough: result.data })
+    }
+
+    resolveAgeData(result:any) {
+    	result.data.shift()
+        this.setState({ age: result.data })
+    }
+
+    resolveSexData(result:any) {
+    	result.data.shift()
+        this.setState({ sex: result.data })
+    }
+
     parseGithubData(result:any, config:any) {
     	const r = JSON.parse(result)[0];
     	const d = r.commit.author.date;
@@ -185,13 +251,13 @@ class Visualization extends React.Component<MyProps, MyState>{
 
 
     
-    resolveAPIData(result:any) {
-        this.setState({ apiData: result.data })
-    }
+    // resolveAPIData(result:any) {
+    //     this.setState({ apiData: result.data })
+    // }
 
-    parseAPIData(result:any, config:any) {
-	    config.complete.apply(this, [JSON.parse(result)]);
-    }
+    // parseAPIData(result:any, config:any) {
+	   //  config.complete.apply(this, [JSON.parse(result)]);
+    // }
 
 	
 	
@@ -207,7 +273,22 @@ class Visualization extends React.Component<MyProps, MyState>{
 						<div className="md:ml-6 md:w-2/3 mb-16">
 							<h2 className="font-bold mb-3 text-xl">New Covid cases by day in NYC</h2>
 							<p className="mb-6">{this.state.github}</p>
-							<PDFSection apiData={this.state.apiData} />
+							{/*<PDFSection apiData={this.state.apiData} />*/}
+							<h2 className="font-bold text-xl">Borough Totals:</h2>
+							{this.state.borough.map((section:any, index) => (
+								<div key={index}><strong>{section[0].replace('*', '')}</strong>: <NumberValue value={section[1]} /></div>
+							))}
+							<br />
+							<h2 className="font-bold text-xl">Case Rate By Age:</h2>
+							{this.state.age.map((section:any, index) => (
+								<div key={index}><strong>{section[0].replace('*', '')}</strong>: <NumberValue value={section[1]} /></div>
+							))}
+							<br />
+							<h2 className="font-bold text-xl">Case Rate By Sex:</h2>
+							{this.state.sex.map((section:any, index) => (
+								<div key={index}><strong>{section[0].replace('*', '')}</strong>: <NumberValue value={section[1]} /></div>
+							))}
+							<br />
 							<Button href="https://github.com/nychealth/coronavirus-data">NYC Health Github</Button>
 						</div>
 						<div className="md:w-1/3">
