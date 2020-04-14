@@ -69677,7 +69677,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
       covid: [],
       totals: [['Loading data...', '']],
       stateData: [],
-      apiData: ['Loading data...']
+      apiData: []
     };
     _this2.resolveCsvData = _this2.resolveCsvData.bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this2));
     _this2.resolveStateData = _this2.resolveStateData.bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this2));
@@ -69715,6 +69715,9 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
       });
 
       if (true) {
+        this.setState({
+          apiData: ['Loading data...']
+        });
         var apicb = this.resolveAPIData;
         var ParseAPI = this.parseAPIData;
         dc.getData('/api/covid', function (data) {
@@ -69775,7 +69778,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 192,
+          lineNumber: 194,
           columnNumber: 13
         }
       }, __jsx("main", {
@@ -69783,7 +69786,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 193,
+          lineNumber: 195,
           columnNumber: 5
         }
       }, __jsx("div", {
@@ -69791,14 +69794,14 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 194,
+          lineNumber: 196,
           columnNumber: 6
         }
       }, __jsx(_components_ui_Chart__WEBPACK_IMPORTED_MODULE_10__["default"], {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 195,
+          lineNumber: 197,
           columnNumber: 7
         }
       })), __jsx("div", {
@@ -69806,7 +69809,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 197,
+          lineNumber: 199,
           columnNumber: 6
         }
       }, __jsx("div", {
@@ -69814,7 +69817,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 198,
+          lineNumber: 200,
           columnNumber: 7
         }
       }, __jsx("h2", {
@@ -69822,7 +69825,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 199,
+          lineNumber: 201,
           columnNumber: 8
         }
       }, "New Covid cases by day in NYC"), __jsx("p", {
@@ -69830,7 +69833,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 200,
+          lineNumber: 202,
           columnNumber: 8
         }
       }, this.state.github), __jsx(PDFSection, {
@@ -69838,7 +69841,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 201,
+          lineNumber: 203,
           columnNumber: 8
         }
       }), __jsx(_components_ui_Button__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -69846,7 +69849,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 202,
+          lineNumber: 204,
           columnNumber: 8
         }
       }, "NYC Health Github")), __jsx("div", {
@@ -69854,7 +69857,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 204,
+          lineNumber: 206,
           columnNumber: 7
         }
       }, __jsx("h2", {
@@ -69862,7 +69865,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 205,
+          lineNumber: 207,
           columnNumber: 8
         }
       }, "New York City:"), __jsx("div", {
@@ -69870,7 +69873,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 206,
+          lineNumber: 208,
           columnNumber: 8
         }
       }, this.state.totals.map(function (section, index) {
@@ -69879,14 +69882,14 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
           __self: _this3,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 208,
+            lineNumber: 210,
             columnNumber: 10
           }
         }, __jsx("strong", {
           __self: _this3,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 208,
+            lineNumber: 210,
             columnNumber: 27
           }
         }, section[0].replace('*', '')), " ", __jsx(NumberValue, {
@@ -69894,7 +69897,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
           __self: _this3,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 208,
+            lineNumber: 210,
             columnNumber: 74
           }
         }));
