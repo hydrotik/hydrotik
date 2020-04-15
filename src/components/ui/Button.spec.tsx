@@ -3,7 +3,6 @@ import { mount } from 'enzyme';
 import { JSDOM } from "jsdom";
 
 const dom = new JSDOM();
-
 const globalAny:any = global;
 
 globalAny.document = dom.window.document;

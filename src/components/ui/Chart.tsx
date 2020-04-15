@@ -70,6 +70,22 @@ class Chart extends React.Component<MyProps, MyState>{
 
 	resolveCsvData(result:any) {
 		result.data.splice(-2, 2);
+
+		console.log(result.data);
+
+		const badprop = 'Retrieving data. Wait a few seconds and try to cut or copy again.';
+		const goodprop = 'DATE_OF_INTEREST';
+
+		//TODO Write test validating schema ofr object props
+		//TODO add schema for object props
+		result.data.map((obj:any) => {
+			if(badprop in obj){
+				obj[goodprop] = obj[badprop];
+				delete obj[badprop];
+			}
+		});
+
+
 		this.setState({data: result.data});
 	}
 
