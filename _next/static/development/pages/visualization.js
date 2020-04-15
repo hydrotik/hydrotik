@@ -69314,20 +69314,37 @@ var Chart = /*#__PURE__*/function (_React$Component) {
     key: "resolveCsvData",
     value: function resolveCsvData(result) {
       result.data.splice(-2, 2);
-      console.log(result.data);
-      var badprop = 'Retrieving data. Wait a few seconds and try to cut or copy again.';
-      var goodprop = 'DATE_OF_INTEREST'; //TODO Write test validating schema ofr object props
-      //TODO add schema for object props
+      this.setState({
+        data: this.checkCSVData(result.data)
+      });
+    }
+  }, {
+    key: "checkKey",
+    value: function checkKey(obj, key) {
+      return key in obj;
+    }
+  }, {
+    key: "updateKey",
+    value: function updateKey(obj, oldkey, newkey) {
+      obj[newkey] = obj[oldkey];
+      delete obj[oldkey];
+      return obj;
+    }
+  }, {
+    key: "checkCSVData",
+    value: function checkCSVData(data) {
+      var _this2 = this;
 
-      result.data.map(function (obj) {
-        if (badprop in obj) {
-          obj[goodprop] = obj[badprop];
-          delete obj[badprop];
+      // FIX for https://github.com/nychealth/coronavirus-data/issues/41
+      var badkey = 'Retrieving data. Wait a few seconds and try to cut or copy again.';
+      var goodkey = 'DATE_OF_INTEREST'; //TODO Write test validating schema of object props
+
+      data.map(function (obj) {
+        if (_this2.checkKey(obj, badkey)) {
+          obj = _this2.updateKey(obj, badkey, goodkey);
         }
       });
-      this.setState({
-        data: result.data
-      });
+      return data;
     }
   }, {
     key: "getCsvData",
@@ -69372,7 +69389,7 @@ var Chart = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 106,
+          lineNumber: 125,
           columnNumber: 4
         }
       }, __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryAxis"], {
@@ -69384,7 +69401,7 @@ var Chart = /*#__PURE__*/function (_React$Component) {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 118,
+            lineNumber: 137,
             columnNumber: 7
           }
         }) // new Date() for https://momentjs.com/guides/#/warnings/js-date/ [CLEANUP]
@@ -69396,7 +69413,7 @@ var Chart = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 114,
+          lineNumber: 133,
           columnNumber: 5
         }
       }), __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryAxis"], {
@@ -69409,14 +69426,14 @@ var Chart = /*#__PURE__*/function (_React$Component) {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 130,
+            lineNumber: 149,
             columnNumber: 7
           }
         }),
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 126,
+          lineNumber: 145,
           columnNumber: 5
         }
       }), __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryLegend"], {
@@ -69456,18 +69473,18 @@ var Chart = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 133,
+          lineNumber: 152,
           columnNumber: 6
         }
       }), __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryGroup"], {
         animate: {
-          duration: 2000
+          duration: 1000
         },
         colorScale: [colorDark, colorMed, colorLight],
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 145,
+          lineNumber: 164,
           columnNumber: 5
         }
       }, __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryArea"], {
@@ -69487,7 +69504,7 @@ var Chart = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 149,
+          lineNumber: 168,
           columnNumber: 6
         }
       }), __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryArea"], {
@@ -69507,7 +69524,7 @@ var Chart = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 159,
+          lineNumber: 178,
           columnNumber: 6
         }
       }), __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryArea"], {
@@ -69527,7 +69544,7 @@ var Chart = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 168,
+          lineNumber: 187,
           columnNumber: 6
         }
       })));
@@ -70177,7 +70194,7 @@ var DataHelper = /*#__PURE__*/function () {
 
 /***/ }),
 
-/***/ 3:
+/***/ 2:
 /*!*************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fvisualization&absolutePagePath=%2FUsers%2Fdadams%2FDesktop%2FCode%2Fhydrotik%2Fsrc%2Fpages%2Fvisualization.tsx ***!
   \*************************************************************************************************************************************************************/
@@ -70200,5 +70217,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=visualization.js.map
