@@ -36,9 +36,16 @@ type MyState = {
 	data: Array<object>
 };
 
-type LabelProp = {
+type LabelProps = {
 	x:string;
 	y:string;
+}
+
+type CSVProps = {
+	DATE_OF_INTEREST:string;
+	NEW_COVID_CASE_COUNT:string;
+	HOSPITALIZED_CASE_COUNT:string;
+	DEATH_COUNT:string;
 }
 
 class Chart extends React.Component<MyProps, MyState>{
@@ -71,22 +78,34 @@ class Chart extends React.Component<MyProps, MyState>{
 	resolveCsvData(result:any) {
 		result.data.splice(-2, 2);
 
-		console.log(result.data);
+		this.setState({
+			data: this.checkCSVData(result.data)
+		});
+	}
 
-		const badprop = 'Retrieving data. Wait a few seconds and try to cut or copy again.';
-		const goodprop = 'DATE_OF_INTEREST';
+	checkKey(obj:any, key:string) {
+		return key in obj;
+	}
 
-		//TODO Write test validating schema ofr object props
-		//TODO add schema for object props
-		result.data.map((obj:any) => {
-			if(badprop in obj){
-				obj[goodprop] = obj[badprop];
-				delete obj[badprop];
+	updateKey(obj:any, oldkey:string, newkey:string) {
+		obj[newkey] = obj[oldkey];
+		delete obj[oldkey];
+		return obj;
+	}
+
+	checkCSVData(data:Array<CSVProps>) {
+		// FIX for https://github.com/nychealth/coronavirus-data/issues/41
+		const badkey = 'Retrieving data. Wait a few seconds and try to cut or copy again.';
+		const goodkey = 'DATE_OF_INTEREST';
+
+		//TODO Write test validating schema of object props
+		data.map((obj:CSVProps) => {
+			if(this.checkKey(obj, badkey)){
+				obj = this.updateKey(obj, badkey, goodkey);
 			}
 		});
 
-
-		this.setState({data: result.data});
+		return data;
 	}
 
 	async getCsvData() {
@@ -143,7 +162,7 @@ class Chart extends React.Component<MyProps, MyState>{
 					]}
 				/>
 				<VictoryGroup
-					animate={{ duration: 2000 }} 
+					animate={{ duration: 1000 }} 
 					colorScale={[colorDark, colorMed, colorLight]}
 				>
 					<VictoryArea
