@@ -45,6 +45,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 
 
+var csvURL = 'https://raw.githubusercontent.com/nychealth/coronavirus-data/master/case-hosp-death.csv?cache-control=';
 var colorDark = '#455A64';
 var colorMed = '#90A4AE';
 var colorLight = '#bdc6cb';
@@ -73,52 +74,12 @@ var Chart = /*#__PURE__*/function (_React$Component) {
       this.getCsvData();
     }
   }, {
-    key: "fetchCsv",
-    value: function fetchCsv() {
-      return node_fetch__WEBPACK_IMPORTED_MODULE_9___default()('https://raw.githubusercontent.com/nychealth/coronavirus-data/master/case-hosp-death.csv?cache-control=' + new Date().getTime()).then(function (response) {
-        var reader = response.body.getReader();
-        var decoder = new TextDecoder('utf-8');
-        return reader.read().then(function (result) {
-          return decoder.decode(result.value);
-        });
-      });
-    }
-  }, {
     key: "resolveCsvData",
     value: function resolveCsvData(result) {
       result.data.splice(-2, 2);
       this.setState({
-        data: this.checkCSVData(result.data)
+        data: checkCSVData(result.data)
       });
-    }
-  }, {
-    key: "checkKey",
-    value: function checkKey(obj, key) {
-      return key in obj;
-    }
-  }, {
-    key: "updateKey",
-    value: function updateKey(obj, oldkey, newkey) {
-      obj[newkey] = obj[oldkey];
-      delete obj[oldkey];
-      return obj;
-    }
-  }, {
-    key: "checkCSVData",
-    value: function checkCSVData(data) {
-      var _this2 = this;
-
-      // FIX for https://github.com/nychealth/coronavirus-data/issues/41
-      var badkey = 'Retrieving data. Wait a few seconds and try to cut or copy again.';
-      var goodkey = 'DATE_OF_INTEREST'; //TODO Write test validating schema ofr object props
-      //TODO add schema for object props
-
-      data.map(function (obj) {
-        if (_this2.checkKey(obj, badkey)) {
-          obj = _this2.updateKey(obj, badkey, goodkey);
-        }
-      });
-      return data;
     }
   }, {
     key: "getCsvData",
@@ -129,7 +90,7 @@ var Chart = /*#__PURE__*/function (_React$Component) {
           switch (_context.prev = _context.next) {
             case 0:
               _context.next = 2;
-              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(this.fetchCsv());
+              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(fetchCsv());
 
             case 2:
               csvData = _context.sent;
@@ -163,7 +124,7 @@ var Chart = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 126,
+          lineNumber: 92,
           columnNumber: 4
         }
       }, __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryAxis"], {
@@ -175,7 +136,7 @@ var Chart = /*#__PURE__*/function (_React$Component) {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 138,
+            lineNumber: 104,
             columnNumber: 7
           }
         }) // new Date() for https://momentjs.com/guides/#/warnings/js-date/ [CLEANUP]
@@ -187,7 +148,7 @@ var Chart = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 134,
+          lineNumber: 100,
           columnNumber: 5
         }
       }), __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryAxis"], {
@@ -200,14 +161,14 @@ var Chart = /*#__PURE__*/function (_React$Component) {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 150,
+            lineNumber: 116,
             columnNumber: 7
           }
         }),
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 146,
+          lineNumber: 112,
           columnNumber: 5
         }
       }), __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryLegend"], {
@@ -247,7 +208,7 @@ var Chart = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 153,
+          lineNumber: 119,
           columnNumber: 6
         }
       }), __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryGroup"], {
@@ -258,7 +219,7 @@ var Chart = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 165,
+          lineNumber: 131,
           columnNumber: 5
         }
       }, __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryArea"], {
@@ -278,7 +239,7 @@ var Chart = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 169,
+          lineNumber: 135,
           columnNumber: 6
         }
       }), __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryArea"], {
@@ -298,7 +259,7 @@ var Chart = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 179,
+          lineNumber: 145,
           columnNumber: 6
         }
       }), __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryArea"], {
@@ -318,7 +279,7 @@ var Chart = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 188,
+          lineNumber: 154,
           columnNumber: 6
         }
       })));
@@ -328,9 +289,41 @@ var Chart = /*#__PURE__*/function (_React$Component) {
   return Chart;
 }(react__WEBPACK_IMPORTED_MODULE_7___default.a.Component);
 
+var updateKey = function updateKey(obj, oldkey, newkey) {
+  obj[newkey] = obj[oldkey];
+  delete obj[oldkey];
+  return obj;
+};
+
+var checkKey = function checkKey(obj, key) {
+  return key in obj;
+};
+
+var fetchCsv = function fetchCsv() {
+  return node_fetch__WEBPACK_IMPORTED_MODULE_9___default()(csvURL + new Date().getTime()).then(function (response) {
+    var reader = response.body.getReader();
+    var decoder = new TextDecoder('utf-8');
+    return reader.read().then(function (result) {
+      return decoder.decode(result.value);
+    });
+  });
+};
+
+var checkCSVData = function checkCSVData(data) {
+  // FIX for https://github.com/nychealth/coronavirus-data/issues/41
+  var badkey = 'Retrieving data. Wait a few seconds and try to cut or copy again.';
+  var goodkey = 'DATE_OF_INTEREST';
+  data.map(function (obj) {
+    if (checkKey(obj, badkey)) {
+      obj = updateKey(obj, badkey, goodkey);
+    }
+  });
+  return data;
+};
+
 /* harmony default export */ __webpack_exports__["default"] = (Chart);
 
 /***/ })
 
 })
-//# sourceMappingURL=visualization.js.817498a14328381f0e2a.hot-update.js.map
+//# sourceMappingURL=visualization.js.508e4e5fa7a82cd415c2.hot-update.js.map
