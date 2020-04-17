@@ -22,11 +22,11 @@ import {
 import ChartTheme from "./ChartTheme";
 
 
+const csvURL = 'https://raw.githubusercontent.com/nychealth/coronavirus-data/master/case-hosp-death.csv?cache-control=';
 
 const colorDark:string = '#455A64';
 const colorMed:string = '#90A4AE';
 const colorLight:string = '#bdc6cb';
-
 
 type MyProps = {
 

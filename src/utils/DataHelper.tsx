@@ -37,12 +37,12 @@ export default class DataHelper {
 	private fetchData() {
 		var datahelper = this;
 		return fetch(datahelper.path + '?cache-control=' + (new Date()).getTime()).then(function (response:any) {
-				let reader = response.body.getReader();
-				let decoder = new TextDecoder('utf-8');
+			let reader = response.body.getReader();
+			let decoder = new TextDecoder('utf-8');
 
-				return reader.read().then(function (result:any) {
-					return decoder.decode(result.value);
-				});
+			return reader.read().then(function (result:any) {
+				return decoder.decode(result.value);
+			});
 		});
 	}
 
