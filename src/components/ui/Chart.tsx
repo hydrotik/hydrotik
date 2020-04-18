@@ -68,7 +68,7 @@ class Chart extends React.Component<IProps, IState> implements IChart{
 	}
 
 	componentDidMount() {
-		//this.getCsvData();
+		this.getCsvData();
 	}
 
 	fetchCsv() {
