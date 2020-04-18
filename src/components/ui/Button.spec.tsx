@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {shallow, mount} from 'enzyme';
 import { act } from 'react-dom/test-utils';
-import { mount } from 'enzyme';
-import { JSDOM } from "jsdom";
+import {JSDOM} from 'jsdom';
 import Button from './Button';
 
-const dom = new JSDOM();
+const dom = new JSDOM('<!doctype html><html><body></body></html>');
 const globalAny:any = global;
 
 globalAny.document = dom.window.document;
@@ -42,4 +42,10 @@ describe('Instantiating the Button component', function () {
     // expect(document.title).toBe('You clicked 1 times');
   });
 
+  it('checkHref should be false with an empty string', () => {
+    const expected:boolean = false;
+    const wrapper:any = shallow(<Button href="">Hello Jest!</Button>).instance(); 
+    const actual = wrapper.checkHref();
+    expect(actual).toBe(expected);
+  });
 })

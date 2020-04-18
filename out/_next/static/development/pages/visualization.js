@@ -69272,6 +69272,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 
 
+var csvURL = 'https://raw.githubusercontent.com/nychealth/coronavirus-data/master/case-hosp-death.csv?cache-control=';
 var colorDark = '#455A64';
 var colorMed = '#90A4AE';
 var colorLight = '#bdc6cb';
@@ -69389,7 +69390,7 @@ var Chart = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 125,
+          lineNumber: 134,
           columnNumber: 4
         }
       }, __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryAxis"], {
@@ -69401,7 +69402,7 @@ var Chart = /*#__PURE__*/function (_React$Component) {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 137,
+            lineNumber: 146,
             columnNumber: 7
           }
         }) // new Date() for https://momentjs.com/guides/#/warnings/js-date/ [CLEANUP]
@@ -69413,7 +69414,7 @@ var Chart = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 133,
+          lineNumber: 142,
           columnNumber: 5
         }
       }), __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryAxis"], {
@@ -69426,14 +69427,14 @@ var Chart = /*#__PURE__*/function (_React$Component) {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 149,
+            lineNumber: 158,
             columnNumber: 7
           }
         }),
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 145,
+          lineNumber: 154,
           columnNumber: 5
         }
       }), __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryLegend"], {
@@ -69473,7 +69474,7 @@ var Chart = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 152,
+          lineNumber: 161,
           columnNumber: 6
         }
       }), __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryGroup"], {
@@ -69484,7 +69485,7 @@ var Chart = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 164,
+          lineNumber: 173,
           columnNumber: 5
         }
       }, __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryArea"], {
@@ -69504,7 +69505,7 @@ var Chart = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 168,
+          lineNumber: 177,
           columnNumber: 6
         }
       }), __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryArea"], {
@@ -69524,7 +69525,7 @@ var Chart = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 178,
+          lineNumber: 187,
           columnNumber: 6
         }
       }), __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryArea"], {
@@ -69544,7 +69545,7 @@ var Chart = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 187,
+          lineNumber: 196,
           columnNumber: 6
         }
       })));

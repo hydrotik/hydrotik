@@ -45,6 +45,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 
 
+var csvURL = 'https://raw.githubusercontent.com/nychealth/coronavirus-data/master/case-hosp-death.csv?cache-control=';
 var colorDark = '#455A64';
 var colorMed = '#90A4AE';
 var colorLight = '#bdc6cb';
@@ -99,7 +100,7 @@ var Chart = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "updateKey",
     value: function updateKey(obj, oldkey, newkey) {
-      obj[oldkey] = obj[newkey];
+      obj[newkey] = obj[oldkey];
       delete obj[oldkey];
       return obj;
     }
@@ -110,8 +111,7 @@ var Chart = /*#__PURE__*/function (_React$Component) {
 
       // FIX for https://github.com/nychealth/coronavirus-data/issues/41
       var badkey = 'Retrieving data. Wait a few seconds and try to cut or copy again.';
-      var goodkey = 'DATE_OF_INTEREST'; //TODO Write test validating schema ofr object props
-      //TODO add schema for object props
+      var goodkey = 'DATE_OF_INTEREST'; //TODO Write test validating schema of object props
 
       data.map(function (obj) {
         if (_this2.checkKey(obj, badkey)) {
@@ -163,7 +163,7 @@ var Chart = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 119,
+          lineNumber: 134,
           columnNumber: 4
         }
       }, __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryAxis"], {
@@ -175,7 +175,7 @@ var Chart = /*#__PURE__*/function (_React$Component) {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 131,
+            lineNumber: 146,
             columnNumber: 7
           }
         }) // new Date() for https://momentjs.com/guides/#/warnings/js-date/ [CLEANUP]
@@ -187,7 +187,7 @@ var Chart = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 127,
+          lineNumber: 142,
           columnNumber: 5
         }
       }), __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryAxis"], {
@@ -200,14 +200,14 @@ var Chart = /*#__PURE__*/function (_React$Component) {
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 143,
+            lineNumber: 158,
             columnNumber: 7
           }
         }),
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 139,
+          lineNumber: 154,
           columnNumber: 5
         }
       }), __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryLegend"], {
@@ -247,18 +247,18 @@ var Chart = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 146,
+          lineNumber: 161,
           columnNumber: 6
         }
       }), __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryGroup"], {
         animate: {
-          duration: 2000
+          duration: 1000
         },
         colorScale: [colorDark, colorMed, colorLight],
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 158,
+          lineNumber: 173,
           columnNumber: 5
         }
       }, __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryArea"], {
@@ -278,7 +278,7 @@ var Chart = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 162,
+          lineNumber: 177,
           columnNumber: 6
         }
       }), __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryArea"], {
@@ -298,7 +298,7 @@ var Chart = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 172,
+          lineNumber: 187,
           columnNumber: 6
         }
       }), __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryArea"], {
@@ -318,7 +318,7 @@ var Chart = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 181,
+          lineNumber: 196,
           columnNumber: 6
         }
       })));
@@ -333,4 +333,4 @@ var Chart = /*#__PURE__*/function (_React$Component) {
 /***/ })
 
 })
-//# sourceMappingURL=visualization.js.a2824d248f9ace0ca49b.hot-update.js.map
+//# sourceMappingURL=visualization.js.42b1d688237cf5bdfb8d.hot-update.js.map

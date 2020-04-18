@@ -28,11 +28,18 @@ const colorDark:string = '#455A64';
 const colorMed:string = '#90A4AE';
 const colorLight:string = '#bdc6cb';
 
-type MyProps = {
+export interface IChart extends React.Component<IProps> {
+    checkKey(obj:any, key:string):boolean;
+    fetchCsv():object;
+    resolveCsvData(result:any):void;
+    getCsvData():void;
+    updateKey(obj:any, oldkey:string, newkey:string):object;
+}
 
+type IProps = {
 };
 
-type MyState = {
+type IState = {
 	data: Array<object>
 };
 
@@ -48,9 +55,9 @@ type CSVProps = {
 	DEATH_COUNT:string;
 }
 
-class Chart extends React.Component<MyProps, MyState>{
+class Chart extends React.Component<IProps, IState> implements IChart{
 
-	constructor(props:MyProps) {
+	constructor(props:IProps) {
 		super(props);
 
 		this.state = {
@@ -65,14 +72,23 @@ class Chart extends React.Component<MyProps, MyState>{
 	}
 
 	fetchCsv() {
-		return fetch('https://raw.githubusercontent.com/nychealth/coronavirus-data/master/case-hosp-death.csv?cache-control=' + (new Date()).getTime()).then(function (response:any) {
-			let reader = response.body.getReader();
-			let decoder = new TextDecoder('utf-8');
+		return fetch('https://raw.githubusercontent.com/nychealth/coronavirus-data/master/case-hosp-death.csv?cache-control=' + (new Date()).getTime())
+		.then(function (response:any) {
+			try {
+				let reader = response.body.getReader();
+				let decoder = new TextDecoder('utf-8');
 
-			return reader.read().then(function (result:any) {
-				return decoder.decode(result.value);
-			});
-		});
+				return reader.read().then(function (result:any) {
+					return decoder.decode(result.value);
+				}).catch((e:any) => {
+					throw new Error('fetchCsv() read() error' + e);
+				})
+			} catch(e) {
+				return null;
+			}
+		}).catch((e:any) => {
+			throw new Error('fetchCsv() fetch() error' + e);
+		})
 	}
 
 	resolveCsvData(result:any) {
@@ -109,12 +125,17 @@ class Chart extends React.Component<MyProps, MyState>{
 	}
 
 	async getCsvData() {
-		let csvData = await this.fetchCsv();
-		Papa.parse(csvData, {
-			header: true,
-			complete: this.resolveCsvData,
-			dynamicTyping: true
-		});
+		try {
+			let csvData = await this.fetchCsv();
+			Papa.parse(csvData, {
+				header: true,
+				complete: this.resolveCsvData,
+				dynamicTyping: true
+			});
+		} catch (e) {
+			return e
+		}
+		throw new Error('Expected promise to be rejected')
 	}
 
 	
