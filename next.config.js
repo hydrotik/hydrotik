@@ -25,9 +25,9 @@ module.exports = {
         'process.env.ASSET_PREFIX': JSON.stringify(assetPrefix),
         'process.env.IS_GITHUBPAGES' : isGHProd,
         'process.env.BACKEND_URL' : JSON.stringify(assetPrefix)
-      }),
+      })
     )
 
     return config
-  },
+  }
 }

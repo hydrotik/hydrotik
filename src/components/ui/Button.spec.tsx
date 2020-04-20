@@ -27,19 +27,11 @@ describe('Instantiating the Button component', function () {
   });
 
   it('can render', () => {
-    // Test first render and componentDidMount
     act(() => {
       ReactDOM.render(<Button href="http://www.google.com">Hello Jest!</Button>, container);
     });
     const a:any = container.querySelector('a');
     expect(a.textContent).toBe('Hello Jest!');
-
-    // Test second render and componentDidUpdate
-    // act(() => {
-    //   button.dispatchEvent(new MouseEvent('click', {bubbles: true}));
-    // });
-    // expect(label.textContent).toBe('You clicked 1 times');
-    // expect(document.title).toBe('You clicked 1 times');
   });
 
   it('checkHref should be false with an empty string', () => {
