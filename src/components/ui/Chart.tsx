@@ -135,7 +135,7 @@ class Chart extends React.Component<IProps, IState> implements IChart{
 		} catch (e) {
 			return e
 		}
-		throw new Error('Expected promise to be rejected')
+		//throw new Error('Expected promise to be rejected')
 	}
 
 	
@@ -193,7 +193,7 @@ class Chart extends React.Component<IProps, IState> implements IChart{
 						}}
 						data={this.state.data}
 						x = {(d) => moment(d.DATE_OF_INTEREST, 'MM/DD/YY').toDate().toString()}
-						y = "NEW_COVID_CASE_COUNT"
+						y = "CASE_COUNT"
 					/>
 					
 					<VictoryArea
@@ -203,7 +203,7 @@ class Chart extends React.Component<IProps, IState> implements IChart{
 						}}
 						data={this.state.data}
 						x = {(d) => moment(d.DATE_OF_INTEREST, 'MM/DD/YY').toDate().toString()}
-						y = "HOSPITALIZED_CASE_COUNT"
+						y = "HOSPITALIZED_COUNT"
 					/>
 					<VictoryArea
 						style={{
