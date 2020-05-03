@@ -27,6 +27,19 @@ module.exports = {
         'process.env.BACKEND_URL' : JSON.stringify(assetPrefix)
       })
     )
+    config.module.rules.push({
+      test: /\.(ts|tsx|js|jsx)$/,
+      enforce: "pre",
+      exclude: /node_modules/,
+      use: [
+        {
+          loader: "eslint-loader",
+          options: {
+            emitWarning: !isProd
+          }
+        }
+      ]
+    });
 
     return config
   }
