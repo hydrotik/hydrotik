@@ -17,8 +17,10 @@ function Header(): JSX.Element {
 			<div className="flex flex-wrap md:flex-no-wrap items-center justify-between max-w-4xl mx-auto p-4 md:p-8">
 				<div className="flex items-center">
 					<img src="images/logo.svg" className="mr-3 text-white w-10" alt="Hydrotik Logo" />
+
 					<Link href={`${process.env.BACKEND_URL}/`}>
-						<a className="text-white text-xl" href="">
+						{/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+						<a className="text-white text-xl">
 							Hydrotik
 						</a>
 					</Link>
@@ -31,7 +33,7 @@ function Header(): JSX.Element {
 					</svg>
 				</button>
 
-				<ul className={`${isExpanded ? `block` : `hidden`} md:flex flex-col md:flex-row md:items-center md:justify-center text-sm w-full md:w-auto`}>
+				<ul className={`${isExpanded ? 'block' : 'hidden'} md:flex flex-col md:flex-row md:items-center md:justify-center text-sm w-full md:w-auto`}>
 					{[
 						{ title: 'Home', route: `${process.env.BACKEND_URL}/` },
 						{ title: 'About', route: `${process.env.BACKEND_URL}/about` },
@@ -39,6 +41,7 @@ function Header(): JSX.Element {
 					].map((navigationItem) => (
 						<li className="mt-3 md:mt-0 md:ml-6" key={navigationItem.title}>
 							<Link href={navigationItem.route}>
+								{/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
 								<a className="block text-white" href="">{navigationItem.title}</a>
 							</Link>
 						</li>

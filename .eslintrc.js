@@ -43,7 +43,11 @@ module.exports = {
         "react/jsx-indent": [2, 'tab'],
         "import/no-unresolved": 0,
         "import/extensions": 0,
-        "react/jsx-indent-props": 0
+        "react/jsx-indent-props": 0,
+        "react/button-has-type": 0
+    },
+    "globals": {
+        
     }
 };
 
