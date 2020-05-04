@@ -1,3 +1,10 @@
+/*
+*	Types and Interfaces
+*/
+
+interface DataResponse extends Response {
+	info: string[];
+}
 
 type Props = {
 	path?: string | undefined;
@@ -30,7 +37,7 @@ export default class DataHelper {
 	* @api private
 	*/
 	//	eslint-disable-next-line @typescript-eslint/no-explicit-any
-	private fetchData = (): Promise<object> => fetch(`${this.path}?cache-control=${(new Date()).getTime()}`).then((response: any) => {
+	private fetchData = (): any => fetch(`${this.path}?cache-control=${(new Date()).getTime()}`).then((response: any) => {
 		const reader = response.body.getReader();
 		const decoder = new TextDecoder('utf-8');
 		//	eslint-disable-next-line @typescript-eslint/no-explicit-any

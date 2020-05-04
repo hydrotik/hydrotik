@@ -18,19 +18,20 @@ const Home: NextPage<{ dynProp: string }> = ({
 				image="images/sea_md.jpg"
 				className="object-cover w-full"
 				srcSet="images/sea_sm.jpg 640w, images/sea_md.jpg 768w, images/sea_lrg.jpg 1024w"
+				alt="Hydrotik Hero Image Serene View"
 			/>
 		</div>
 
 		<main className="flex-1 w-full max-w-4xl p-4 mx-auto md:px-8 md:py-16 text-white">
 			<div className="flex flex-col md:items-left md:justify-left">
-				<h2 className="font-bold my-8 text-lg md:text-2xl">
+				<h1 className="font-bold my-8 text-lg md:text-2xl">
 					Now more than ever,
 					{` ${dynProp} `}
 					bring us together.
 					<br />
 					<br />
 					<TextLoop />
-				</h2>
+				</h1>
 			</div>
 		</main>
 	</Layout>

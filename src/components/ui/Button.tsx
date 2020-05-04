@@ -17,7 +17,7 @@ class Button extends React.Component<IProps> implements ButtonInterface {
 	render(): JSX.Element {
 		const { href, target, children } = this.props;
 		return (
-			<a href={href} className="btn-blue no-underline" target={target}>
+			<a href={href} className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded" target={target}>
 				{ children }
 			</a>
 		);
