@@ -17255,7 +17255,7 @@ var freeGlobal = typeof global == 'object' && global && global.Object === Object
 
 module.exports = freeGlobal;
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../next/node_modules/webpack/buildin/global.js */ "./node_modules/next/node_modules/webpack/buildin/global.js")))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
 /***/ }),
 
@@ -18759,7 +18759,7 @@ var nodeUtil = (function() {
 
 module.exports = nodeUtil;
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../next/node_modules/webpack/buildin/module.js */ "./node_modules/next/node_modules/webpack/buildin/module.js")(module)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/module.js */ "./node_modules/webpack/buildin/module.js")(module)))
 
 /***/ }),
 
@@ -20669,7 +20669,7 @@ var isBuffer = nativeIsBuffer || stubFalse;
 
 module.exports = isBuffer;
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../next/node_modules/webpack/buildin/module.js */ "./node_modules/next/node_modules/webpack/buildin/module.js")(module)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/module.js */ "./node_modules/webpack/buildin/module.js")(module)))
 
 /***/ }),
 
@@ -40406,7 +40406,7 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 
 })));
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../next/node_modules/webpack/buildin/module.js */ "./node_modules/next/node_modules/webpack/buildin/module.js")(module)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/module.js */ "./node_modules/webpack/buildin/module.js")(module)))
 
 /***/ }),
 
@@ -40417,7 +40417,7 @@ webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var e,t=(e=__webpack_require__(/*! querystring */ "./node_modules/querystring-es3/index.js"))&&"object"==typeof e&&"default"in e?e.default:e,r=/https?|ftp|gopher|file/;function o(e){"string"==typeof e&&(e=f(e));var o=function(e,t,r){var o=e.auth,a=e.hostname,s=e.protocol||"",h=e.pathname||"",c=e.hash||"",p=e.query||"",n=!1;o=o?encodeURIComponent(o).replace(/%3A/i,":")+"@":"",e.host?n=o+e.host:a&&(n=o+(~a.indexOf(":")?"["+a+"]":a),e.port&&(n+=":"+e.port)),p&&"object"==typeof p&&(p=t.encode(p));var l=e.search||p&&"?"+p||"";return s&&":"!==s.substr(-1)&&(s+=":"),e.slashes||(!s||r.test(s))&&!1!==n?(n="//"+(n||""),h&&"/"!==h[0]&&(h="/"+h)):n||(n=""),c&&"#"!==c[0]&&(c="#"+c),l&&"?"!==l[0]&&(l="?"+l),{protocol:s,host:n,pathname:h=h.replace(/[?#]/g,encodeURIComponent),search:l=l.replace("#","%23"),hash:c}}(e,t,r);return""+o.protocol+o.host+o.pathname+o.search+o.hash}var a="http://",s="w.w",h=a+s,c=/^https?|ftp|gopher|file/,p=/^(.*?)([#?].*)/,n=/^([a-z0-9.+-]*:)(\/{0,3})(.*)/i,l=/^([a-z0-9.+-]*:)?\/\/\/*/i,i=/^([a-z0-9.+-]*:)(\/{0,2})\[(.*)\]$/i;function u(e){try{return decodeURI(e)}catch(t){return e}}function f(e,r,a){void 0===r&&(r=!1),void 0===a&&(a=!1);var f=(e=e.trim()).match(p);e=f?u(f[1]).replace(/\\/g,"/")+f[2]:u(e).replace(/\\/g,"/"),i.test(e)&&"/"!==e.slice(-1)&&(e+="/");var m=!/(^javascript)/.test(e)&&e.match(n),v=l.test(e),d="";m&&(c.test(m[1])||(d=m[1].toLowerCase(),e=""+m[2]+m[3]),m[2]||(v=!1,c.test(m[1])?(d=m[1],e=""+m[3]):e="//"+m[3]),3!==m[2].length&&1!==m[2].length||(d=m[1],e="/"+m[3]));var g,b=e.match(/(:[0-9]+)/),y="";b&&b[1]&&3===b[1].length&&(e=e.replace(y=b[1],y+"00"));var w={},x="",R="";try{g=new URL(e)}catch(t){x=t,d||a||!/^\/\//.test(e)||/^\/\/.+[@.]/.test(e)||(R="/",e=e.substr(1));try{g=new URL(e,h)}catch(e){return w.protocol=d,w.href=d,w}}w.slashes=v&&!R,w.host=g.host===s?"":g.host,w.hostname=g.hostname===s?"":g.hostname.replace(/(\[|\])/g,""),w.protocol=x?d||null:g.protocol,w.search=g.search.replace(/\\/g,"%5C"),w.hash=g.hash.replace(/\\/g,"%5C");var U=e.split("#");!w.search&&~U[0].indexOf("?")&&(w.search="?"),w.hash||""!==U[1]||(w.hash="#"),w.query=r?t.decode(g.search.substr(1)):w.search.substr(1),w.pathname=R+u(g.pathname).replace(/"/g,"%22"),"about:"===w.protocol&&"blank"===w.pathname&&(w.protocol="",w.pathname=""),x&&"/"!==e[0]&&(w.pathname=w.pathname.substr(1)),d&&!c.test(d)&&"/"!==e.slice(-1)&&"/"===w.pathname&&(w.pathname=""),w.path=w.pathname+w.search,w.auth=[g.username,g.password].map(decodeURIComponent).filter(Boolean).join(":"),w.port=g.port,y&&(w.host=w.host.replace(y+"00",y),w.port=w.port.slice(0,-2)),w.href=R?""+w.pathname+w.search+w.hash:o(w);var j=/^(file)/.test(w.href)?["host","hostname"]:[];return Object.keys(w).forEach(function(e){~j.indexOf(e)||(w[e]=w[e]||null)}),w}var m=/^([a-z0-9.+-]*:\/\/\/)([a-z0-9.+-]:\/*)?/i,v=/https?|ftp|gopher|file/;function d(e,t){var r="string"==typeof e?f(e):e;e="object"==typeof e?o(e):e;var s=f(t),c="";r.protocol&&!r.slashes&&(c=r.protocol,e=e.replace(r.protocol,""),c+="/"===t[0]||"/"===e[0]?"/":""),c&&s.protocol&&(c="",s.slashes||(c=s.protocol,t=t.replace(s.protocol,"")));var p=e.match(m);p&&!s.protocol&&(e=e.substr((c=p[1]+(p[2]||"")).length),/^\/\/[^\/]/.test(t)&&(c=c.slice(0,-1)));var n=new URL(e,h+"/"),l=new URL(t,n).toString().replace(h,""),i=s.protocol||r.protocol;return i+=r.slashes||s.slashes?"//":"",!c&&i?l=l.replace(a,i):c&&(l=l.replace(a,"")),v.test(l)||~t.indexOf(".")||"/"===e.slice(-1)||"/"===t.slice(-1)||"/"!==l.slice(-1)||(l=l.slice(0,-1)),c&&(l=c+("/"===l[0]?l.substr(1):l)),l}exports.parse=f,exports.format=o,exports.resolve=d,exports.resolveObject=function(e,t){return f(d(e,t))};
+var e,t=(e=__webpack_require__(/*! querystring */ "./node_modules/querystring-es3/index.js"))&&"object"==typeof e&&"default"in e?e.default:e,r=/https?|ftp|gopher|file/;function o(e){"string"==typeof e&&(e=g(e));var o=function(e,t,r){var o=e.auth,a=e.hostname,s=e.protocol||"",c=e.pathname||"",h=e.hash||"",p=e.query||"",n=!1;o=o?encodeURIComponent(o).replace(/%3A/i,":")+"@":"",e.host?n=o+e.host:a&&(n=o+(~a.indexOf(":")?"["+a+"]":a),e.port&&(n+=":"+e.port)),p&&"object"==typeof p&&(p=t.encode(p));var l=e.search||p&&"?"+p||"";return s&&":"!==s.substr(-1)&&(s+=":"),e.slashes||(!s||r.test(s))&&!1!==n?(n="//"+(n||""),c&&"/"!==c[0]&&(c="/"+c)):n||(n=""),h&&"#"!==h[0]&&(h="#"+h),l&&"?"!==l[0]&&(l="?"+l),{protocol:s,host:n,pathname:c=c.replace(/[?#]/g,encodeURIComponent),search:l=l.replace("#","%23"),hash:h}}(e,t,r);return""+o.protocol+o.host+o.pathname+o.search+o.hash}var a="http://",s="w.w",c=a+s,h=/^([a-z0-9.+-]*:\/\/\/)([a-z0-9.+-]:\/*)?/i,p=/https?|ftp|gopher|file/;function n(e,t){var r="string"==typeof e?g(e):e;e="object"==typeof e?o(e):e;var s=g(t),n="";r.protocol&&!r.slashes&&(n=r.protocol,e=e.replace(r.protocol,""),n+="/"===t[0]||"/"===e[0]?"/":""),n&&s.protocol&&(n="",s.slashes||(n=s.protocol,t=t.replace(s.protocol,"")));var l=e.match(h);l&&!s.protocol&&(e=e.substr((n=l[1]+(l[2]||"")).length),/^\/\/[^/]/.test(t)&&(n=n.slice(0,-1)));var i=new URL(e,c+"/"),f=new URL(t,i).toString().replace(c,""),u=s.protocol||r.protocol;return u+=r.slashes||s.slashes?"//":"",!n&&u?f=f.replace(a,u):n&&(f=f.replace(a,"")),p.test(f)||~t.indexOf(".")||"/"===e.slice(-1)||"/"===t.slice(-1)||"/"!==f.slice(-1)||(f=f.slice(0,-1)),n&&(f=n+("/"===f[0]?f.substr(1):f)),f}function l(){}l.parse=g,l.format=o,l.resolve=n,l.resolveObject=n;var i=/^https?|ftp|gopher|file/,f=/^(.*?)([#?].*)/,u=/^([a-z0-9.+-]*:)(\/{0,3})(.*)/i,m=/^([a-z0-9.+-]*:)?\/\/\/*/i,v=/^([a-z0-9.+-]*:)(\/{0,2})\[(.*)\]$/i;function d(e){try{return decodeURI(e)}catch(t){return e}}function g(e,r,a){if(void 0===r&&(r=!1),void 0===a&&(a=!1),e&&"object"==typeof e&&e instanceof l)return e;var h=(e=e.trim()).match(f);e=h?d(h[1]).replace(/\\/g,"/")+h[2]:d(e).replace(/\\/g,"/"),v.test(e)&&"/"!==e.slice(-1)&&(e+="/");var p=!/(^javascript)/.test(e)&&e.match(u),n=m.test(e),g="";p&&(i.test(p[1])||(g=p[1].toLowerCase(),e=""+p[2]+p[3]),p[2]||(n=!1,i.test(p[1])?(g=p[1],e=""+p[3]):e="//"+p[3]),3!==p[2].length&&1!==p[2].length||(g=p[1],e="/"+p[3]));var b,y=(h?h[1]:e).match(/(:[0-9]+)/),j="";y&&y[1]&&3===y[1].length&&(e=e.replace(j=y[1],j+"00"));var w=new l,x="",U="";try{b=new URL(e)}catch(t){x=t,g||a||!/^\/\//.test(e)||/^\/\/.+[@.]/.test(e)||(U="/",e=e.substr(1));try{b=new URL(e,c)}catch(e){return w.protocol=g,w.href=g,w}}w.slashes=n&&!U,w.host=b.host===s?"":b.host,w.hostname=b.hostname===s?"":b.hostname.replace(/(\[|\])/g,""),w.protocol=x?g||null:b.protocol,w.search=b.search.replace(/\\/g,"%5C"),w.hash=b.hash.replace(/\\/g,"%5C");var R=e.split("#");!w.search&&~R[0].indexOf("?")&&(w.search="?"),w.hash||""!==R[1]||(w.hash="#"),w.query=r?t.decode(b.search.substr(1)):w.search.substr(1),w.pathname=U+d(b.pathname).replace(/"/g,"%22"),"about:"===w.protocol&&"blank"===w.pathname&&(w.protocol="",w.pathname=""),x&&"/"!==e[0]&&(w.pathname=w.pathname.substr(1)),g&&!i.test(g)&&"/"!==e.slice(-1)&&"/"===w.pathname&&(w.pathname=""),w.path=w.pathname+w.search,w.auth=[b.username,b.password].map(decodeURIComponent).filter(Boolean).join(":"),w.port=b.port,j&&(w.host=w.host.replace(j+"00",j),w.port=w.port.slice(0,-2)),w.href=U?""+w.pathname+w.search+w.hash:o(w);var O=/^(file)/.test(w.href)?["host","hostname"]:[];return Object.keys(w).forEach(function(e){~O.indexOf(e)||(w[e]=w[e]||null)}),w}exports.parse=g,exports.format=o,exports.resolve=n,exports.resolveObject=function(e,t){return g(n(e,t))},exports.Url=l;
 //# sourceMappingURL=index.js.map
 
 
@@ -40446,25 +40446,28 @@ var assign=Object.assign.bind(Object);function g(){return assign;}Object.defineP
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fvisualization&absolutePagePath=%2FUsers%2Fdadams%2FDesktop%2FCode%2Fhydrotik%2Fsrc%2Fpages%2Fvisualization.tsx!./":
-/*!*********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fvisualization&absolutePagePath=%2FUsers%2Fdadams%2FDesktop%2FCode%2Fhydrotik%2Fsrc%2Fpages%2Fvisualization.tsx ***!
-  \*********************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fvisualization&absolutePagePath=%2FUsers%2Fdadams%2FDesktop%2FCode%2Fhydrotik%2Fsrc%2Fpages%2Fvisualization.tsx&hotRouterUpdates=true!./":
+/*!*******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fvisualization&absolutePagePath=%2FUsers%2Fdadams%2FDesktop%2FCode%2Fhydrotik%2Fsrc%2Fpages%2Fvisualization.tsx&hotRouterUpdates=true ***!
+  \*******************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-    (window.__NEXT_P=window.__NEXT_P||[]).push(["/visualization", function() {
-      var mod = __webpack_require__(/*! ./src/pages/visualization.tsx */ "./src/pages/visualization.tsx")
-      if(true) {
-        module.hot.accept(/*! ./src/pages/visualization.tsx */ "./src/pages/visualization.tsx", function() {
-          if(!next.router.components["/visualization"]) return
-          var updatedPage = __webpack_require__(/*! ./src/pages/visualization.tsx */ "./src/pages/visualization.tsx")
-          next.router.update("/visualization", updatedPage)
-        })
+    (window.__NEXT_P = window.__NEXT_P || []).push([
+      "/visualization",
+      function () {
+        var mod = __webpack_require__(/*! ./src/pages/visualization.tsx */ "./src/pages/visualization.tsx");
+        if (true) {
+          module.hot.accept(/*! ./src/pages/visualization.tsx */ "./src/pages/visualization.tsx", function () {
+            if (!next.router.components["/visualization"]) return;
+            var updatedPage = __webpack_require__(/*! ./src/pages/visualization.tsx */ "./src/pages/visualization.tsx");
+            next.router.update("/visualization", updatedPage);
+          });
+        }
+        return mod;
       }
-      return mod
-    }]);
+    ]);
   
 
 /***/ }),
@@ -40483,11 +40486,11 @@ var _classCallCheck = __webpack_require__(/*! @babel/runtime/helpers/classCallCh
 
 var _createClass = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
 
+var _inherits = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/@babel/runtime/helpers/inherits.js");
+
 var _possibleConstructorReturn = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js");
 
 var _getPrototypeOf = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/getPrototypeOf.js");
-
-var _inherits = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/@babel/runtime/helpers/inherits.js");
 
 function _createSuper(Derived) { return function () { var Super = _getPrototypeOf(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
 
@@ -40507,6 +40510,8 @@ var _url = __webpack_require__(/*! url */ "./node_modules/native-url/dist/index.
 var _utils = __webpack_require__(/*! ../next-server/lib/utils */ "./node_modules/next/dist/next-server/lib/utils.js");
 
 var _router = _interopRequireDefault(__webpack_require__(/*! ./router */ "./node_modules/next/dist/client/router.js"));
+
+var _router2 = __webpack_require__(/*! ../next-server/lib/router/router */ "./node_modules/next/dist/next-server/lib/router/router.js");
 
 function isLocal(href) {
   var url = (0, _url.parse)(href, false, true);
@@ -40607,8 +40612,8 @@ var Link = /*#__PURE__*/function (_react$Component) {
 
     _this.formatUrls = memoizedFormatUrl(function (href, asHref) {
       return {
-        href: formatUrl(href),
-        as: asHref ? formatUrl(asHref) : asHref
+        href: (0, _router2.addBasePath)(formatUrl(href)),
+        as: asHref ? (0, _router2.addBasePath)(formatUrl(asHref)) : asHref
       };
     });
 
@@ -40876,7 +40881,7 @@ var singletonRouter = {
   }
 }; // Create public properties and methods of the router in the singletonRouter
 
-var urlPropertyFields = ['pathname', 'route', 'query', 'asPath', 'components', 'isFallback'];
+var urlPropertyFields = ['pathname', 'route', 'query', 'asPath', 'components', 'isFallback', 'basePath'];
 var routerEvents = ['routeChangeStart', 'beforeHistoryChange', 'routeChangeComplete', 'routeChangeError', 'hashChangeStart', 'hashChangeComplete'];
 var coreMethodFields = ['push', 'replace', 'reload', 'back', 'prefetch', 'beforePopState']; // Events is a static property on the router, the router doesn't have to be initialized to use it
 
@@ -41071,6 +41076,10 @@ var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/
 
 exports.AmpStateContext = React.createContext({});
 
+if (true) {
+  exports.AmpStateContext.displayName = 'AmpStateContext';
+}
+
 /***/ }),
 
 /***/ "./node_modules/next/dist/next-server/lib/amp.js":
@@ -41147,6 +41156,10 @@ Object.defineProperty(exports, "__esModule", {
 var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 
 exports.HeadManagerContext = React.createContext(null);
+
+if (true) {
+  exports.HeadManagerContext.displayName = 'HeadManagerContext';
+}
 
 /***/ }),
 
@@ -41411,6 +41424,10 @@ var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/
 
 exports.RouterContext = React.createContext(null);
 
+if (true) {
+  exports.RouterContext.displayName = 'RouterContext';
+}
+
 /***/ }),
 
 /***/ "./node_modules/next/dist/next-server/lib/router/router.js":
@@ -41453,11 +41470,19 @@ var route_matcher_1 = __webpack_require__(/*! ./utils/route-matcher */ "./node_m
 
 var route_regex_1 = __webpack_require__(/*! ./utils/route-regex */ "./node_modules/next/dist/next-server/lib/router/utils/route-regex.js");
 
+var basePath =  false || '';
+
 function addBasePath(path) {
-  // variable is always a string
-  var p = "";
-  return path.indexOf(p) !== 0 ? p + path : path;
+  return path.indexOf(basePath) !== 0 ? basePath + path : path;
 }
+
+exports.addBasePath = addBasePath;
+
+function delBasePath(path) {
+  return path.indexOf(basePath) === 0 ? path.substr(basePath.length) || '/' : path;
+}
+
+exports.delBasePath = delBasePath;
 
 function toRoute(path) {
   return path.replace(/\/$/, '') || '/';
@@ -41472,8 +41497,8 @@ function fetchNextData(pathname, query, isServerRender, cb) {
 
   function getResponse() {
     return fetch(utils_1.formatWithValidation({
-      // @ts-ignore __NEXT_DATA__
-      pathname: "/_next/data/".concat(__NEXT_DATA__.buildId).concat(pathname, ".json"),
+      pathname: addBasePath( // @ts-ignore __NEXT_DATA__
+      "/_next/data/".concat(__NEXT_DATA__.buildId).concat(delBasePath(pathname), ".json")),
       query: query
     }), {
       // Cookies are required to be present for Next.js' SSG "Preview Mode".
@@ -41628,6 +41653,7 @@ var Router = /*#__PURE__*/function () {
 
     this.asPath = // @ts-ignore this is temporarily global (attached to window)
     is_dynamic_1.isDynamicRoute(pathname) && __NEXT_DATA__.autoExport ? pathname : as;
+    this.basePath = basePath;
     this.sub = subscription;
     this.clc = null;
     this._wrapApp = wrapApp; // make sure to ignore extra popState in safari on navigating
@@ -41637,12 +41663,17 @@ var Router = /*#__PURE__*/function () {
     this.isFallback = isFallback;
 
     if (true) {
-      // in order for `e.state` to work on the `onpopstate` event
-      // we have to register the initial route upon initialization
-      this.changeState('replaceState', utils_1.formatWithValidation({
-        pathname: pathname,
-        query: query
-      }), as);
+      // make sure "as" doesn't start with double slashes or else it can
+      // throw an error as it's considered invalid
+      if (as.substr(0, 2) !== '//') {
+        // in order for `e.state` to work on the `onpopstate` event
+        // we have to register the initial route upon initialization
+        this.changeState('replaceState', utils_1.formatWithValidation({
+          pathname: pathname,
+          query: query
+        }), as);
+      }
+
       window.addEventListener('popstate', this.onPopState);
     }
   } // @deprecated backwards compatibility even though it's a private method.
@@ -41734,7 +41765,9 @@ var Router = /*#__PURE__*/function () {
 
 
         var url = typeof _url === 'object' ? utils_1.formatWithValidation(_url) : _url;
-        var as = typeof _as === 'object' ? utils_1.formatWithValidation(_as) : _as; // Add the ending slash to the paths. So, we can serve the
+        var as = typeof _as === 'object' ? utils_1.formatWithValidation(_as) : _as;
+        url = addBasePath(url);
+        as = addBasePath(as); // Add the ending slash to the paths. So, we can serve the
         // "<page>/index.html" directly for the SSR page.
 
         if (false) { var rewriteUrlForNextExport; }
@@ -41750,7 +41783,7 @@ var Router = /*#__PURE__*/function () {
           _this2.asPath = as;
           Router.events.emit('hashChangeStart', as);
 
-          _this2.changeState(method, url, addBasePath(as), options);
+          _this2.changeState(method, url, as, options);
 
           _this2.scrollToHash(as);
 
@@ -41820,7 +41853,7 @@ var Router = /*#__PURE__*/function () {
 
           Router.events.emit('beforeHistoryChange', as);
 
-          _this2.changeState(method, url, addBasePath(as), options);
+          _this2.changeState(method, url, as, options);
 
           if (true) {
             var appComp = _this2.components['/_app'].Component;
@@ -42090,7 +42123,8 @@ var Router = /*#__PURE__*/function () {
           return;
         }
 
-        Promise.all([_this4.pageLoader.prefetchData(url, asPath), _this4.pageLoader[options.priority ? 'loadPage' : 'prefetch'](toRoute(pathname))]).then(function () {
+        var route = delBasePath(toRoute(pathname));
+        Promise.all([_this4.pageLoader.prefetchData(url, delBasePath(asPath)), _this4.pageLoader[options.priority ? 'loadPage' : 'prefetch'](route)]).then(function () {
           return resolve();
         }, reject);
       });
@@ -42109,14 +42143,15 @@ var Router = /*#__PURE__*/function () {
                 cancelled = true;
               };
 
-              _context.next = 4;
+              route = delBasePath(route);
+              _context.next = 5;
               return _regeneratorRuntime.awrap(this.pageLoader.loadPage(route));
 
-            case 4:
+            case 5:
               componentResult = _context.sent;
 
               if (!cancelled) {
-                _context.next = 9;
+                _context.next = 10;
                 break;
               }
 
@@ -42124,14 +42159,14 @@ var Router = /*#__PURE__*/function () {
               error.cancelled = true;
               throw error;
 
-            case 9:
+            case 10:
               if (cancel === this.clc) {
                 this.clc = null;
               }
 
               return _context.abrupt("return", componentResult);
 
-            case 11:
+            case 12:
             case "end":
               return _context.stop();
           }
@@ -42260,7 +42295,16 @@ function getRouteMatcher(routeRegex) {
       return false;
     }
 
-    var decode = decodeURIComponent;
+    var decode = function decode(param) {
+      try {
+        return decodeURIComponent(param);
+      } catch (_) {
+        var err = new Error('failed to decode param');
+        err.code = 'DECODE_FAILED';
+        throw err;
+      }
+    };
+
     var params = {};
     Object.keys(groups).forEach(function (slugName) {
       var g = groups[slugName];
@@ -42292,11 +42336,16 @@ exports.getRouteMatcher = getRouteMatcher;
 
 Object.defineProperty(exports, "__esModule", {
   value: true
-});
+}); // this isn't importing the escape-string-regex module
+// to reduce bytes
+
+function escapeRegex(str) {
+  return str.replace(/[|\\{}()[\]^$+*?.-]/g, '\\$&');
+}
 
 function getRouteRegex(normalizedRoute) {
   // Escape all characters that could be considered RegEx
-  var escapedRoute = (normalizedRoute.replace(/\/$/, '') || '/').replace(/[|\\{}()[\]^$+*?.-]/g, '\\$&');
+  var escapedRoute = escapeRegex(normalizedRoute.replace(/\/$/, '') || '/');
   var groups = {};
   var groupIndex = 1;
   var parameterizedRoute = escapedRoute.replace(/\/\\\[([^/]+?)\\\](?=\/|$)/g, function (_, $1) {
@@ -42309,10 +42358,17 @@ function getRouteRegex(normalizedRoute) {
     };
     return isCatchAll ? '/(.+?)' : '/([^/]+?)';
   });
-  return {
+  var namedParameterizedRoute; // dead code eliminate for browser since it's only needed
+  // while generating routes-manifest
+
+  if (false) {}
+
+  return Object.assign({
     re: new RegExp('^' + parameterizedRoute + '(?:/)?$', 'i'),
     groups: groups
-  };
+  }, namedParameterizedRoute ? {
+    namedRegex: "^".concat(namedParameterizedRoute, "(?:/)?$")
+  } : {});
 }
 
 exports.getRouteRegex = getRouteRegex;
@@ -42335,11 +42391,11 @@ var _assertThisInitialized = __webpack_require__(/*! @babel/runtime/helpers/asse
 
 var _createClass = __webpack_require__(/*! @babel/runtime/helpers/createClass */ "./node_modules/@babel/runtime/helpers/createClass.js");
 
+var _inherits = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/@babel/runtime/helpers/inherits.js");
+
 var _possibleConstructorReturn = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js");
 
 var _getPrototypeOf = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/getPrototypeOf.js");
-
-var _inherits = __webpack_require__(/*! @babel/runtime/helpers/inherits */ "./node_modules/@babel/runtime/helpers/inherits.js");
 
 var _toConsumableArray = __webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ "./node_modules/@babel/runtime/helpers/toConsumableArray.js");
 
@@ -42451,19 +42507,12 @@ var url_1 = __webpack_require__(/*! url */ "./node_modules/native-url/dist/index
 
 
 function execOnce(fn) {
-  var _this = this;
-
   var used = false;
-  var result = null;
+  var result;
   return function () {
     if (!used) {
       used = true;
-
-      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-        args[_key] = arguments[_key];
-      }
-
-      result = fn.apply(_this, args);
+      result = fn.apply(void 0, arguments);
     }
 
     return result;
@@ -42872,70 +42921,6 @@ exports.isSuspense = isSuspense;
 if (false) {} else {
   module.exports = __webpack_require__(/*! ./cjs/react-is.development.js */ "./node_modules/next/node_modules/react-is/cjs/react-is.development.js");
 }
-
-
-/***/ }),
-
-/***/ "./node_modules/next/node_modules/webpack/buildin/global.js":
-/*!***********************************!*\
-  !*** (webpack)/buildin/global.js ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || new Function("return this")();
-} catch (e) {
-	// This works if the window reference is available
-	if (typeof window === "object") g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-
-/***/ "./node_modules/next/node_modules/webpack/buildin/module.js":
-/*!***********************************!*\
-  !*** (webpack)/buildin/module.js ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = function(module) {
-	if (!module.webpackPolyfill) {
-		module.deprecate = function() {};
-		module.paths = [];
-		// module.parent = undefined by default
-		if (!module.children) module.children = [];
-		Object.defineProperty(module, "loaded", {
-			enumerable: true,
-			get: function() {
-				return module.l;
-			}
-		});
-		Object.defineProperty(module, "id", {
-			enumerable: true,
-			get: function() {
-				return module.i;
-			}
-		});
-		module.webpackPolyfill = 1;
-	}
-	return module;
-};
 
 
 /***/ }),
@@ -68855,6 +68840,70 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/webpack/buildin/global.js":
+/*!***********************************!*\
+  !*** (webpack)/buildin/global.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || new Function("return this")();
+} catch (e) {
+	// This works if the window reference is available
+	if (typeof window === "object") g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+
+/***/ "./node_modules/webpack/buildin/module.js":
+/*!***********************************!*\
+  !*** (webpack)/buildin/module.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = function(module) {
+	if (!module.webpackPolyfill) {
+		module.deprecate = function() {};
+		module.paths = [];
+		// module.parent = undefined by default
+		if (!module.children) module.children = [];
+		Object.defineProperty(module, "loaded", {
+			enumerable: true,
+			get: function() {
+				return module.l;
+			}
+		});
+		Object.defineProperty(module, "id", {
+			enumerable: true,
+			get: function() {
+				return module.i;
+			}
+		});
+		module.webpackPolyfill = 1;
+	}
+	return module;
+};
+
+
+/***/ }),
+
 /***/ "./src/components/global/footer.tsx":
 /*!******************************************!*\
   !*** ./src/components/global/footer.tsx ***!
@@ -68875,15 +68924,14 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0__["createElement"];
 
 
 var Footer = function Footer(_ref) {
-  var children = _ref.children,
-      _ref$footerTitle = _ref.footerTitle,
-      footerTitle = _ref$footerTitle === void 0 ? "\xA9 " + new Date().getFullYear() + ' Hydrotik' : _ref$footerTitle;
+  var _ref$footerTitle = _ref.footerTitle,
+      footerTitle = _ref$footerTitle === void 0 ? "\xA9 ".concat(new Date().getFullYear(), " Hydrotik") : _ref$footerTitle;
   return __jsx("footer", {
     className: "bg-red-300",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 16,
+      lineNumber: 9,
       columnNumber: 2
     }
   }, __jsx("ul", {
@@ -68891,45 +68939,45 @@ var Footer = function Footer(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17,
-      columnNumber: 4
+      lineNumber: 10,
+      columnNumber: 3
     }
   }, __jsx("li", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
-      columnNumber: 5
+      lineNumber: 11,
+      columnNumber: 4
     }
   }, footerTitle), __jsx("li", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
-      columnNumber: 5
+      lineNumber: 14,
+      columnNumber: 4
     }
   }, __jsx(_ui_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
     href: "https://github.com/hydrotik/hydrotik",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
-      columnNumber: 6
+      lineNumber: 15,
+      columnNumber: 5
     }
   }, "Github")), __jsx("li", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24,
-      columnNumber: 5
+      lineNumber: 17,
+      columnNumber: 4
     }
   }, __jsx(_ui_Button__WEBPACK_IMPORTED_MODULE_1__["default"], {
     href: "https://www.linkedin.com/in/donovanadams/",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25,
-      columnNumber: 6
+      lineNumber: 18,
+      columnNumber: 5
     }
   }, "Linkedin"))));
 };
@@ -68972,14 +69020,14 @@ function Header() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11,
+      lineNumber: 10,
       columnNumber: 3
     }
   }, __jsx(next_head__WEBPACK_IMPORTED_MODULE_2___default.a, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13,
+      lineNumber: 12,
       columnNumber: 4
     }
   }, __jsx("link", {
@@ -68989,7 +69037,7 @@ function Header() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14,
+      lineNumber: 13,
       columnNumber: 5
     }
   }), __jsx("link", {
@@ -68999,7 +69047,7 @@ function Header() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15,
+      lineNumber: 14,
       columnNumber: 5
     }
   })), __jsx("div", {
@@ -69007,7 +69055,7 @@ function Header() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 17,
       columnNumber: 4
     }
   }, __jsx("div", {
@@ -69015,24 +69063,25 @@ function Header() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 18,
       columnNumber: 5
     }
   }, __jsx("img", {
     src: "images/logo.svg",
     className: "mr-3 text-white w-10",
+    alt: "Hydrotik Logo",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
+      lineNumber: 19,
       columnNumber: 6
     }
   }), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "" + "/",
+    href: "".concat("", "/"),
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25,
+      lineNumber: 21,
       columnNumber: 6
     }
   }, __jsx("a", {
@@ -69040,7 +69089,7 @@ function Header() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
+      lineNumber: 23,
       columnNumber: 7
     }
   }, "Hydrotik"))), __jsx("button", {
@@ -69051,7 +69100,7 @@ function Header() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34,
+      lineNumber: 29,
       columnNumber: 5
     }
   }, __jsx("svg", {
@@ -69061,14 +69110,14 @@ function Header() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 30,
       columnNumber: 6
     }
   }, __jsx("title", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 31,
       columnNumber: 7
     }
   }, "Menu"), __jsx("path", {
@@ -69076,26 +69125,27 @@ function Header() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 32,
       columnNumber: 7
     }
   }))), __jsx("ul", {
-    className: "".concat(isExpanded ? "block" : "hidden", " md:flex flex-col md:flex-row md:items-center md:justify-center text-sm w-full md:w-auto"),
+    role: "navigation",
+    className: "".concat(isExpanded ? 'block' : 'hidden', " md:flex flex-col md:flex-row md:items-center md:justify-center text-sm w-full md:w-auto"),
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 36,
       columnNumber: 5
     }
   }, [{
-    title: "Home",
-    route: "" + "/"
+    title: 'Home',
+    route: "".concat("", "/")
   }, {
-    title: "About",
-    route: "" + "/about"
+    title: 'About',
+    route: "".concat("", "/about")
   }, {
-    title: "Covid Visualization",
-    route: "" + "/visualization"
+    title: 'Covid Visualization',
+    route: "".concat("", "/visualization")
   }].map(function (navigationItem) {
     return __jsx("li", {
       className: "mt-3 md:mt-0 md:ml-6",
@@ -69103,7 +69153,7 @@ function Header() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 58,
+        lineNumber: 42,
         columnNumber: 7
       }
     }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -69111,15 +69161,16 @@ function Header() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 59,
+        lineNumber: 43,
         columnNumber: 8
       }
     }, __jsx("a", {
       className: "block text-white",
+      href: "",
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 60,
+        lineNumber: 45,
         columnNumber: 9
       }
     }, navigationItem.title)));
@@ -69156,29 +69207,27 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0__["createElement"];
 
 var Layout = function Layout(_ref) {
   var children = _ref.children,
-      _ref$title = _ref.title,
-      title = _ref$title === void 0 ? 'This is the default title' : _ref$title,
       className = _ref.className;
   return __jsx("div", {
     className: classnames__WEBPACK_IMPORTED_MODULE_1___default()('flex flex-col min-h-screen', className),
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17,
+      lineNumber: 15,
       columnNumber: 2
     }
   }, __jsx(_header__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 16,
       columnNumber: 3
     }
   }), children, __jsx(_footer__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
+      lineNumber: 18,
       columnNumber: 3
     }
   }));
@@ -69199,87 +69248,77 @@ var Layout = function Layout(_ref) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
 /* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
-/* harmony import */ var _babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/esm/inherits */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js");
+/* harmony import */ var _babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/esm/inherits */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
+/* harmony import */ var _babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
+
+
 
 
 
 
 
 var _jsxFileName = "/Users/dadams/Desktop/Code/hydrotik/src/components/ui/Button.tsx";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_5__["createElement"];
+var __jsx = react__WEBPACK_IMPORTED_MODULE_7__["createElement"];
 
-function _createSuper(Derived) { return function () { var Super = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_3__["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_2__["default"])(this, result); }; }
+function _createSuper(Derived) { return function () { var Super = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__["default"])(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 
 
 var Button = /*#__PURE__*/function (_React$Component) {
-  Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(Button, _React$Component);
+  Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_3__["default"])(Button, _React$Component);
 
   var _super = _createSuper(Button);
 
-  function Button(props) {
+  function Button() {
+    var _this;
+
     Object(_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Button);
 
-    return _super.call(this, props);
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _super.call.apply(_super, [this].concat(args));
+
+    Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_6__["default"])(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this), "checkHref", function (href) {
+      return href !== '';
+    });
+
+    return _this;
   }
 
   Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Button, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {}
-  }, {
-    key: "checkHref",
-    value: function checkHref(href) {
-      return this.props.href != '';
-    }
-  }, {
     key: "render",
     value: function render() {
+      var _this$props = this.props,
+          href = _this$props.href,
+          target = _this$props.target,
+          children = _this$props.children;
       return __jsx("a", {
-        href: this.props.href,
+        href: href,
         className: "btn-blue no-underline",
-        target: this.props.target,
+        target: target,
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 32,
+          lineNumber: 20,
           columnNumber: 4
         }
-      }, this.props.children);
+      }, children);
     }
   }]);
 
   return Button;
-}(react__WEBPACK_IMPORTED_MODULE_5__["Component"]);
+}(react__WEBPACK_IMPORTED_MODULE_7__["Component"]);
 
 /* harmony default export */ __webpack_exports__["default"] = (Button);
-/* TODO
-
-// https://medium.com/@acesmndr/testing-react-functional-components-with-hooks-using-enzyme-f732124d320a
-
-const Button: React.FunctionComponent<IProps> | IButton  = ({
-	children,
-	href,
-	target = "_blank"
-}) => {
-
-	function checkHref(){
-		return href != '';
-	}
-
-	return (
-		<a href={href} className="btn-blue no-underline" target={target}>
-			{children}
-		</a>
-	)
-}
-
-*/
 
 /***/ }),
 
@@ -69297,18 +69336,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
 /* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
 /* harmony import */ var _babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js");
-/* harmony import */ var _babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime/helpers/esm/inherits */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var papaparse__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! papaparse */ "./node_modules/papaparse/papaparse.min.js");
-/* harmony import */ var papaparse__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(papaparse__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var node_fetch__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! node-fetch */ "./node_modules/node-fetch/browser.js");
-/* harmony import */ var node_fetch__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(node_fetch__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var victory__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! victory */ "./node_modules/victory/es/index.js");
+/* harmony import */ var _babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/esm/inherits */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
+/* harmony import */ var _babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var papaparse__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! papaparse */ "./node_modules/papaparse/papaparse.min.js");
+/* harmony import */ var papaparse__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(papaparse__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var node_fetch__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! node-fetch */ "./node_modules/node-fetch/browser.js");
+/* harmony import */ var node_fetch__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(node_fetch__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var victory__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! victory */ "./node_modules/victory/es/index.js");
+
 
 
 
@@ -69317,9 +69358,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _jsxFileName = "/Users/dadams/Desktop/Code/hydrotik/src/components/ui/Chart.tsx";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement;
 
-function _createSuper(Derived) { return function () { var Super = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__["default"])(this, result); }; }
+function _createSuper(Derived) { return function () { var Super = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6__["default"])(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6__["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_5__["default"])(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
@@ -69328,13 +69369,12 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 
 
-var csvURL = 'https://raw.githubusercontent.com/nychealth/coronavirus-data/master/case-hosp-death.csv?cache-control=';
 var colorDark = '#455A64';
 var colorMed = '#90A4AE';
 var colorLight = '#bdc6cb';
 
 var Chart = /*#__PURE__*/function (_React$Component) {
-  Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_6__["default"])(Chart, _React$Component);
+  Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_4__["default"])(Chart, _React$Component);
 
   var _super = _createSuper(Chart);
 
@@ -69344,6 +69384,47 @@ var Chart = /*#__PURE__*/function (_React$Component) {
     Object(_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, Chart);
 
     _this = _super.call(this, props);
+
+    Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3__["default"])(_this), "fetchCsv", function () {
+      return node_fetch__WEBPACK_IMPORTED_MODULE_10___default()("https://raw.githubusercontent.com/nychealth/coronavirus-data/master/case-hosp-death.csv?cache-control=".concat(new Date().getTime())) //	eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .then(function (response) {
+        try {
+          var reader = response.body.getReader();
+          var decoder = new TextDecoder('utf-8');
+          return reader.read() //	eslint-disable-next-line @typescript-eslint/no-explicit-any
+          .then(function (result) {
+            return decoder.decode(result.value);
+          })["catch"](function (e) {
+            throw new Error("fetchCsv() read() error: ".concat(e));
+          });
+        } catch (e) {
+          throw new Error("fetchCsv() fetch() error: ".concat(e));
+        }
+      })["catch"](function (e) {
+        throw new Error("fetchCsv() fetch() error: ".concat(e));
+      });
+    });
+
+    Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3__["default"])(_this), "checkKey", function (obj, key) {
+      return key in obj;
+    });
+
+    Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3__["default"])(_this), "updateKey", function (obj, oldkey, newkey) {
+      //	eslint-disable-next-line no-param-reassign
+      obj[newkey] = obj[oldkey]; //	eslint-disable-next-line no-param-reassign
+
+      delete obj[oldkey];
+      return obj;
+    });
+
+    Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_7__["default"])(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3__["default"])(_this), "resolveCsvData", function (result) {
+      result.data.splice(-2, 2);
+
+      _this.setState({
+        data: result.data
+      });
+    });
+
     _this.state = {
       data: []
     };
@@ -69355,62 +69436,8 @@ var Chart = /*#__PURE__*/function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.getCsvData();
-    }
-  }, {
-    key: "fetchCsv",
-    value: function fetchCsv() {
-      return node_fetch__WEBPACK_IMPORTED_MODULE_9___default()('https://raw.githubusercontent.com/nychealth/coronavirus-data/master/case-hosp-death.csv?cache-control=' + new Date().getTime()).then(function (response) {
-        try {
-          var reader = response.body.getReader();
-          var decoder = new TextDecoder('utf-8');
-          return reader.read().then(function (result) {
-            return decoder.decode(result.value);
-          })["catch"](function (e) {
-            throw new Error('fetchCsv() read() error' + e);
-          });
-        } catch (e) {
-          return null;
-        }
-      })["catch"](function (e) {
-        throw new Error('fetchCsv() fetch() error' + e);
-      });
-    }
-  }, {
-    key: "resolveCsvData",
-    value: function resolveCsvData(result) {
-      result.data.splice(-2, 2);
-      this.setState({
-        data: this.checkCSVData(result.data)
-      });
-    }
-  }, {
-    key: "checkKey",
-    value: function checkKey(obj, key) {
-      return key in obj;
-    }
-  }, {
-    key: "updateKey",
-    value: function updateKey(obj, oldkey, newkey) {
-      obj[newkey] = obj[oldkey];
-      delete obj[oldkey];
-      return obj;
-    }
-  }, {
-    key: "checkCSVData",
-    value: function checkCSVData(data) {
-      var _this2 = this;
+    } // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 
-      // FIX for https://github.com/nychealth/coronavirus-data/issues/41
-      var badkey = 'Retrieving data. Wait a few seconds and try to cut or copy again.';
-      var goodkey = 'DATE_OF_INTEREST'; //TODO Write test validating schema of object props
-
-      data.map(function (obj) {
-        if (_this2.checkKey(obj, badkey)) {
-          obj = _this2.updateKey(obj, badkey, goodkey);
-        }
-      });
-      return data;
-    }
   }, {
     key: "getCsvData",
     value: function getCsvData() {
@@ -69425,7 +69452,7 @@ var Chart = /*#__PURE__*/function (_React$Component) {
 
             case 3:
               csvData = _context.sent;
-              papaparse__WEBPACK_IMPORTED_MODULE_8___default.a.parse(csvData, {
+              papaparse__WEBPACK_IMPORTED_MODULE_9___default.a.parse(csvData, {
                 header: true,
                 complete: this.resolveCsvData,
                 dynamicTyping: true
@@ -69436,7 +69463,7 @@ var Chart = /*#__PURE__*/function (_React$Component) {
             case 7:
               _context.prev = 7;
               _context.t0 = _context["catch"](0);
-              return _context.abrupt("return", _context.t0);
+              throw new Error(_context.t0);
 
             case 10:
             case "end":
@@ -69444,12 +69471,14 @@ var Chart = /*#__PURE__*/function (_React$Component) {
           }
         }
       }, null, this, [[0, 7]], Promise);
-    }
+    } //	eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   }, {
     key: "render",
     value: function render() {
-      return __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryChart"], {
-        theme: victory__WEBPACK_IMPORTED_MODULE_11__["VictoryTheme"].material //domain={{y: [0, 6000]}}
+      var data = this.state.data;
+      return __jsx(victory__WEBPACK_IMPORTED_MODULE_12__["VictoryChart"], {
+        theme: victory__WEBPACK_IMPORTED_MODULE_12__["VictoryTheme"].material //	domain={{y: [0, 6000]}}
         ,
         domainPadding: {
           y: [0, 50]
@@ -69457,59 +69486,59 @@ var Chart = /*#__PURE__*/function (_React$Component) {
         width: 600,
         height: 350,
         scale: {
-          x: "time"
+          x: 'time'
         },
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 146,
+          lineNumber: 119,
           columnNumber: 4
         }
-      }, __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryAxis"], {
+      }, __jsx(victory__WEBPACK_IMPORTED_MODULE_12__["VictoryAxis"], {
         crossAxis: true,
-        theme: victory__WEBPACK_IMPORTED_MODULE_11__["VictoryTheme"].material,
+        theme: victory__WEBPACK_IMPORTED_MODULE_12__["VictoryTheme"].material,
         standalone: false,
-        tickLabelComponent: __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryLabel"], {
+        tickLabelComponent: __jsx(victory__WEBPACK_IMPORTED_MODULE_12__["VictoryLabel"], {
           renderInPortal: true,
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 158,
+            lineNumber: 132,
             columnNumber: 7
           }
-        }) // new Date() for https://momentjs.com/guides/#/warnings/js-date/ [CLEANUP]
+        }) //	new Date() for https://momentjs.com/guides/#/warnings/js-date/ [CLEANUP]
         ,
         tickFormat: function tickFormat(t) {
-          return moment__WEBPACK_IMPORTED_MODULE_10___default()(new Date(t)).format('M/D/YY');
+          return moment__WEBPACK_IMPORTED_MODULE_11___default()(new Date(t)).format('M/D/YY');
         },
         fixLabelOverlap: true,
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 154,
+          lineNumber: 127,
           columnNumber: 5
         }
-      }), __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryAxis"], {
+      }), __jsx(victory__WEBPACK_IMPORTED_MODULE_12__["VictoryAxis"], {
         dependentAxis: true,
         crossAxis: true,
-        theme: victory__WEBPACK_IMPORTED_MODULE_11__["VictoryTheme"].material,
+        theme: victory__WEBPACK_IMPORTED_MODULE_12__["VictoryTheme"].material,
         standalone: false,
-        tickLabelComponent: __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryLabel"], {
+        tickLabelComponent: __jsx(victory__WEBPACK_IMPORTED_MODULE_12__["VictoryLabel"], {
           renderInPortal: true,
           __self: this,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 170,
+            lineNumber: 146,
             columnNumber: 7
           }
         }),
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 166,
+          lineNumber: 140,
           columnNumber: 5
         }
-      }), __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryLegend"], {
+      }), __jsx(victory__WEBPACK_IMPORTED_MODULE_12__["VictoryLegend"], {
         x: 75,
         y: 50,
         title: "Legend",
@@ -69518,38 +69547,38 @@ var Chart = /*#__PURE__*/function (_React$Component) {
         gutter: 10,
         style: {
           border: {
-            stroke: "black"
+            stroke: 'black'
           },
           title: {
             fontSize: 10
           }
         },
         data: [{
-          name: "New Cases",
+          name: 'New Cases',
           symbol: {
             fill: colorDark,
-            type: "square"
+            type: 'square'
           }
         }, {
-          name: "Hospitalizations",
+          name: 'Hospitalizations',
           symbol: {
             fill: colorMed,
-            type: "square"
+            type: 'square'
           }
         }, {
-          name: "New Deaths",
+          name: 'New Deaths',
           symbol: {
             fill: colorLight,
-            type: "square"
+            type: 'square'
           }
         }],
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 173,
-          columnNumber: 6
+          lineNumber: 149,
+          columnNumber: 5
         }
-      }), __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryGroup"], {
+      }), __jsx(victory__WEBPACK_IMPORTED_MODULE_12__["VictoryGroup"], {
         animate: {
           duration: 1000
         },
@@ -69557,67 +69586,67 @@ var Chart = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 185,
+          lineNumber: 163,
           columnNumber: 5
         }
-      }, __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryArea"], {
+      }, __jsx(victory__WEBPACK_IMPORTED_MODULE_12__["VictoryArea"], {
         style: {
           data: {
             stroke: colorDark
           },
           parent: {
-            border: "1px solid #ccc"
+            border: '1px solid #ccc'
           }
         },
-        data: this.state.data,
+        data: data,
         x: function x(d) {
-          return moment__WEBPACK_IMPORTED_MODULE_10___default()(d.DATE_OF_INTEREST, 'MM/DD/YY').toDate().toString();
+          return moment__WEBPACK_IMPORTED_MODULE_11___default()(d.DATE_OF_INTEREST, 'MM/DD/YY').toDate().toString();
         },
         y: "CASE_COUNT",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 189,
+          lineNumber: 167,
           columnNumber: 6
         }
-      }), __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryArea"], {
+      }), __jsx(victory__WEBPACK_IMPORTED_MODULE_12__["VictoryArea"], {
         style: {
           data: {
             stroke: colorMed
           },
           parent: {
-            border: "1px solid #ccc"
+            border: '1px solid #ccc'
           }
         },
-        data: this.state.data,
+        data: data,
         x: function x(d) {
-          return moment__WEBPACK_IMPORTED_MODULE_10___default()(d.DATE_OF_INTEREST, 'MM/DD/YY').toDate().toString();
+          return moment__WEBPACK_IMPORTED_MODULE_11___default()(d.DATE_OF_INTEREST, 'MM/DD/YY').toDate().toString();
         },
         y: "HOSPITALIZED_COUNT",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 199,
+          lineNumber: 176,
           columnNumber: 6
         }
-      }), __jsx(victory__WEBPACK_IMPORTED_MODULE_11__["VictoryArea"], {
+      }), __jsx(victory__WEBPACK_IMPORTED_MODULE_12__["VictoryArea"], {
         style: {
           data: {
             stroke: colorLight
           },
           parent: {
-            border: "1px solid #ccc"
+            border: '1px solid #ccc'
           }
         },
-        data: this.state.data,
+        data: data,
         x: function x(d) {
-          return moment__WEBPACK_IMPORTED_MODULE_10___default()(d.DATE_OF_INTEREST, 'MM/DD/YY').toDate().toString();
+          return moment__WEBPACK_IMPORTED_MODULE_11___default()(d.DATE_OF_INTEREST, 'MM/DD/YY').toDate().toString();
         },
         y: "DEATH_COUNT",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 208,
+          lineNumber: 185,
           columnNumber: 6
         }
       })));
@@ -69625,7 +69654,7 @@ var Chart = /*#__PURE__*/function (_React$Component) {
   }]);
 
   return Chart;
-}(react__WEBPACK_IMPORTED_MODULE_7___default.a.Component);
+}(react__WEBPACK_IMPORTED_MODULE_8___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (Chart);
 
@@ -69643,9 +69672,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
 /* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
 /* harmony import */ var _babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/assertThisInitialized */ "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js");
-/* harmony import */ var _babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var _babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/esm/inherits */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
+/* harmony import */ var _babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/esm/inherits */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
+/* harmony import */ var _babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var papaparse__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! papaparse */ "./node_modules/papaparse/papaparse.min.js");
@@ -69662,13 +69691,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-var _this = undefined,
-    _jsxFileName = "/Users/dadams/Desktop/Code/hydrotik/src/pages/visualization.tsx";
-
+var _jsxFileName = "/Users/dadams/Desktop/Code/hydrotik/src/pages/visualization.tsx";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
 
-function _createSuper(Derived) { return function () { var Super = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__["default"])(this, result); }; }
+function _createSuper(Derived) { return function () { var Super = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__["default"])(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
@@ -69679,124 +69705,63 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 
 
-var colorDark = '';
-var colorMed = '';
-var colorLight = '';
 
 function numberWithCommas(x) {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
 
 function NumberValue(props) {
-  var v = props.value;
+  var value = props.value;
 
-  if (isNaN(v)) {
-    return v;
+  if (Number.isNaN(value)) {
+    return value;
   }
 
-  return numberWithCommas(v);
+  return __jsx("span", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 43,
+      columnNumber: 3
+    }
+  }, numberWithCommas(value));
 }
 
 var dc = new _utils_DataHelper__WEBPACK_IMPORTED_MODULE_12__["default"]();
 
-var PDFItem = function PDFItem(_ref) {
-  var children = _ref.children;
-
-  if (children.includes('-')) {
-    return __jsx("div", {
-      __self: _this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 62,
-        columnNumber: 10
-      }
-    }, children.replace('-', "\u2022"));
-  } else {
-    return __jsx("div", {
-      className: "mt-4 -mb-4",
-      __self: _this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 64,
-        columnNumber: 10
-      }
-    }, __jsx("strong", {
-      __self: _this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 64,
-        columnNumber: 38
-      }
-    }, children));
-  }
-}; // function PDFSection(props:any) {
-// 	if(!process.env.IS_GITHUBPAGES){
-// 		return (
-// 			<div className="mb-6">
-// 			<h2 className="font-bold mb-3 text-xl">New York City Details:</h2>
-// 				{props.apiData.map((section:any, index:number) => (
-// 					<PDFItem key={index}>{section}</PDFItem>
-// 				))}
-// 			</div>
-// 		);
-// 	}else{
-// 		return (
-// 			<></>
-// 		);
-// 	}
-// }
-
-
-function isGHPages() {
-  var url = window.location.hostname;
-  return url.search('github.io') != -1 ? true : false;
-}
-
 var Visualization = /*#__PURE__*/function (_React$Component) {
-  Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_5__["default"])(Visualization, _React$Component);
+  Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_3__["default"])(Visualization, _React$Component);
 
   var _super = _createSuper(Visualization);
 
   function Visualization(props) {
-    var _this2;
+    var _this;
 
     Object(_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Visualization);
 
-    _this2 = _super.call(this, props);
-    _this2.state = {
+    _this = _super.call(this, props);
+    _this.state = {
       github: 'Loading data...',
-      covid: [],
       totals: [['Loading data...', '']],
-      stateData: [],
-      //apiData:[],
       borough: [],
       age: [],
       sex: []
     };
-    _this2.resolveCsvData = _this2.resolveCsvData.bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this2));
-    _this2.resolveStateData = _this2.resolveStateData.bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this2));
-    _this2.resolveGithubData = _this2.resolveGithubData.bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this2));
-    _this2.parseGithubData = _this2.parseGithubData.bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this2)); //this.parseAPIData = this.parseAPIData.bind(this);
-
-    _this2.resolveBoroughData = _this2.resolveBoroughData.bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this2));
-    _this2.resolveAgeData = _this2.resolveAgeData.bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this2));
-    _this2.resolveSexData = _this2.resolveSexData.bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this2));
-    return _this2;
+    _this.resolveCsvData = _this.resolveCsvData.bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this));
+    _this.resolveGithubData = _this.resolveGithubData.bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this));
+    _this.parseGithubData = _this.parseGithubData.bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this));
+    _this.resolveBoroughData = _this.resolveBoroughData.bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this));
+    _this.resolveAgeData = _this.resolveAgeData.bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this));
+    _this.resolveSexData = _this.resolveSexData.bind(Object(_babel_runtime_helpers_esm_assertThisInitialized__WEBPACK_IMPORTED_MODULE_2__["default"])(_this));
+    return _this;
   }
 
   Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Visualization, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      var rdcb = this.resolveStateData;
-      dc.getData('https://raw.githubusercontent.com/chazeon/NYState-COVID-19-Tracker/master/data/NYC-covid-19-daily-data-summary.csv', function (data) {
-        papaparse__WEBPACK_IMPORTED_MODULE_7___default.a.parse(data, {
-          header: false,
-          complete: rdcb,
-          dynamicTyping: true
-        });
-      });
       var cvcb = this.resolveCsvData;
-      dc.getData('https://raw.githubusercontent.com/nychealth/coronavirus-data/master/summary.csv', function (data) {
+      dc.getData('https://raw.githubusercontent.com/nychealth/coronavirus-data/master/summary.csv', //	eslint-disable-next-line @typescript-eslint/no-explicit-any
+      function (data) {
         papaparse__WEBPACK_IMPORTED_MODULE_7___default.a.parse(data, {
           header: false,
           complete: cvcb,
@@ -69805,13 +69770,15 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
       });
       var cghcb = this.resolveGithubData;
       var ParseGithub = this.parseGithubData;
-      dc.getData('https://api.github.com/repos/nychealth/coronavirus-data/commits', function (data) {
+      dc.getData('https://api.github.com/repos/nychealth/coronavirus-data/commits', //	eslint-disable-next-line @typescript-eslint/no-explicit-any
+      function (data) {
         ParseGithub(data, {
           complete: cghcb
         });
       });
       var boroughcb = this.resolveBoroughData;
-      dc.getData('https://raw.githubusercontent.com/nychealth/coronavirus-data/master/boro.csv', function (data) {
+      dc.getData('https://raw.githubusercontent.com/nychealth/coronavirus-data/master/boro.csv', //	eslint-disable-next-line @typescript-eslint/no-explicit-any
+      function (data) {
         papaparse__WEBPACK_IMPORTED_MODULE_7___default.a.parse(data, {
           header: false,
           complete: boroughcb,
@@ -69819,7 +69786,8 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         });
       });
       var agecb = this.resolveAgeData;
-      dc.getData('https://raw.githubusercontent.com/nychealth/coronavirus-data/master/by-age.csv', function (data) {
+      dc.getData('https://raw.githubusercontent.com/nychealth/coronavirus-data/master/by-age.csv', //	eslint-disable-next-line @typescript-eslint/no-explicit-any
+      function (data) {
         papaparse__WEBPACK_IMPORTED_MODULE_7___default.a.parse(data, {
           header: false,
           complete: agecb,
@@ -69827,47 +69795,32 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         });
       });
       var sexcb = this.resolveSexData;
-      dc.getData('https://raw.githubusercontent.com/nychealth/coronavirus-data/master/by-sex.csv', function (data) {
+      dc.getData('https://raw.githubusercontent.com/nychealth/coronavirus-data/master/by-sex.csv', //	eslint-disable-next-line @typescript-eslint/no-explicit-any
+      function (data) {
         papaparse__WEBPACK_IMPORTED_MODULE_7___default.a.parse(data, {
           header: false,
           complete: sexcb,
           dynamicTyping: true
         });
-      }); //    if(!isGHPages()){
-      //    	this.setState({ apiData: ['Loading data...'] })
-      //     const apicb = this.resolveAPIData;
-      //     const ParseAPI = this.parseAPIData;
-      //     dc.getData(
-      //        	'/api/covid', 
-      //        	function(data:any){
-      // 	        ParseAPI(data, {
-      // 		        complete: apicb
-      // 		    })
-      // 	    }
-      //     )
-      // }
-    }
+      });
+    } //	eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   }, {
     key: "resolveCsvData",
     value: function resolveCsvData(result) {
       this.setState({
         totals: result.data
       });
-    }
-  }, {
-    key: "resolveStateData",
-    value: function resolveStateData(result) {
-      this.setState({
-        stateData: result.data
-      });
-    }
+    } //	eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   }, {
     key: "resolveGithubData",
     value: function resolveGithubData(result) {
       this.setState({
         github: result
       });
-    }
+    } // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   }, {
     key: "resolveBoroughData",
     value: function resolveBoroughData(result) {
@@ -69875,7 +69828,8 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
       this.setState({
         borough: result.data
       });
-    }
+    } //	eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   }, {
     key: "resolveAgeData",
     value: function resolveAgeData(result) {
@@ -69883,7 +69837,8 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
       this.setState({
         age: result.data
       });
-    }
+    } //	eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   }, {
     key: "resolveSexData",
     value: function resolveSexData(result) {
@@ -69891,7 +69846,8 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
       this.setState({
         sex: result.data
       });
-    }
+    } //	eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   }, {
     key: "parseGithubData",
     value: function parseGithubData(result, config) {
@@ -69900,31 +69856,31 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
       var n = moment__WEBPACK_IMPORTED_MODULE_8___default()(d).format('MM/DD/YYYY, hh:hh a');
       var s = "Chart updated on ".concat(n);
       config.complete.apply(this, [s]);
-    } // resolveAPIData(result:any) {
-    //     this.setState({ apiData: result.data })
-    // }
-    // parseAPIData(result:any, config:any) {
-    //  config.complete.apply(this, [JSON.parse(result)]);
-    // }
-
+    }
   }, {
     key: "render",
     value: function render() {
-      var _this3 = this;
+      var _this2 = this;
 
+      var _this$state = this.state,
+          github = _this$state.github,
+          borough = _this$state.borough,
+          age = _this$state.age,
+          sex = _this$state.sex,
+          totals = _this$state.totals;
       return __jsx(_components_global_layout__WEBPACK_IMPORTED_MODULE_9__["default"], {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 263,
-          columnNumber: 13
+          lineNumber: 190,
+          columnNumber: 4
         }
       }, __jsx("main", {
         className: "flex-1 w-full max-w-4xl p-4 mx-auto md:px-8 md:py-16",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 264,
+          lineNumber: 191,
           columnNumber: 5
         }
       }, __jsx("div", {
@@ -69932,14 +69888,14 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 265,
+          lineNumber: 192,
           columnNumber: 6
         }
       }, __jsx(_components_ui_Chart__WEBPACK_IMPORTED_MODULE_10__["default"], {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 266,
+          lineNumber: 193,
           columnNumber: 7
         }
       })), __jsx("div", {
@@ -69947,7 +69903,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 268,
+          lineNumber: 195,
           columnNumber: 6
         }
       }, __jsx("div", {
@@ -69955,7 +69911,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 269,
+          lineNumber: 196,
           columnNumber: 7
         }
       }, __jsx("h2", {
@@ -69963,7 +69919,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 270,
+          lineNumber: 197,
           columnNumber: 8
         }
       }, "New Covid cases by day in NYC"), __jsx("p", {
@@ -69971,47 +69927,48 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 271,
+          lineNumber: 198,
           columnNumber: 8
         }
-      }, this.state.github), __jsx("h2", {
+      }, github), __jsx("h2", {
         className: "font-bold text-xl",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 273,
+          lineNumber: 199,
           columnNumber: 8
         }
-      }, "Borough Totals:"), this.state.borough.map(function (section, index) {
+      }, "Borough Totals:"), //	eslint-disable-next-line @typescript-eslint/no-explicit-any
+      borough.map(function (section) {
         return __jsx("div", {
-          key: index,
-          __self: _this3,
+          key: section[0],
+          __self: _this2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 275,
-            columnNumber: 9
+            lineNumber: 203,
+            columnNumber: 10
           }
         }, __jsx("strong", {
-          __self: _this3,
+          __self: _this2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 275,
-            columnNumber: 26
+            lineNumber: 204,
+            columnNumber: 11
           }
-        }, section[0].replace('*', '')), ": ", __jsx(NumberValue, {
+        }, section[0].replace('*', '')), ":", ' ', __jsx(NumberValue, {
           value: section[1],
-          __self: _this3,
+          __self: _this2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 275,
-            columnNumber: 74
+            lineNumber: 207,
+            columnNumber: 11
           }
         }));
       }), __jsx("br", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 277,
+          lineNumber: 211,
           columnNumber: 8
         }
       }), __jsx("h2", {
@@ -70019,39 +69976,40 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 278,
+          lineNumber: 212,
           columnNumber: 8
         }
-      }, "Case Rate By Age:"), this.state.age.map(function (section, index) {
+      }, "Case Rate By Age:"), //	eslint-disable-next-line @typescript-eslint/no-explicit-any
+      age.map(function (section) {
         return __jsx("div", {
-          key: index,
-          __self: _this3,
+          key: section[0],
+          __self: _this2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 280,
-            columnNumber: 9
+            lineNumber: 216,
+            columnNumber: 10
           }
         }, __jsx("strong", {
-          __self: _this3,
+          __self: _this2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 280,
-            columnNumber: 26
+            lineNumber: 217,
+            columnNumber: 11
           }
-        }, section[0].replace('*', '')), ": ", __jsx(NumberValue, {
+        }, section[0].replace('*', '')), ":", ' ', __jsx(NumberValue, {
           value: section[1],
-          __self: _this3,
+          __self: _this2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 280,
-            columnNumber: 74
+            lineNumber: 220,
+            columnNumber: 11
           }
         }));
       }), __jsx("br", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 282,
+          lineNumber: 224,
           columnNumber: 8
         }
       }), __jsx("h2", {
@@ -70059,39 +70017,40 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 283,
+          lineNumber: 225,
           columnNumber: 8
         }
-      }, "Case Rate By Sex:"), this.state.sex.map(function (section, index) {
+      }, "Case Rate By Sex:"), //	eslint-disable-next-line @typescript-eslint/no-explicit-any
+      sex.map(function (section) {
         return __jsx("div", {
-          key: index,
-          __self: _this3,
+          key: section[0],
+          __self: _this2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 285,
-            columnNumber: 9
+            lineNumber: 229,
+            columnNumber: 10
           }
         }, __jsx("strong", {
-          __self: _this3,
+          __self: _this2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 285,
-            columnNumber: 26
+            lineNumber: 230,
+            columnNumber: 11
           }
-        }, section[0].replace('*', '')), ": ", __jsx(NumberValue, {
+        }, section[0].replace('*', '')), ":", ' ', __jsx(NumberValue, {
           value: section[1],
-          __self: _this3,
+          __self: _this2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 285,
-            columnNumber: 74
+            lineNumber: 233,
+            columnNumber: 11
           }
         }));
       }), __jsx("br", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 287,
+          lineNumber: 237,
           columnNumber: 8
         }
       }), __jsx(_components_ui_Button__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -70099,7 +70058,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 288,
+          lineNumber: 238,
           columnNumber: 8
         }
       }, "NYC Health Github")), __jsx("div", {
@@ -70107,7 +70066,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 290,
+          lineNumber: 240,
           columnNumber: 7
         }
       }, __jsx("h2", {
@@ -70115,7 +70074,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 291,
+          lineNumber: 241,
           columnNumber: 8
         }
       }, "New York City:"), __jsx("div", {
@@ -70123,32 +70082,33 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 292,
+          lineNumber: 242,
           columnNumber: 8
         }
-      }, this.state.totals.map(function (section, index) {
+      }, //	eslint-disable-next-line @typescript-eslint/no-explicit-any
+      totals.map(function (section) {
         return __jsx("div", {
-          key: index,
-          __self: _this3,
+          key: section[0],
+          __self: _this2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 294,
-            columnNumber: 10
+            lineNumber: 246,
+            columnNumber: 11
           }
         }, __jsx("strong", {
-          __self: _this3,
+          __self: _this2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 294,
-            columnNumber: 27
+            lineNumber: 247,
+            columnNumber: 12
           }
-        }, section[0].replace('*', '')), " ", __jsx(NumberValue, {
+        }, section[0].replace('*', '')), ' ', __jsx(NumberValue, {
           value: section[1],
-          __self: _this3,
+          __self: _this2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 294,
-            columnNumber: 74
+            lineNumber: 249,
+            columnNumber: 12
           }
         }));
       }))))));
@@ -70184,56 +70144,57 @@ __webpack_require__.r(__webpack_exports__);
 
 var DataHelper = /*#__PURE__*/function () {
   /**
-   * Main DataHelper constructor
-   */
-  function DataHelper(opts) {
+  * Main DataHelper constructor
+  */
+  function DataHelper(options) {
+    var _this = this;
+
     Object(_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, DataHelper);
 
     Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_3__["default"])(this, "data", {});
 
     Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_3__["default"])(this, "path", '');
 
+    Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_3__["default"])(this, "fetchData", function () {
+      return fetch("".concat(_this.path, "?cache-control=").concat(new Date().getTime())).then(function (response) {
+        var reader = response.body.getReader();
+        var decoder = new TextDecoder('utf-8'); //	eslint-disable-next-line @typescript-eslint/no-explicit-any
+
+        return reader.read().then(function (result) {
+          return decoder.decode(result.value);
+        });
+      });
+    });
+
     if (this instanceof DataHelper) {
-      opts = opts || {};
+      var opts = options || {};
       this.data = {};
       this.path = opts.path;
       return this;
     }
 
-    return new DataHelper(opts);
+    return new DataHelper(options);
   }
   /**
-   * 
-   *
-   * @api private
-   */
+  *
+  *
+  * @api private
+  */
+  //	eslint-disable-next-line @typescript-eslint/no-explicit-any
 
 
   Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(DataHelper, [{
-    key: "fetchData",
-    value: function fetchData() {
-      var datahelper = this;
-      return fetch(datahelper.path + '?cache-control=' + new Date().getTime()).then(function (response) {
-        var reader = response.body.getReader();
-        var decoder = new TextDecoder('utf-8');
-        return reader.read().then(function (result) {
-          return decoder.decode(result.value);
-        });
-      });
-    }
-    /**
-     * 
-     *
-     * @api private
-     */
-
-  }, {
     key: "resolveData",
+
+    /**
+    *
+    *
+    * @api private
+    */
     value: function resolveData(result) {
       this.data = result;
-      console.log('DatCon DONE');
-      console.log(this.data);
-    }
+    } //	eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   }, {
     key: "getData",
     value: function getData(path, fn) {
@@ -70249,8 +70210,9 @@ var DataHelper = /*#__PURE__*/function () {
             case 3:
               d = _context.sent;
               fn.call(this, d);
+              return _context.abrupt("return", fn);
 
-            case 5:
+            case 6:
             case "end":
               return _context.stop();
           }
@@ -70263,18 +70225,17 @@ var DataHelper = /*#__PURE__*/function () {
 }();
 
 
-;
 
 /***/ }),
 
 /***/ 3:
-/*!*************************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Fvisualization&absolutePagePath=%2FUsers%2Fdadams%2FDesktop%2FCode%2Fhydrotik%2Fsrc%2Fpages%2Fvisualization.tsx ***!
-  \*************************************************************************************************************************************************************/
+/*!***********************************************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fvisualization&absolutePagePath=%2FUsers%2Fdadams%2FDesktop%2FCode%2Fhydrotik%2Fsrc%2Fpages%2Fvisualization.tsx&hotRouterUpdates=true ***!
+  \***********************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fvisualization&absolutePagePath=%2FUsers%2Fdadams%2FDesktop%2FCode%2Fhydrotik%2Fsrc%2Fpages%2Fvisualization.tsx! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fvisualization&absolutePagePath=%2FUsers%2Fdadams%2FDesktop%2FCode%2Fhydrotik%2Fsrc%2Fpages%2Fvisualization.tsx!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fvisualization&absolutePagePath=%2FUsers%2Fdadams%2FDesktop%2FCode%2Fhydrotik%2Fsrc%2Fpages%2Fvisualization.tsx&hotRouterUpdates=true! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fvisualization&absolutePagePath=%2FUsers%2Fdadams%2FDesktop%2FCode%2Fhydrotik%2Fsrc%2Fpages%2Fvisualization.tsx&hotRouterUpdates=true!./");
 
 
 /***/ }),
