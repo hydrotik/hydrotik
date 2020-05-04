@@ -1,10 +1,16 @@
 import React from 'react';
-import Papa from 'papaparse';
+import Papa, { ParseResult } from 'papaparse';
 import moment from 'moment';
 import Layout from '../components/global/layout';
 import Chart from '../components/ui/Chart';
 import Button from '../components/ui/Button';
 import DataHelper from '../utils/DataHelper';
+
+const dc = new DataHelper();
+
+/*
+*	Types and Interfaces
+*/
 
 type MyProps = {
 	dc: DataHelper;
@@ -17,6 +23,16 @@ type DataProps = {
 type CovidProps = {
 };
 
+interface PDFItemProps {
+	children: string;
+}
+
+type ParseProps = {
+	complete(result: string): void;
+	header?: boolean;
+	dynamicTyping?: boolean;
+};
+
 type MyState = {
 	github: string;
 	totals: Array<object>;
@@ -25,30 +41,26 @@ type MyState = {
 	sex: Array<string>;
 };
 
+type NumberProps = {
+	value: number|string;
+};
+
+/*
+*	Helper functions and sanitizers
+*/
+
 function numberWithCommas(x: string): string {
 	return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
 
-type NumberProps = {
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	value: any;
-};
-
 function NumberValue(props: NumberProps): JSX.Element {
 	const { value } = props;
-	if (Number.isNaN(value)) {
-		return value;
-	}
-	return (
-		<span>{ numberWithCommas(value) }</span>
-	);
+	return <span>{ typeof value === 'number' ? value : numberWithCommas(value) }</span>;
 }
 
-const dc = new DataHelper();
-
-interface PDFItemProps {
-	children: string;
-}
+/*
+*	Visualization Class
+*/
 
 class Visualization extends React.Component<MyProps, MyState> {
 	constructor(props: MyProps) {
@@ -75,8 +87,7 @@ class Visualization extends React.Component<MyProps, MyState> {
 
 		dc.getData(
 			'https://raw.githubusercontent.com/nychealth/coronavirus-data/master/summary.csv',
-			//	eslint-disable-next-line @typescript-eslint/no-explicit-any
-			(data: any): void => {
+			(data: string): void => {
 				Papa.parse(data, {
 					header: false,
 					complete: cvcb,
@@ -90,8 +101,7 @@ class Visualization extends React.Component<MyProps, MyState> {
 
 		dc.getData(
 			'https://api.github.com/repos/nychealth/coronavirus-data/commits',
-			//	eslint-disable-next-line @typescript-eslint/no-explicit-any
-			(data: any): void => {
+			(data: string): void => {
 				ParseGithub(data, {
 					complete: cghcb,
 				});
@@ -102,8 +112,7 @@ class Visualization extends React.Component<MyProps, MyState> {
 
 		dc.getData(
 			'https://raw.githubusercontent.com/nychealth/coronavirus-data/master/boro.csv',
-			//	eslint-disable-next-line @typescript-eslint/no-explicit-any
-			(data: any): void => {
+			(data: string): void => {
 				Papa.parse(data, {
 					header: false,
 					complete: boroughcb,
@@ -116,8 +125,7 @@ class Visualization extends React.Component<MyProps, MyState> {
 
 		dc.getData(
 			'https://raw.githubusercontent.com/nychealth/coronavirus-data/master/by-age.csv',
-			//	eslint-disable-next-line @typescript-eslint/no-explicit-any
-			(data: any): void => {
+			(data: string): void => {
 				Papa.parse(data, {
 					header: false,
 					complete: agecb,
@@ -130,8 +138,7 @@ class Visualization extends React.Component<MyProps, MyState> {
 
 		dc.getData(
 			'https://raw.githubusercontent.com/nychealth/coronavirus-data/master/by-sex.csv',
-			//	eslint-disable-next-line @typescript-eslint/no-explicit-any
-			(data: any): void => {
+			(data: string): void => {
 				Papa.parse(data, {
 					header: false,
 					complete: sexcb,
@@ -141,36 +148,30 @@ class Visualization extends React.Component<MyProps, MyState> {
 		);
 	}
 
-	//	eslint-disable-next-line @typescript-eslint/no-explicit-any
-	resolveCsvData(result: any): void {
+	resolveCsvData(result: ParseResult): void {
 		this.setState({ totals: result.data });
 	}
 
-	//	eslint-disable-next-line @typescript-eslint/no-explicit-any
-	resolveGithubData(result: any): void {
+	resolveGithubData(result: string): void {
 		this.setState({ github: result });
 	}
 
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	resolveBoroughData(result: any): void {
+	resolveBoroughData(result: ParseResult): void {
 		result.data.shift();
 		this.setState({ borough: result.data });
 	}
 
-	//	eslint-disable-next-line @typescript-eslint/no-explicit-any
-	resolveAgeData(result: any): void {
+	resolveAgeData(result: ParseResult): void {
 		result.data.shift();
 		this.setState({ age: result.data });
 	}
 
-	//	eslint-disable-next-line @typescript-eslint/no-explicit-any
-	resolveSexData(result: any): void {
+	resolveSexData(result: ParseResult): void {
 		result.data.shift();
 		this.setState({ sex: result.data });
 	}
 
-	//	eslint-disable-next-line @typescript-eslint/no-explicit-any
-	parseGithubData(result: any, config: any): void {
+	parseGithubData(result: string, config: ParseProps): void {
 		const r = JSON.parse(result)[0];
 		const d = r.commit.author.date;
 		const n = moment(d).format('MM/DD/YYYY, hh:hh a');
