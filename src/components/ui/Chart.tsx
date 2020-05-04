@@ -18,11 +18,11 @@ const colorMed = '#90A4AE';
 const colorLight = '#bdc6cb';
 
 export interface ChartInterface extends React.Component<ChartProps> {
-	checkKey(obj: any, key: string): boolean;
+	checkKey(obj: object, key: string): boolean;
 	fetchCsv(): object;
-	resolveCsvData(result: any): void;
+	resolveCsvData(result: object): void;
 	getCsvData(): void;
-	updateKey(obj: any, oldkey: string, newkey: string): object;
+	updateKey(obj: object, oldkey: string, newkey: string): object;
 }
 
 type ChartProps = {
@@ -45,7 +45,7 @@ type CSVProps = {
 }
 
 class Chart extends React.Component<ChartProps, ChartState> implements ChartInterface {
-	constructor(props: IProps) {
+	constructor(props: ChartProps) {
 		super(props);
 
 		this.state = {
@@ -55,10 +55,11 @@ class Chart extends React.Component<ChartProps, ChartState> implements ChartInte
 		this.resolveCsvData = this.resolveCsvData.bind(this);
 	}
 
-	componentDidMount() {
+	componentDidMount(): void {
 		this.getCsvData();
 	}
 
+	// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 	async getCsvData() {
 		try {
 			const csvData = await this.fetchCsv();
@@ -67,61 +68,53 @@ class Chart extends React.Component<ChartProps, ChartState> implements ChartInte
 				complete: this.resolveCsvData,
 				dynamicTyping: true,
 			});
-		} catch (e: Error) {
-			return e;
+		} catch (e) {
+			throw new Error(e);
 		}
 	}
 
-	fetchCsv = () => fetch(`https://raw.githubusercontent.com/nychealth/coronavirus-data/master/case-hosp-death.csv?cache-control=${(new Date()).getTime()}`)
-		.then(function (response: any) {
+	//	eslint-disable-next-line @typescript-eslint/no-explicit-any
+	fetchCsv = (): any => fetch(`https://raw.githubusercontent.com/nychealth/coronavirus-data/master/case-hosp-death.csv?cache-control=${(new Date()).getTime()}`)
+		//	eslint-disable-next-line @typescript-eslint/no-explicit-any
+		.then((response: any) => {
 			try {
 				const reader = response.body.getReader();
 				const decoder = new TextDecoder('utf-8');
 
-				return reader.read().then(function (result: any) {
-					return decoder.decode(result.value);
-				}).catch((e: any) => {
-					throw new Error(`fetchCsv() read() error: ${e}`);
-				});
-			} catch(e: Error) {
-				return null;
+				return reader.read()
+					//	eslint-disable-next-line @typescript-eslint/no-explicit-any
+					.then((result: any) => decoder.decode(result.value)).catch((e: Error) => {
+						throw new Error(`fetchCsv() read() error: ${e}`);
+					});
+			} catch (e) {
+				throw new Error(`fetchCsv() fetch() error: ${e}`);
 			}
-		}).catch((e: any) => {
+		}).catch((e: Error) => {
 			throw new Error(`fetchCsv() fetch() error: ${e}`);
 		})
 
-	checkCSVData(data: Array<CSVProps>) {
-		//	FIX for https://github.com/nychealth/coronavirus-data/issues/41
-		const badkey = 'Retrieving data. Wait a few seconds and try to cut or copy again.';
-		const goodkey = 'DATE_OF_INTEREST';
+	checkKey = (obj: object, key: string): boolean => key in obj;
 
-		//	TODO Write test validating schema of object props
-		data.map((obj: CSVProps) => {
-			if (this.checkKey(obj, badkey)) {
-				obj = this.updateKey(obj, badkey, goodkey);
-			}
-		});
-
-		return data;
-	}
-
-	resolveCsvData = (result: any) => {
-		result.data.splice(-2, 2);
-
-		this.setState({
-			data: this.checkCSVData(result.data),
-		});
-	}
-
-	checkKey = (obj: any, key: string) => key in obj;
-
-	updateKey = (obj: any, oldkey: string, newkey: string) => {
+	//	eslint-disable-next-line @typescript-eslint/no-explicit-any
+	updateKey = (obj: any, oldkey: string, newkey: string): any => {
+		//	eslint-disable-next-line no-param-reassign
 		obj[newkey] = obj[oldkey];
+		//	eslint-disable-next-line no-param-reassign
 		delete obj[oldkey];
 		return obj;
 	}
 
+	//	eslint-disable-next-line @typescript-eslint/no-explicit-any
+	resolveCsvData = (result: any): void => {
+		result.data.splice(-2, 2);
+
+		this.setState({
+			data: result.data,
+		});
+	}
+
 	render(): JSX.Element {
+		const { data } = this.state;
 		return (
 			<VictoryChart
 				theme={VictoryTheme.material}
@@ -135,13 +128,13 @@ class Chart extends React.Component<ChartProps, ChartState> implements ChartInte
 					crossAxis
 					theme={VictoryTheme.material}
 					standalone={false}
-					tickLabelComponent={
+					tickLabelComponent={(
 						<VictoryLabel
 							renderInPortal
 						/>
-					}
+					)}
 					//	new Date() for https://momentjs.com/guides/#/warnings/js-date/ [CLEANUP]
-					tickFormat={(t) => moment(new Date(t)).format('M/D/YY')}
+					tickFormat={(t): string => moment(new Date(t)).format('M/D/YY')}
 					fixLabelOverlap
 				/>
 				<VictoryAxis
@@ -176,8 +169,8 @@ class Chart extends React.Component<ChartProps, ChartState> implements ChartInte
 							data: { stroke: colorDark },
 							parent: { border: '1px solid #ccc' },
 						}}
-						data={this.state.data}
-						x={(d) => moment(d.DATE_OF_INTEREST, 'MM/DD/YY').toDate().toString()}
+						data={data}
+						x={(d): string => moment(d.DATE_OF_INTEREST, 'MM/DD/YY').toDate().toString()}
 						y="CASE_COUNT"
 					/>
 					<VictoryArea
@@ -185,8 +178,8 @@ class Chart extends React.Component<ChartProps, ChartState> implements ChartInte
 							data: { stroke: colorMed },
 							parent: { border: '1px solid #ccc' },
 						}}
-						data={this.state.data}
-						x={(d) => moment(d.DATE_OF_INTEREST, 'MM/DD/YY').toDate().toString()}
+						data={data}
+						x={(d): string => moment(d.DATE_OF_INTEREST, 'MM/DD/YY').toDate().toString()}
 						y="HOSPITALIZED_COUNT"
 					/>
 					<VictoryArea
@@ -194,8 +187,8 @@ class Chart extends React.Component<ChartProps, ChartState> implements ChartInte
 							data: { stroke: colorLight },
 							parent: { border: '1px solid #ccc' },
 						}}
-						data={this.state.data}
-						x={(d) => moment(d.DATE_OF_INTEREST, 'MM/DD/YY').toDate().toString()}
+						data={data}
+						x={(d): string => moment(d.DATE_OF_INTEREST, 'MM/DD/YY').toDate().toString()}
 						y="DEATH_COUNT"
 					/>
 				</VictoryGroup>

@@ -33,7 +33,7 @@ function Header(): JSX.Element {
 					</svg>
 				</button>
 
-				<ul className={`${isExpanded ? 'block' : 'hidden'} md:flex flex-col md:flex-row md:items-center md:justify-center text-sm w-full md:w-auto`}>
+				<ul role="navigation" className={`${isExpanded ? 'block' : 'hidden'} md:flex flex-col md:flex-row md:items-center md:justify-center text-sm w-full md:w-auto`}>
 					{[
 						{ title: 'Home', route: `${process.env.BACKEND_URL}/` },
 						{ title: 'About', route: `${process.env.BACKEND_URL}/about` },

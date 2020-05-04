@@ -1,65 +1,56 @@
-import Papa from 'papaparse';
-
 
 type Props = {
 	path?: string | undefined;
 };
 
-
-
-
 export default class DataHelper {
+	private data: object = {};
 
-	private data:any = {};
-	private path:string | undefined = '';
+	private path: string | undefined = '';
 
 	/**
-	 * Main DataHelper constructor
-	 */
+	* Main DataHelper constructor
+	*/
 
-	constructor(opts?:Props) {
+	constructor(options?: Props) {
 		if (this instanceof DataHelper) {
-			opts = opts || {};
+			const opts = options || {};
 
 			this.data = {};
 			this.path = opts.path;
 			return this;
 		}
 
-		return new DataHelper(opts);
+		return new DataHelper(options);
 	}
 
 	/**
-	 * 
-	 *
-	 * @api private
-	 */
-	private fetchData() {
-		var datahelper = this;
-		return fetch(datahelper.path + '?cache-control=' + (new Date()).getTime()).then(function (response:any) {
-			let reader = response.body.getReader();
-			let decoder = new TextDecoder('utf-8');
-
-			return reader.read().then(function (result:any) {
-				return decoder.decode(result.value);
-			});
-		});
-	}
+	*
+	*
+	* @api private
+	*/
+	//	eslint-disable-next-line @typescript-eslint/no-explicit-any
+	private fetchData = (): Promise<object> => fetch(`${this.path}?cache-control=${(new Date()).getTime()}`).then((response: any) => {
+		const reader = response.body.getReader();
+		const decoder = new TextDecoder('utf-8');
+		//	eslint-disable-next-line @typescript-eslint/no-explicit-any
+		return reader.read().then((result: any) => decoder.decode(result.value));
+	});
 
 	/**
-	 * 
-	 *
-	 * @api private
-	 */
-	private resolveData(result:any) {
+	*
+	*
+	* @api private
+	*/
+	private resolveData(result: object): void {
 		this.data = result;
-		console.log('DatCon DONE');
-		console.log(this.data);
 	}
 
-	async getData(path:string, fn:any) {
+	//	eslint-disable-next-line @typescript-eslint/no-explicit-any
+	async getData(path: string, fn: any): Promise<object> {
 		this.path = path;
-		let d = await this.fetchData();
-		fn.call(this, d)
+		const d = await this.fetchData();
+		fn.call(this, d);
+		return fn;
 	}
-};
+}
