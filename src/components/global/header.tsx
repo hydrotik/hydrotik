@@ -1,10 +1,9 @@
-import Link from "next/link";
-import { useState } from "react";
+import Link from 'next/link';
+import { useState } from 'react';
+import Head from 'next/head';
 
-import Head from 'next/head'
 
-
-function Header() {
+function Header(): JSX.Element {
 	const [isExpanded, toggleExpansion] = useState(false);
 
 	return (
@@ -17,47 +16,30 @@ function Header() {
 
 			<div className="flex flex-wrap md:flex-no-wrap items-center justify-between max-w-4xl mx-auto p-4 md:p-8">
 				<div className="flex items-center">
-					<img
-						src="images/logo.svg"
-						className="mr-3 text-white w-10"
-					/>
-
-					<Link href={process.env.BACKEND_URL + "/"}>
-
-					
-						<a className="text-white text-xl">
+					<img src="images/logo.svg" className="mr-3 text-white w-10" alt="Hydrotik Logo" />
+					<Link href={`${process.env.BACKEND_URL}/`}>
+						<a className="text-white text-xl" href="">
 							Hydrotik
 						</a>
 					</Link>
 				</div>
 
-				<button
-					className="block md:hidden border border-white flex items-center px-3 py-2 rounded text-white"
-					onClick={() => toggleExpansion(!isExpanded)}
-				>
-					<svg
-						className="fill-current h-3 w-3"
-						viewBox="0 0 20 20"
-						xmlns="http://www.w3.org/2000/svg"
-					>
+				<button className="block md:hidden border border-white flex items-center px-3 py-2 rounded text-white" onClick={(): void => toggleExpansion(!isExpanded)}>
+					<svg className="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
 						<title>Menu</title>
 						<path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
 					</svg>
 				</button>
 
-				<ul
-					className={`${
-						isExpanded ? `block` : `hidden`
-					} md:flex flex-col md:flex-row md:items-center md:justify-center text-sm w-full md:w-auto`}
-				>
+				<ul className={`${isExpanded ? `block` : `hidden`} md:flex flex-col md:flex-row md:items-center md:justify-center text-sm w-full md:w-auto`}>
 					{[
-						{ title: "Home", route: process.env.BACKEND_URL + "/" },
-						{ title: "About", route: process.env.BACKEND_URL + "/about" },
-						{ title: "Covid Visualization", route: process.env.BACKEND_URL + "/visualization" }
-					].map(navigationItem => (
+						{ title: 'Home', route: `${process.env.BACKEND_URL}/` },
+						{ title: 'About', route: `${process.env.BACKEND_URL}/about` },
+						{ title: 'Covid Visualization', route: `${process.env.BACKEND_URL}/visualization` },
+					].map((navigationItem) => (
 						<li className="mt-3 md:mt-0 md:ml-6" key={navigationItem.title}>
 							<Link href={navigationItem.route}>
-								<a className="block text-white">{navigationItem.title}</a>
+								<a className="block text-white" href="">{navigationItem.title}</a>
 							</Link>
 						</li>
 					))}
