@@ -11,7 +11,8 @@
     "test": "jest --forceExit --runInBand --detectOpenHandles",
     "test:watch": "jest --watch --runInBand --detectOpenHandles",
     "test:coverage": "jest --coverage --forceExit --runInBand --detectOpenHandles",
-    "coverage": "nyc --reporter=lcov --reporter=text npm run test"
+    "coverage": "nyc --reporter=lcov --reporter=text npm run test",
+    "lighthouse": "mkdir -p .lighthouse-reports && cd .lighthouse-reports && lighthouse http://localhost:3000 --config-path=../.lighthouse.js"
   },
   "repository": {
     "type": "git",

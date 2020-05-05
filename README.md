@@ -6,9 +6,19 @@
 - **TypesScript** Strongly typed JavaScript
 - **Tailwind** CSS framework
 - **Victory** Visualization framework for React
+- **Lighthouse** Performance and a11y tool
 - lodash, pdf-reader, moment.js, papaparse
 
 This is a personal playground of my work that allows me to test ideas, explore mistakes, as well present and evolve my professional brand in a fun way. I've been leading others in development pursuits professionally for quite some time. This is a way for me to carve out time to code, which I still very much enjoy.
+
+Need Lighthouse CLI installed first:
+```bash
+npm install -g lighthouse
+# or use yarn:
+# yarn global add lighthouse
+```
+
+Then...
 
 ```bash
 npm install

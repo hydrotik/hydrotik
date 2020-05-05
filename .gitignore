@@ -28,6 +28,10 @@ coverage
 # nyc test coverage
 .nyc_output
 
+# Lighthouse output
+.lighthouse
+.lighthouse-reports
+
 # Grunt intermediate storage (https://gruntjs.com/creating-plugins#storing-task-files)
 .grunt
 

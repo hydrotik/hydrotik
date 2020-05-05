@@ -68927,7 +68927,7 @@ var Footer = function Footer(_ref) {
   var _ref$footerTitle = _ref.footerTitle,
       footerTitle = _ref$footerTitle === void 0 ? "\xA9 ".concat(new Date().getFullYear(), " Hydrotik") : _ref$footerTitle;
   return __jsx("footer", {
-    className: "bg-red-300",
+    className: "bg-gray-900",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
@@ -68935,7 +68935,7 @@ var Footer = function Footer(_ref) {
       columnNumber: 2
     }
   }, __jsx("ul", {
-    className: "flex items-center justify-between max-w-4xl mx-auto p-4 md:p-8 text-sm text-gray-900",
+    className: "flex items-center justify-between max-w-4xl mx-auto p-4 md:p-8 text-sm text-white",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
@@ -69030,14 +69030,21 @@ function Header() {
       lineNumber: 12,
       columnNumber: 4
     }
-  }, __jsx("link", {
+  }, __jsx("title", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13,
+      columnNumber: 5
+    }
+  }, "Hydrotik | Donovan Adams"), __jsx("link", {
     rel: "shortcut icon",
     href: "/favicon.ico",
     type: "image/x-icon",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13,
+      lineNumber: 14,
       columnNumber: 5
     }
   }), __jsx("link", {
@@ -69047,15 +69054,15 @@ function Header() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14,
+      lineNumber: 15,
       columnNumber: 5
     }
-  })), __jsx("div", {
+  })), __jsx("nav", {
     className: "flex flex-wrap md:flex-no-wrap items-center justify-between max-w-4xl mx-auto p-4 md:p-8",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17,
+      lineNumber: 18,
       columnNumber: 4
     }
   }, __jsx("div", {
@@ -69063,7 +69070,7 @@ function Header() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 19,
       columnNumber: 5
     }
   }, __jsx("img", {
@@ -69073,7 +69080,7 @@ function Header() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 20,
       columnNumber: 6
     }
   }), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -69081,7 +69088,7 @@ function Header() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
+      lineNumber: 22,
       columnNumber: 6
     }
   }, __jsx("a", {
@@ -69089,7 +69096,7 @@ function Header() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23,
+      lineNumber: 24,
       columnNumber: 7
     }
   }, "Hydrotik"))), __jsx("button", {
@@ -69100,24 +69107,25 @@ function Header() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29,
+      lineNumber: 30,
       columnNumber: 5
     }
   }, __jsx("svg", {
+    role: "img",
     className: "fill-current h-3 w-3",
     viewBox: "0 0 20 20",
     xmlns: "http://www.w3.org/2000/svg",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 31,
       columnNumber: 6
     }
   }, __jsx("title", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
+      lineNumber: 32,
       columnNumber: 7
     }
   }, "Menu"), __jsx("path", {
@@ -69125,16 +69133,15 @@ function Header() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32,
+      lineNumber: 33,
       columnNumber: 7
     }
   }))), __jsx("ul", {
-    role: "navigation",
     className: "".concat(isExpanded ? 'block' : 'hidden', " md:flex flex-col md:flex-row md:items-center md:justify-center text-sm w-full md:w-auto"),
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
+      lineNumber: 37,
       columnNumber: 5
     }
   }, [{
@@ -69153,7 +69160,7 @@ function Header() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 42,
+        lineNumber: 43,
         columnNumber: 7
       }
     }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -69161,7 +69168,7 @@ function Header() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 43,
+        lineNumber: 44,
         columnNumber: 8
       }
     }, __jsx("a", {
@@ -69170,7 +69177,7 @@ function Header() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 45,
+        lineNumber: 46,
         columnNumber: 9
       }
     }, navigationItem.title)));
@@ -69303,7 +69310,7 @@ var Button = /*#__PURE__*/function (_React$Component) {
           children = _this$props.children;
       return __jsx("a", {
         href: href,
-        className: "btn-blue no-underline",
+        className: "bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded",
         target: target,
         __self: this,
         __source: {
@@ -69705,29 +69712,33 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 
 
+var dc = new _utils_DataHelper__WEBPACK_IMPORTED_MODULE_12__["default"]();
+/*
+*	Types and Interfaces
+*/
 
+/*
+*	Helper functions and sanitizers
+*/
 function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
 
 function NumberValue(props) {
   var value = props.value;
-
-  if (Number.isNaN(value)) {
-    return value;
-  }
-
   return __jsx("span", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
-      columnNumber: 3
+      lineNumber: 58,
+      columnNumber: 9
     }
-  }, numberWithCommas(value));
+  }, typeof value === 'number' ? value : numberWithCommas(value));
 }
+/*
+*	Visualization Class
+*/
 
-var dc = new _utils_DataHelper__WEBPACK_IMPORTED_MODULE_12__["default"]();
 
 var Visualization = /*#__PURE__*/function (_React$Component) {
   Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_3__["default"])(Visualization, _React$Component);
@@ -69760,8 +69771,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       var cvcb = this.resolveCsvData;
-      dc.getData('https://raw.githubusercontent.com/nychealth/coronavirus-data/master/summary.csv', //	eslint-disable-next-line @typescript-eslint/no-explicit-any
-      function (data) {
+      dc.getData('https://raw.githubusercontent.com/nychealth/coronavirus-data/master/summary.csv', function (data) {
         papaparse__WEBPACK_IMPORTED_MODULE_7___default.a.parse(data, {
           header: false,
           complete: cvcb,
@@ -69770,15 +69780,13 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
       });
       var cghcb = this.resolveGithubData;
       var ParseGithub = this.parseGithubData;
-      dc.getData('https://api.github.com/repos/nychealth/coronavirus-data/commits', //	eslint-disable-next-line @typescript-eslint/no-explicit-any
-      function (data) {
+      dc.getData('https://api.github.com/repos/nychealth/coronavirus-data/commits', function (data) {
         ParseGithub(data, {
           complete: cghcb
         });
       });
       var boroughcb = this.resolveBoroughData;
-      dc.getData('https://raw.githubusercontent.com/nychealth/coronavirus-data/master/boro.csv', //	eslint-disable-next-line @typescript-eslint/no-explicit-any
-      function (data) {
+      dc.getData('https://raw.githubusercontent.com/nychealth/coronavirus-data/master/boro.csv', function (data) {
         papaparse__WEBPACK_IMPORTED_MODULE_7___default.a.parse(data, {
           header: false,
           complete: boroughcb,
@@ -69786,8 +69794,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         });
       });
       var agecb = this.resolveAgeData;
-      dc.getData('https://raw.githubusercontent.com/nychealth/coronavirus-data/master/by-age.csv', //	eslint-disable-next-line @typescript-eslint/no-explicit-any
-      function (data) {
+      dc.getData('https://raw.githubusercontent.com/nychealth/coronavirus-data/master/by-age.csv', function (data) {
         papaparse__WEBPACK_IMPORTED_MODULE_7___default.a.parse(data, {
           header: false,
           complete: agecb,
@@ -69795,32 +69802,28 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         });
       });
       var sexcb = this.resolveSexData;
-      dc.getData('https://raw.githubusercontent.com/nychealth/coronavirus-data/master/by-sex.csv', //	eslint-disable-next-line @typescript-eslint/no-explicit-any
-      function (data) {
+      dc.getData('https://raw.githubusercontent.com/nychealth/coronavirus-data/master/by-sex.csv', function (data) {
         papaparse__WEBPACK_IMPORTED_MODULE_7___default.a.parse(data, {
           header: false,
           complete: sexcb,
           dynamicTyping: true
         });
       });
-    } //	eslint-disable-next-line @typescript-eslint/no-explicit-any
-
+    }
   }, {
     key: "resolveCsvData",
     value: function resolveCsvData(result) {
       this.setState({
         totals: result.data
       });
-    } //	eslint-disable-next-line @typescript-eslint/no-explicit-any
-
+    }
   }, {
     key: "resolveGithubData",
     value: function resolveGithubData(result) {
       this.setState({
         github: result
       });
-    } // eslint-disable-next-line @typescript-eslint/no-explicit-any
-
+    }
   }, {
     key: "resolveBoroughData",
     value: function resolveBoroughData(result) {
@@ -69828,8 +69831,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
       this.setState({
         borough: result.data
       });
-    } //	eslint-disable-next-line @typescript-eslint/no-explicit-any
-
+    }
   }, {
     key: "resolveAgeData",
     value: function resolveAgeData(result) {
@@ -69837,8 +69839,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
       this.setState({
         age: result.data
       });
-    } //	eslint-disable-next-line @typescript-eslint/no-explicit-any
-
+    }
   }, {
     key: "resolveSexData",
     value: function resolveSexData(result) {
@@ -69846,8 +69847,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
       this.setState({
         sex: result.data
       });
-    } //	eslint-disable-next-line @typescript-eslint/no-explicit-any
-
+    }
   }, {
     key: "parseGithubData",
     value: function parseGithubData(result, config) {
@@ -69872,7 +69872,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 190,
+          lineNumber: 191,
           columnNumber: 4
         }
       }, __jsx("main", {
@@ -69880,22 +69880,30 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 191,
+          lineNumber: 192,
           columnNumber: 5
         }
-      }, __jsx("div", {
+      }, __jsx("h1", {
+        className: "font-bold text-xl mb-5",
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 193,
+          columnNumber: 6
+        }
+      }, "Covid Visualization"), __jsx("div", {
         className: "bg-gray-100 mb-16",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 192,
+          lineNumber: 194,
           columnNumber: 6
         }
       }, __jsx(_components_ui_Chart__WEBPACK_IMPORTED_MODULE_10__["default"], {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 193,
+          lineNumber: 195,
           columnNumber: 7
         }
       })), __jsx("div", {
@@ -69903,7 +69911,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 195,
+          lineNumber: 197,
           columnNumber: 6
         }
       }, __jsx("div", {
@@ -69911,7 +69919,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 196,
+          lineNumber: 198,
           columnNumber: 7
         }
       }, __jsx("h2", {
@@ -69919,7 +69927,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 197,
+          lineNumber: 199,
           columnNumber: 8
         }
       }, "New Covid cases by day in NYC"), __jsx("p", {
@@ -69927,7 +69935,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 198,
+          lineNumber: 200,
           columnNumber: 8
         }
       }, github), __jsx("h2", {
@@ -69935,7 +69943,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 199,
+          lineNumber: 201,
           columnNumber: 8
         }
       }, "Borough Totals:"), //	eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -69945,14 +69953,14 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
           __self: _this2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 203,
+            lineNumber: 205,
             columnNumber: 10
           }
         }, __jsx("strong", {
           __self: _this2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 204,
+            lineNumber: 206,
             columnNumber: 11
           }
         }, section[0].replace('*', '')), ":", ' ', __jsx(NumberValue, {
@@ -69960,7 +69968,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
           __self: _this2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 207,
+            lineNumber: 209,
             columnNumber: 11
           }
         }));
@@ -69968,7 +69976,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 211,
+          lineNumber: 213,
           columnNumber: 8
         }
       }), __jsx("h2", {
@@ -69976,7 +69984,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 212,
+          lineNumber: 214,
           columnNumber: 8
         }
       }, "Case Rate By Age:"), //	eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -69986,14 +69994,14 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
           __self: _this2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 216,
+            lineNumber: 218,
             columnNumber: 10
           }
         }, __jsx("strong", {
           __self: _this2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 217,
+            lineNumber: 219,
             columnNumber: 11
           }
         }, section[0].replace('*', '')), ":", ' ', __jsx(NumberValue, {
@@ -70001,7 +70009,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
           __self: _this2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 220,
+            lineNumber: 222,
             columnNumber: 11
           }
         }));
@@ -70009,7 +70017,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 224,
+          lineNumber: 226,
           columnNumber: 8
         }
       }), __jsx("h2", {
@@ -70017,7 +70025,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 225,
+          lineNumber: 227,
           columnNumber: 8
         }
       }, "Case Rate By Sex:"), //	eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -70027,14 +70035,14 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
           __self: _this2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 229,
+            lineNumber: 231,
             columnNumber: 10
           }
         }, __jsx("strong", {
           __self: _this2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 230,
+            lineNumber: 232,
             columnNumber: 11
           }
         }, section[0].replace('*', '')), ":", ' ', __jsx(NumberValue, {
@@ -70042,7 +70050,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
           __self: _this2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 233,
+            lineNumber: 235,
             columnNumber: 11
           }
         }));
@@ -70050,7 +70058,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 237,
+          lineNumber: 239,
           columnNumber: 8
         }
       }), __jsx(_components_ui_Button__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -70058,7 +70066,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 238,
+          lineNumber: 240,
           columnNumber: 8
         }
       }, "NYC Health Github")), __jsx("div", {
@@ -70066,7 +70074,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 240,
+          lineNumber: 242,
           columnNumber: 7
         }
       }, __jsx("h2", {
@@ -70074,7 +70082,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 241,
+          lineNumber: 243,
           columnNumber: 8
         }
       }, "New York City:"), __jsx("div", {
@@ -70082,7 +70090,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 242,
+          lineNumber: 244,
           columnNumber: 8
         }
       }, //	eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -70092,14 +70100,14 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
           __self: _this2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 246,
+            lineNumber: 248,
             columnNumber: 11
           }
         }, __jsx("strong", {
           __self: _this2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 247,
+            lineNumber: 249,
             columnNumber: 12
           }
         }, section[0].replace('*', '')), ' ', __jsx(NumberValue, {
@@ -70107,7 +70115,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
           __self: _this2,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 249,
+            lineNumber: 251,
             columnNumber: 12
           }
         }));
@@ -70142,6 +70150,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+/*
+*	Types and Interfaces
+*/
 var DataHelper = /*#__PURE__*/function () {
   /**
   * Main DataHelper constructor
@@ -70228,7 +70239,7 @@ var DataHelper = /*#__PURE__*/function () {
 
 /***/ }),
 
-/***/ 3:
+/***/ 2:
 /*!***********************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fvisualization&absolutePagePath=%2FUsers%2Fdadams%2FDesktop%2FCode%2Fhydrotik%2Fsrc%2Fpages%2Fvisualization.tsx&hotRouterUpdates=true ***!
   \***********************************************************************************************************************************************************************************/
@@ -70251,5 +70262,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=visualization.js.map
