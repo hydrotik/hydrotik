@@ -85,6 +85,12 @@ class Visualization extends React.Component<MyProps, MyState> {
 	componentDidMount(): void {
 		const cvcb = this.resolveCsvData;
 
+		dc.getDataPromise('https://raw.githubusercontent.com/nychealth/coronavirus-data/master/summary.csv')
+			.then((result) => {
+				// eslint-disable-next-line no-console
+				console.log(result);
+			});
+
 		dc.getData(
 			'https://raw.githubusercontent.com/nychealth/coronavirus-data/master/summary.csv',
 			(data: string): void => {

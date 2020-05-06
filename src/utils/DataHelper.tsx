@@ -60,4 +60,13 @@ export default class DataHelper {
 		fn.call(this, d);
 		return fn;
 	}
+
+	//	eslint-disable-next-line @typescript-eslint/no-explicit-any
+	getDataPromise = (path: string): Promise<object> => {
+		this.path = path;
+		return new Promise<object>((resolve) => {
+			const d = this.fetchData();
+			resolve(d);
+		});
+	}
 }
