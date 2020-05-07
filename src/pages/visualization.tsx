@@ -39,6 +39,10 @@ type MyState = {
 	borough: Array<Array<string>>;
 	age: Array<Array<string>>;
 	sex: Array<Array<string>>;
+	boroughLoading: boolean;
+	ageLoading: boolean;
+	sexLoading: boolean;
+	totalsLoading: boolean;
 }
 
 type NumberProps = {
@@ -58,6 +62,34 @@ function NumberValue(props: NumberProps): JSX.Element {
 	return <span>{ typeof value !== 'number' ? value : numberWithCommas(value) }</span>;
 }
 
+type DataResultsProps = {
+	value: Array<Array<string>>;
+	loading: boolean;
+	hasColon?: boolean;
+}
+
+function DataResults(props: DataResultsProps): JSX.Element {
+	const { value, loading, hasColon } = props;
+
+	if (loading) {
+		return <span>Loading Data...</span>;
+	}
+
+	return (
+		<div className="mb-3">
+			{
+				value.map((item: string[]) => (
+					<div key={item[0]}>
+						<strong>{item[0]}</strong>
+						{hasColon ? ' ' : ': '}
+						<NumberValue value={item[1]} />
+					</div>
+				))
+			}
+		</div>
+	);
+}
+
 /*
 *	Visualization Class
 */
@@ -68,20 +100,28 @@ class Visualization extends React.Component<MyProps, MyState> {
 
 		this.state = {
 			github: 'Loading data...',
-			totals: [['Loading data...'], []],
-			borough: [['Loading data...'], []],
-			age: [['Loading data...'], []],
-			sex: [['Loading data...'], []],
+			totals: [[], []],
+			borough: [[], []],
+			age: [[], []],
+			sex: [[], []],
+			boroughLoading: true,
+			ageLoading: true,
+			sexLoading: true,
+			totalsLoading: true,
 		};
 	}
 
 	componentDidMount(): void {
+		const papaConfig: object = {
+			header: false,
+			dynamicTyping: true,
+		};
+
 		dc.getDataPromise('https://raw.githubusercontent.com/nychealth/coronavirus-data/master/summary.csv')
 			.then((result: object) => {
 				let data;
 				Papa.parse(result.toString(), {
-					header: false,
-					dynamicTyping: true,
+					...papaConfig,
 					complete: (r) => {
 						data = r;
 					},
@@ -91,7 +131,10 @@ class Visualization extends React.Component<MyProps, MyState> {
 			.then((result) => {
 				const { data } = (result as unknown) as DataProps;
 				const noAsteriks: Array<Array<string>> = JSON.parse(JSON.stringify(data).replace(/\*/g, ''));
-				this.resolveCsvData(noAsteriks);
+				this.setState({
+					totals: noAsteriks,
+					totalsLoading: false,
+				});
 			});
 
 		dc.getDataPromise('https://api.github.com/repos/nychealth/coronavirus-data/commits')
@@ -103,15 +146,14 @@ class Visualization extends React.Component<MyProps, MyState> {
 				return s;
 			})
 			.then((result) => {
-				this.resolveGithubData(result);
+				this.setState({ github: result });
 			});
 
 		dc.getDataPromise('https://raw.githubusercontent.com/nychealth/coronavirus-data/master/boro.csv')
 			.then((result: object) => {
 				let data;
 				Papa.parse(result.toString(), {
-					header: false,
-					dynamicTyping: true,
+					...papaConfig,
 					complete: (r) => {
 						data = r;
 					},
@@ -119,15 +161,19 @@ class Visualization extends React.Component<MyProps, MyState> {
 				return data;
 			})
 			.then((result) => {
-				this.resolveBoroughData((result as unknown) as ParseResult);
+				const r = (result as unknown) as ParseResult;
+				r.data.shift();
+				this.setState({
+					borough: r.data,
+					boroughLoading: false,
+				});
 			});
 
 		dc.getDataPromise('https://raw.githubusercontent.com/nychealth/coronavirus-data/master/by-age.csv')
 			.then((result: object) => {
 				let data;
 				Papa.parse(result.toString(), {
-					header: false,
-					dynamicTyping: true,
+					...papaConfig,
 					complete: (r) => {
 						data = r;
 					},
@@ -135,15 +181,19 @@ class Visualization extends React.Component<MyProps, MyState> {
 				return data;
 			})
 			.then((result) => {
-				this.resolveAgeData((result as unknown) as ParseResult);
+				const r = (result as unknown) as ParseResult;
+				r.data.shift();
+				this.setState({
+					age: r.data,
+					ageLoading: false,
+				});
 			});
 
 		dc.getDataPromise('https://raw.githubusercontent.com/nychealth/coronavirus-data/master/by-sex.csv')
 			.then((result: object) => {
 				let data;
 				Papa.parse(result.toString(), {
-					header: false,
-					dynamicTyping: true,
+					...papaConfig,
 					complete: (r) => {
 						data = r;
 					},
@@ -151,39 +201,13 @@ class Visualization extends React.Component<MyProps, MyState> {
 				return data;
 			})
 			.then((result) => {
-				this.resolveSexData((result as unknown) as ParseResult);
+				const r = (result as unknown) as ParseResult;
+				r.data.shift();
+				this.setState({
+					sex: r.data,
+					sexLoading: false,
+				});
 			});
-	}
-
-	resolveCsvData(result: Array<Array<string>>): void {
-		this.setState({ totals: result });
-	}
-
-	resolveGithubData(result: string): void {
-		this.setState({ github: result });
-	}
-
-	resolveBoroughData(result: ParseResult): void {
-		result.data.shift();
-		this.setState({ borough: result.data });
-	}
-
-	resolveAgeData(result: ParseResult): void {
-		result.data.shift();
-		this.setState({ age: result.data });
-	}
-
-	resolveSexData(result: ParseResult): void {
-		result.data.shift();
-		this.setState({ sex: result.data });
-	}
-
-	parseGithubData(result: string, config: ParseProps): void {
-		const r = JSON.parse(result)[0];
-		const d = r.commit.author.date;
-		const n = moment(d).format('MM/DD/YYYY, hh:hh a');
-		const s = `Chart updated on ${n}`;
-		config.complete.apply(this, [s]);
 	}
 
 	render(): JSX.Element {
@@ -193,6 +217,10 @@ class Visualization extends React.Component<MyProps, MyState> {
 			age,
 			sex,
 			totals,
+			boroughLoading,
+			ageLoading,
+			sexLoading,
+			totalsLoading,
 		} = this.state;
 
 		return (
@@ -207,55 +235,18 @@ class Visualization extends React.Component<MyProps, MyState> {
 							<h2 className="font-bold mb-3 text-xl">New Covid cases by day in NYC</h2>
 							<p className="mb-6">{ github }</p>
 							<h2 className="font-bold text-xl">Borough Totals:</h2>
-							{
-								borough.map((value: string[]) => (
-									<div key={value[0]}>
-										<strong>{value[0]}</strong>
-										:
-										{' '}
-										<NumberValue value={value[1]} />
-									</div>
-								))
-							}
-							<br />
+							<DataResults value={borough} loading={boroughLoading} />
 							<h2 className="font-bold text-xl">Case Rate By Age:</h2>
-							{
-								age.map((value: string[]) => (
-									<div key={value[0]}>
-										<strong>{value[0]}</strong>
-										:
-										{' '}
-										<NumberValue value={value[1]} />
-									</div>
-								))
-							}
-							<br />
+							<DataResults value={age} loading={ageLoading} />
 							<h2 className="font-bold text-xl">Case Rate By Sex:</h2>
-							{
-								sex.map((value: string[]) => (
-									<div key={value[0]}>
-										<strong>{value[0]}</strong>
-										:
-										{' '}
-										<NumberValue value={value[1]} />
-									</div>
-								))
-							}
+							<DataResults value={sex} loading={sexLoading} />
 							<br />
-							<Button href="https://github.com/nychealth/coronavirus-data">NYC Health Github</Button>
+							<Button className="mt-6" href="https://github.com/nychealth/coronavirus-data">NYC Health Github</Button>
 						</div>
 						<div className="md:w-1/3">
 							<h2 className="font-bold mb-3 text-xl">New York City:</h2>
 							<div className="mb-6">
-								{
-									totals.map((value: string[]) => (
-										<div key={value[0]}>
-											<strong>{value[0]}</strong>
-											{' '}
-											<NumberValue value={value[1]} />
-										</div>
-									))
-								}
+								<DataResults value={totals} loading={totalsLoading} hasColon />
 							</div>
 						</div>
 					</div>
