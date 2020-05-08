@@ -226,7 +226,7 @@ class Visualization extends React.Component<MyProps, MyState> {
 		return (
 			<Layout>
 				<main className="flex-1 w-full max-w-4xl p-4 mx-auto md:px-8 md:py-16">
-					<h1 className="font-bold text-xl mb-5">Covid Visualization</h1>
+					<h1 className="font-bold text-xl mb-5">COVID-19 Visualization</h1>
 					<div className="bg-gray-100 mb-16">
 						<Chart />
 					</div>

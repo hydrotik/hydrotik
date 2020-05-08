@@ -69307,15 +69307,16 @@ var Button = /*#__PURE__*/function (_React$Component) {
       var _this$props = this.props,
           href = _this$props.href,
           target = _this$props.target,
-          children = _this$props.children;
+          children = _this$props.children,
+          className = _this$props.className;
       return __jsx("a", {
         href: href,
-        className: "bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded",
+        className: "bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded ".concat(className),
         target: target,
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 20,
+          lineNumber: 26,
           columnNumber: 4
         }
       }, children);
@@ -69676,30 +69677,36 @@ var Chart = /*#__PURE__*/function (_React$Component) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
-/* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
-/* harmony import */ var _babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/inherits */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
-/* harmony import */ var _babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js");
-/* harmony import */ var _babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var papaparse__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! papaparse */ "./node_modules/papaparse/papaparse.min.js");
-/* harmony import */ var papaparse__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(papaparse__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
-/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _components_global_layout__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../components/global/layout */ "./src/components/global/layout.tsx");
-/* harmony import */ var _components_ui_Chart__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/ui/Chart */ "./src/components/ui/Chart.tsx");
-/* harmony import */ var _components_ui_Button__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/ui/Button */ "./src/components/ui/Button.tsx");
-/* harmony import */ var _utils_DataHelper__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../utils/DataHelper */ "./src/utils/DataHelper.tsx");
+/* harmony import */ var _babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/defineProperty */ "./node_modules/@babel/runtime/helpers/esm/defineProperty.js");
+/* harmony import */ var _babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/classCallCheck */ "./node_modules/@babel/runtime/helpers/esm/classCallCheck.js");
+/* harmony import */ var _babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/esm/createClass */ "./node_modules/@babel/runtime/helpers/esm/createClass.js");
+/* harmony import */ var _babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/esm/inherits */ "./node_modules/@babel/runtime/helpers/esm/inherits.js");
+/* harmony import */ var _babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/esm/possibleConstructorReturn */ "./node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js");
+/* harmony import */ var _babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/esm/getPrototypeOf */ "./node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var papaparse__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! papaparse */ "./node_modules/papaparse/papaparse.min.js");
+/* harmony import */ var papaparse__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(papaparse__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _components_global_layout__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/global/layout */ "./src/components/global/layout.tsx");
+/* harmony import */ var _components_ui_Chart__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../components/ui/Chart */ "./src/components/ui/Chart.tsx");
+/* harmony import */ var _components_ui_Button__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../components/ui/Button */ "./src/components/ui/Button.tsx");
+/* harmony import */ var _utils_DataHelper__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../utils/DataHelper */ "./src/utils/DataHelper.tsx");
+
 
 
 
 
 
 var _jsxFileName = "/Users/dadams/Desktop/Code/hydrotik/src/pages/visualization.tsx";
-var __jsx = react__WEBPACK_IMPORTED_MODULE_5___default.a.createElement;
+var __jsx = react__WEBPACK_IMPORTED_MODULE_6___default.a.createElement;
 
-function _createSuper(Derived) { return function () { var Super = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_4__["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_3__["default"])(this, result); }; }
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { Object(_babel_runtime_helpers_esm_defineProperty__WEBPACK_IMPORTED_MODULE_0__["default"])(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _createSuper(Derived) { return function () { var Super = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(Derived), result; if (_isNativeReflectConstruct()) { var NewTarget = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_5__["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_4__["default"])(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
@@ -69710,7 +69717,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 
 
-var dc = new _utils_DataHelper__WEBPACK_IMPORTED_MODULE_11__["default"]();
+var dc = new _utils_DataHelper__WEBPACK_IMPORTED_MODULE_12__["default"]();
 /*
 *	Types and Interfaces
 */
@@ -69728,10 +69735,64 @@ function NumberValue(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 62,
       columnNumber: 9
     }
   }, typeof value !== 'number' ? value : numberWithCommas(value));
+}
+
+function DataResults(props) {
+  var _this = this;
+
+  var value = props.value,
+      loading = props.loading,
+      hasColon = props.hasColon;
+
+  if (loading) {
+    return __jsx("span", {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 75,
+        columnNumber: 10
+      }
+    }, "Loading Data...");
+  }
+
+  return __jsx("div", {
+    className: "mb-3",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 79,
+      columnNumber: 3
+    }
+  }, value.map(function (item) {
+    return __jsx("div", {
+      key: item[0],
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 82,
+        columnNumber: 6
+      }
+    }, __jsx("strong", {
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 83,
+        columnNumber: 7
+      }
+    }, item[0]), hasColon ? ' ' : ': ', __jsx(NumberValue, {
+      value: item[1],
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 85,
+        columnNumber: 7
+      }
+    }));
+  }));
 }
 /*
 *	Visualization Class
@@ -69739,160 +69800,138 @@ function NumberValue(props) {
 
 
 var Visualization = /*#__PURE__*/function (_React$Component) {
-  Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_2__["default"])(Visualization, _React$Component);
+  Object(_babel_runtime_helpers_esm_inherits__WEBPACK_IMPORTED_MODULE_3__["default"])(Visualization, _React$Component);
 
   var _super = _createSuper(Visualization);
 
   function Visualization(props) {
-    var _this;
+    var _this2;
 
-    Object(_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_0__["default"])(this, Visualization);
+    Object(_babel_runtime_helpers_esm_classCallCheck__WEBPACK_IMPORTED_MODULE_1__["default"])(this, Visualization);
 
-    _this = _super.call(this, props);
-    _this.state = {
+    _this2 = _super.call(this, props);
+    _this2.state = {
       github: 'Loading data...',
-      totals: [['Loading data...'], []],
-      borough: [['Loading data...'], []],
-      age: [['Loading data...'], []],
-      sex: [['Loading data...'], []]
+      totals: [[], []],
+      borough: [[], []],
+      age: [[], []],
+      sex: [[], []],
+      boroughLoading: true,
+      ageLoading: true,
+      sexLoading: true,
+      totalsLoading: true
     };
-    return _this;
+    return _this2;
   }
 
-  Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_1__["default"])(Visualization, [{
+  Object(_babel_runtime_helpers_esm_createClass__WEBPACK_IMPORTED_MODULE_2__["default"])(Visualization, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      var _this2 = this;
+      var _this3 = this;
 
+      var papaConfig = {
+        header: false,
+        dynamicTyping: true
+      };
       dc.getDataPromise('https://raw.githubusercontent.com/nychealth/coronavirus-data/master/summary.csv').then(function (result) {
         var data;
-        papaparse__WEBPACK_IMPORTED_MODULE_6___default.a.parse(result.toString(), {
-          header: false,
-          dynamicTyping: true,
+        papaparse__WEBPACK_IMPORTED_MODULE_7___default.a.parse(result.toString(), _objectSpread({}, papaConfig, {
           complete: function complete(r) {
             data = r;
           }
-        });
+        }));
         return data;
       }).then(function (result) {
         var _ref = result,
             data = _ref.data;
         var noAsteriks = JSON.parse(JSON.stringify(data).replace(/\*/g, ''));
 
-        _this2.resolveCsvData(noAsteriks);
+        _this3.setState({
+          totals: noAsteriks,
+          totalsLoading: false
+        });
       });
       dc.getDataPromise('https://api.github.com/repos/nychealth/coronavirus-data/commits').then(function (result) {
         var r = JSON.parse(result)[0];
         var d = r.commit.author.date;
-        var n = moment__WEBPACK_IMPORTED_MODULE_7___default()(d).format('MM/DD/YYYY, hh:hh a');
+        var n = moment__WEBPACK_IMPORTED_MODULE_8___default()(d).format('MM/DD/YYYY, hh:hh a');
         var s = "Chart updated on ".concat(n);
         return s;
       }).then(function (result) {
-        _this2.resolveGithubData(result);
+        _this3.setState({
+          github: result
+        });
       });
       dc.getDataPromise('https://raw.githubusercontent.com/nychealth/coronavirus-data/master/boro.csv').then(function (result) {
         var data;
-        papaparse__WEBPACK_IMPORTED_MODULE_6___default.a.parse(result.toString(), {
-          header: false,
-          dynamicTyping: true,
+        papaparse__WEBPACK_IMPORTED_MODULE_7___default.a.parse(result.toString(), _objectSpread({}, papaConfig, {
           complete: function complete(r) {
             data = r;
           }
-        });
+        }));
         return data;
       }).then(function (result) {
-        _this2.resolveBoroughData(result);
+        var r = result;
+        r.data.shift();
+
+        _this3.setState({
+          borough: r.data,
+          boroughLoading: false
+        });
       });
       dc.getDataPromise('https://raw.githubusercontent.com/nychealth/coronavirus-data/master/by-age.csv').then(function (result) {
         var data;
-        papaparse__WEBPACK_IMPORTED_MODULE_6___default.a.parse(result.toString(), {
-          header: false,
-          dynamicTyping: true,
+        papaparse__WEBPACK_IMPORTED_MODULE_7___default.a.parse(result.toString(), _objectSpread({}, papaConfig, {
           complete: function complete(r) {
             data = r;
           }
-        });
+        }));
         return data;
       }).then(function (result) {
-        _this2.resolveAgeData(result);
+        var r = result;
+        r.data.shift();
+
+        _this3.setState({
+          age: r.data,
+          ageLoading: false
+        });
       });
       dc.getDataPromise('https://raw.githubusercontent.com/nychealth/coronavirus-data/master/by-sex.csv').then(function (result) {
         var data;
-        papaparse__WEBPACK_IMPORTED_MODULE_6___default.a.parse(result.toString(), {
-          header: false,
-          dynamicTyping: true,
+        papaparse__WEBPACK_IMPORTED_MODULE_7___default.a.parse(result.toString(), _objectSpread({}, papaConfig, {
           complete: function complete(r) {
             data = r;
           }
-        });
+        }));
         return data;
       }).then(function (result) {
-        _this2.resolveSexData(result);
+        var r = result;
+        r.data.shift();
+
+        _this3.setState({
+          sex: r.data,
+          sexLoading: false
+        });
       });
-    }
-  }, {
-    key: "resolveCsvData",
-    value: function resolveCsvData(result) {
-      this.setState({
-        totals: result
-      });
-    }
-  }, {
-    key: "resolveGithubData",
-    value: function resolveGithubData(result) {
-      this.setState({
-        github: result
-      });
-    }
-  }, {
-    key: "resolveBoroughData",
-    value: function resolveBoroughData(result) {
-      result.data.shift();
-      this.setState({
-        borough: result.data
-      });
-    }
-  }, {
-    key: "resolveAgeData",
-    value: function resolveAgeData(result) {
-      result.data.shift();
-      this.setState({
-        age: result.data
-      });
-    }
-  }, {
-    key: "resolveSexData",
-    value: function resolveSexData(result) {
-      result.data.shift();
-      this.setState({
-        sex: result.data
-      });
-    }
-  }, {
-    key: "parseGithubData",
-    value: function parseGithubData(result, config) {
-      var r = JSON.parse(result)[0];
-      var d = r.commit.author.date;
-      var n = moment__WEBPACK_IMPORTED_MODULE_7___default()(d).format('MM/DD/YYYY, hh:hh a');
-      var s = "Chart updated on ".concat(n);
-      config.complete.apply(this, [s]);
     }
   }, {
     key: "render",
     value: function render() {
-      var _this3 = this;
-
       var _this$state = this.state,
           github = _this$state.github,
           borough = _this$state.borough,
           age = _this$state.age,
           sex = _this$state.sex,
-          totals = _this$state.totals;
-      return __jsx(_components_global_layout__WEBPACK_IMPORTED_MODULE_8__["default"], {
+          totals = _this$state.totals,
+          boroughLoading = _this$state.boroughLoading,
+          ageLoading = _this$state.ageLoading,
+          sexLoading = _this$state.sexLoading,
+          totalsLoading = _this$state.totalsLoading;
+      return __jsx(_components_global_layout__WEBPACK_IMPORTED_MODULE_9__["default"], {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 199,
+          lineNumber: 227,
           columnNumber: 4
         }
       }, __jsx("main", {
@@ -69900,7 +69939,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 200,
+          lineNumber: 228,
           columnNumber: 5
         }
       }, __jsx("h1", {
@@ -69908,7 +69947,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 201,
+          lineNumber: 229,
           columnNumber: 6
         }
       }, "Covid Visualization"), __jsx("div", {
@@ -69916,14 +69955,14 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 202,
+          lineNumber: 230,
           columnNumber: 6
         }
-      }, __jsx(_components_ui_Chart__WEBPACK_IMPORTED_MODULE_9__["default"], {
+      }, __jsx(_components_ui_Chart__WEBPACK_IMPORTED_MODULE_10__["default"], {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 203,
+          lineNumber: 231,
           columnNumber: 7
         }
       })), __jsx("div", {
@@ -69931,7 +69970,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 205,
+          lineNumber: 233,
           columnNumber: 6
         }
       }, __jsx("div", {
@@ -69939,7 +69978,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 206,
+          lineNumber: 234,
           columnNumber: 7
         }
       }, __jsx("h2", {
@@ -69947,7 +69986,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 207,
+          lineNumber: 235,
           columnNumber: 8
         }
       }, "New Covid cases by day in NYC"), __jsx("p", {
@@ -69955,7 +69994,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 208,
+          lineNumber: 236,
           columnNumber: 8
         }
       }, github), __jsx("h2", {
@@ -69963,39 +70002,16 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 209,
+          lineNumber: 237,
           columnNumber: 8
         }
-      }, "Borough Totals:"), borough.map(function (value) {
-        return __jsx("div", {
-          key: value[0],
-          __self: _this3,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 212,
-            columnNumber: 10
-          }
-        }, __jsx("strong", {
-          __self: _this3,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 213,
-            columnNumber: 11
-          }
-        }, value[0]), ":", ' ', __jsx(NumberValue, {
-          value: value[1],
-          __self: _this3,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 216,
-            columnNumber: 11
-          }
-        }));
-      }), __jsx("br", {
+      }, "Borough Totals:"), __jsx(DataResults, {
+        value: borough,
+        loading: boroughLoading,
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 220,
+          lineNumber: 238,
           columnNumber: 8
         }
       }), __jsx("h2", {
@@ -70003,39 +70019,16 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 221,
+          lineNumber: 239,
           columnNumber: 8
         }
-      }, "Case Rate By Age:"), age.map(function (value) {
-        return __jsx("div", {
-          key: value[0],
-          __self: _this3,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 224,
-            columnNumber: 10
-          }
-        }, __jsx("strong", {
-          __self: _this3,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 225,
-            columnNumber: 11
-          }
-        }, value[0]), ":", ' ', __jsx(NumberValue, {
-          value: value[1],
-          __self: _this3,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 228,
-            columnNumber: 11
-          }
-        }));
-      }), __jsx("br", {
+      }, "Case Rate By Age:"), __jsx(DataResults, {
+        value: age,
+        loading: ageLoading,
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 232,
+          lineNumber: 240,
           columnNumber: 8
         }
       }), __jsx("h2", {
@@ -70043,47 +70036,32 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 233,
+          lineNumber: 241,
           columnNumber: 8
         }
-      }, "Case Rate By Sex:"), sex.map(function (value) {
-        return __jsx("div", {
-          key: value[0],
-          __self: _this3,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 236,
-            columnNumber: 10
-          }
-        }, __jsx("strong", {
-          __self: _this3,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 237,
-            columnNumber: 11
-          }
-        }, value[0]), ":", ' ', __jsx(NumberValue, {
-          value: value[1],
-          __self: _this3,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 240,
-            columnNumber: 11
-          }
-        }));
+      }, "Case Rate By Sex:"), __jsx(DataResults, {
+        value: sex,
+        loading: sexLoading,
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 242,
+          columnNumber: 8
+        }
       }), __jsx("br", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 244,
+          lineNumber: 243,
           columnNumber: 8
         }
-      }), __jsx(_components_ui_Button__WEBPACK_IMPORTED_MODULE_10__["default"], {
+      }), __jsx(_components_ui_Button__WEBPACK_IMPORTED_MODULE_11__["default"], {
+        className: "mt-6",
         href: "https://github.com/nychealth/coronavirus-data",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 245,
+          lineNumber: 244,
           columnNumber: 8
         }
       }, "NYC Health Github")), __jsx("div", {
@@ -70091,7 +70069,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 247,
+          lineNumber: 246,
           columnNumber: 7
         }
       }, __jsx("h2", {
@@ -70099,7 +70077,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 248,
+          lineNumber: 247,
           columnNumber: 8
         }
       }, "New York City:"), __jsx("div", {
@@ -70107,40 +70085,25 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 249,
+          lineNumber: 248,
           columnNumber: 8
         }
-      }, totals.map(function (value) {
-        return __jsx("div", {
-          key: value[0],
-          __self: _this3,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 252,
-            columnNumber: 11
-          }
-        }, __jsx("strong", {
-          __self: _this3,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 253,
-            columnNumber: 12
-          }
-        }, value[0]), ' ', __jsx(NumberValue, {
-          value: value[1],
-          __self: _this3,
-          __source: {
-            fileName: _jsxFileName,
-            lineNumber: 255,
-            columnNumber: 12
-          }
-        }));
+      }, __jsx(DataResults, {
+        value: totals,
+        loading: totalsLoading,
+        hasColon: true,
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 249,
+          columnNumber: 9
+        }
       }))))));
     }
   }]);
 
   return Visualization;
-}(react__WEBPACK_IMPORTED_MODULE_5___default.a.Component);
+}(react__WEBPACK_IMPORTED_MODULE_6___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (Visualization);
 

@@ -1,46 +1,47 @@
-const webpack = require('webpack')
-const purgecss = require('@fullhuman/postcss-purgecss')
+const webpack = require('webpack');
+const purgecss = require('@fullhuman/postcss-purgecss');
+const optimizedImages = require('next-optimized-images');
 
-const isProd = (process.env.NODE_ENV || 'production') === 'production'
-const isGHProd = (process.env.GHPAGES_ENV) === 'true'
-const isZeit = (process.env.ZEIT_ENV) === 'true'
-const assetPrefix = ((isProd && isZeit) || !isProd) ? '' : '/hydrotik'
+const isProd = (process.env.NODE_ENV || 'production') === 'production';
+const isGHProd = (process.env.GHPAGES_ENV) === 'true';
+const isZeit = (process.env.ZEIT_ENV) === 'true';
+const assetPrefix = ((isProd && isZeit) || !isProd) ? '' : '/hydrotik';
 
 console.log('production: ' + isProd);
 console.log('GH Pages: ' + isGHProd);
 console.log('ZEIT: ' + isZeit);
 
 module.exports = {
-  'process.env.BACKEND_URL': assetPrefix,
-  exportPathMap: () => ({
-    '/': { page: '/' },
-    '/about': { page: '/about' },
-    '/visualization': { page: '/visualization' },
+	'process.env.BACKEND_URL': assetPrefix,
+	exportPathMap: () => ({
+		'/': { page: '/' },
+		'/about': { page: '/about' },
+		'/visualization': { page: '/visualization' },
 
-  }),
-  assetPrefix: assetPrefix,
-  webpack: config => {
-    config.plugins.push(
-      new webpack.DefinePlugin({
-        'process.env.ASSET_PREFIX': JSON.stringify(assetPrefix),
-        'process.env.IS_GITHUBPAGES' : isGHProd,
-        'process.env.BACKEND_URL' : JSON.stringify(assetPrefix)
-      })
-    )
-    config.module.rules.push({
-      test: /\.(ts|tsx|js|jsx)$/,
-      enforce: "pre",
-      exclude: /node_modules/,
-      use: [
-        {
-          loader: "eslint-loader",
-          options: {
-            emitWarning: !isProd
-          }
-        }
-      ]
-    });
+	}),
+	assetPrefix: assetPrefix,
+	webpack: config => {
+		config.plugins.push(
+			new webpack.DefinePlugin({
+				'process.env.ASSET_PREFIX': JSON.stringify(assetPrefix),
+				'process.env.IS_GITHUBPAGES': isGHProd,
+				'process.env.BACKEND_URL': JSON.stringify(assetPrefix)
+			}),
+		);
+		config.module.rules.push({
+			test: /\.(ts|tsx|js|jsx)$/,
+			enforce: "pre",
+			exclude: /node_modules/,
+			use: [
+				{
+					loader: "eslint-loader",
+					options: {
+						emitWarning: !isProd,
+					},
+				},
+			],
+		});
 
-    return config
-  }
-}
+		return config;
+	},
+};
