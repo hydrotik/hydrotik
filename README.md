@@ -33,18 +33,18 @@ To deploy to production which includes the API functionality push to master with
 npm run build:zeit
 ```
 
-```npm run dev``` Run local instance on http://localhost:3000
-```npm run build:zeit``` Deploy to production on Zeit
-```npm run build:preview``` Export static site and run locally on http://localhost:3000
-```npm run build:gh-pages``` Export static site and deploy to Github Pages
-```npm run start``` Start local server from 'out' folder
-```npm run test``` Run Unit Tests
-```npm run test:watch``` Run Unit Tests and listen for changes
-```npm run test:coverage``` Run Test Coverage in Jest
-```npm run coverage``` Run Test Coverage using NYC
-```npm run lighthouse:dev``` Run Lighthouse analysis on dev on http://localhost:3000
-```npm run lighthouse:preview``` Run Lighthouse analysis on Nginix on http://localhost:3030
-```npm run lighthouse:prod``` Run Lighthouse analysis on Github Pages
+- ```npm run dev``` Run local instance on http://localhost:3000
+- ```npm run build:zeit``` Deploy to production on Zeit
+- ```npm run build:preview``` Export static site and run locally on http://localhost:3000
+- ```npm run build:gh-pages``` Export static site and deploy to Github Pages
+- ```npm run start``` Start local server from 'out' folder
+- ```npm run test``` Run Unit Tests
+- ```npm run test:watch``` Run Unit Tests and listen for changes
+- ```npm run test:coverage``` Run Test Coverage in Jest
+- ```npm run coverage``` Run Test Coverage using NYC
+- ```npm run lighthouse:dev``` Run Lighthouse analysis on dev on http://localhost:3000
+- ```npm run lighthouse:preview``` Run Lighthouse analysis on Nginix on http://localhost:3030
+- ```npm run lighthouse:prod``` Run Lighthouse analysis on Github Pages
  
 
 ## License
