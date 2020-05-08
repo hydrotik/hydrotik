@@ -69057,12 +69057,48 @@ function Header() {
       lineNumber: 15,
       columnNumber: 5
     }
+  }), __jsx("meta", {
+    name: "description",
+    content: "Hydrotik is an experiential digital consultancy with a focus on retail and entertainment brands led by Donovan Adams.",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16,
+      columnNumber: 5
+    }
+  }), __jsx("meta", {
+    name: "keywords",
+    content: "Hydrotik, React, Front End Development, HTML, CSS, JavaScript, Donovan Adams",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17,
+      columnNumber: 5
+    }
+  }), __jsx("meta", {
+    name: "author",
+    content: "Donovan Adams",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18,
+      columnNumber: 5
+    }
+  }), __jsx("meta", {
+    name: "viewport",
+    content: "width=device-width, initial-scale=1.0",
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19,
+      columnNumber: 5
+    }
   })), __jsx("nav", {
     className: "flex flex-wrap md:flex-no-wrap items-center justify-between max-w-4xl mx-auto p-4 md:p-8",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 23,
       columnNumber: 4
     }
   }, __jsx("div", {
@@ -69070,7 +69106,7 @@ function Header() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19,
+      lineNumber: 24,
       columnNumber: 5
     }
   }, __jsx("img", {
@@ -69080,7 +69116,7 @@ function Header() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
+      lineNumber: 25,
       columnNumber: 6
     }
   }), __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -69088,7 +69124,7 @@ function Header() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
+      lineNumber: 27,
       columnNumber: 6
     }
   }, __jsx("a", {
@@ -69096,10 +69132,11 @@ function Header() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24,
+      lineNumber: 29,
       columnNumber: 7
     }
   }, "Hydrotik"))), __jsx("button", {
+    "aria-label": "Home Link",
     className: "block md:hidden border border-white flex items-center px-3 py-2 rounded text-white",
     onClick: function onClick() {
       return toggleExpansion(!isExpanded);
@@ -69107,7 +69144,7 @@ function Header() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 35,
       columnNumber: 5
     }
   }, __jsx("svg", {
@@ -69118,14 +69155,14 @@ function Header() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
+      lineNumber: 36,
       columnNumber: 6
     }
   }, __jsx("title", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32,
+      lineNumber: 37,
       columnNumber: 7
     }
   }, "Menu"), __jsx("path", {
@@ -69133,7 +69170,7 @@ function Header() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 33,
+      lineNumber: 38,
       columnNumber: 7
     }
   }))), __jsx("ul", {
@@ -69141,7 +69178,7 @@ function Header() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37,
+      lineNumber: 42,
       columnNumber: 5
     }
   }, [{
@@ -69151,7 +69188,7 @@ function Header() {
     title: 'About',
     route: "".concat("", "/about")
   }, {
-    title: 'Covid Visualization',
+    title: 'COVID-19 Visualization',
     route: "".concat("", "/visualization")
   }].map(function (navigationItem) {
     return __jsx("li", {
@@ -69160,7 +69197,7 @@ function Header() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 43,
+        lineNumber: 48,
         columnNumber: 7
       }
     }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
@@ -69168,7 +69205,7 @@ function Header() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 44,
+        lineNumber: 49,
         columnNumber: 8
       }
     }, __jsx("a", {
@@ -69177,7 +69214,7 @@ function Header() {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 46,
+        lineNumber: 51,
         columnNumber: 9
       }
     }, navigationItem.title)));
@@ -69950,7 +69987,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
           lineNumber: 229,
           columnNumber: 6
         }
-      }, "Covid Visualization"), __jsx("div", {
+      }, "COVID-19 Visualization"), __jsx("div", {
         className: "bg-gray-100 mb-16",
         __self: this,
         __source: {
@@ -70228,7 +70265,7 @@ var DataHelper = /*#__PURE__*/function () {
 
 /***/ }),
 
-/***/ 2:
+/***/ 3:
 /*!***********************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fvisualization&absolutePagePath=%2FUsers%2Fdadams%2FDesktop%2FCode%2Fhydrotik%2Fsrc%2Fpages%2Fvisualization.tsx&hotRouterUpdates=true ***!
   \***********************************************************************************************************************************************************************************/
@@ -70251,5 +70288,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[3,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=visualization.js.map
