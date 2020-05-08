@@ -9,7 +9,7 @@
 - **Lighthouse** Performance and a11y tool
 - lodash, pdf-reader, moment.js, papaparse
 
-This is a personal playground of my work that allows me to test ideas, explore mistakes, as well present and evolve my professional brand in a fun way. I've been leading others in development pursuits professionally for quite some time. This is a way for me to carve out time to code, which I still very much enjoy.
+A quick and simple POC that consists of a collection of tools for me to test out some project boilerplate.
 
 Need Lighthouse CLI installed first:
 ```bash
@@ -46,6 +46,8 @@ npm run build:zeit
 - ```npm run lighthouse:preview``` Run Lighthouse analysis on Nginix on http://localhost:3030
 - ```npm run lighthouse:prod``` Run Lighthouse analysis on Github Pages
  
+ ## Some To Do's
+ - [ ] Implement Hapi Server with Next.js
 
 ## License
 
