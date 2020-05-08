@@ -5,7 +5,7 @@ type Props = {
 	footerTitle?: string;
 }
 
-const Footer: React.FunctionComponent<Props> = ({ footerTitle = `\u00A9 ${(new Date()).getFullYear()} Hydrotik` }) => (
+const Footer: React.FunctionComponent<Props> = ({ footerTitle = `\u00A9 ${(new Date()).getFullYear()} Hydrotik LLC` }) => (
 	<footer className="bg-gray-900">
 		<ul className="flex items-center justify-between max-w-4xl mx-auto p-4 md:p-8 text-sm text-white">
 			<li>
@@ -16,6 +16,9 @@ const Footer: React.FunctionComponent<Props> = ({ footerTitle = `\u00A9 ${(new D
 			</li>
 			<li>
 				<Button href="https://www.linkedin.com/in/donovanadams/">Linkedin</Button>
+			</li>
+			<li>
+				<Button href="http://www.hydrotik.com/portfolio/">Portfolio</Button>
 			</li>
 		</ul>
 	</footer>
