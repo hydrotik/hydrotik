@@ -1,7 +1,11 @@
 import { NextPage } from 'next';
+import ProgressiveImage from 'react-progressive-image';
 import Layout from '../components/global/layout';
-import ProgressiveImage from '../components/ui/ProgressiveImage';
 
+type SrcSetProps = {
+	srcSet: string;
+	sizes: string;
+}
 
 const About: NextPage = (): JSX.Element => (
 	<Layout>
@@ -28,10 +32,23 @@ const About: NextPage = (): JSX.Element => (
 
 				<div className="md:ml-6 md:w-1/2">
 					<ProgressiveImage
-						preview="data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAAUAAD/4QMXaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjYtYzEzOCA3OS4xNTk4MjQsIDIwMTYvMDkvMTQtMDE6MDk6MDEgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjA2MEJBM0ZBNkZBMzExRUFCNjUzODE0QzJDQjEzMkE0IiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjA2MEJBM0Y5NkZBMzExRUFCNjUzODE0QzJDQjEzMkE0IiB4bXA6Q3JlYXRvclRvb2w9IlZlci4xLjAwICI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjkzRDE2OUJDNkZBMDExRUFCQ0I1QzNBRUYxRjAwMDlDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjkzRDE2OUJENkZBMDExRUFCQ0I1QzNBRUYxRjAwMDlDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+/+4ADkFkb2JlAGTAAAAAAf/bAIQAEg4ODhAOFRAQFR4UERQeIxoVFRojIhkZGhkZIiceIyEhIx4nJy4wMzAuJz4+QUE+PkFBQUFBQUFBQUFBQUFBQQEUFBQWGRYbFxcbGhYaFhohGh0dGiExISEkISExPi0nJycnLT44OzMzMzs4QUE+PkFBQUFBQUFBQUFBQUFBQUFB/8AAEQgADwAKAwEiAAIRAQMRAf/EAFkAAQEBAAAAAAAAAAAAAAAAAAMEBQEBAQAAAAAAAAAAAAAAAAAAAQMQAAEDBQEAAAAAAAAAAAAAAAEAAhMRIVGRAxIRAAMBAAAAAAAAAAAAAAAAAAACFBH/2gAMAwEAAhEDEQA/AK5qFJM1ZMnQuu06KT10wdKVb6MyH//Z"
-						image="images/nyc_lrg.jpg"
-						alt="Hydrotik About Image"
-					/>
+						src="images/nyc_md.jpg"
+						srcSetData={{
+							srcSet: 'images/nyc_sm.jpg 320w, images/nyc_md.jpg 700w, images/nyc_lrg.jpg 2000w',
+							sizes: '(max-width: 2000px) 100vw, 2000px',
+						}}
+						placeholder="images/nyc_tiny.jpg"
+					>
+						{(src: string, _loading: boolean, srcSetData: SrcSetProps): JSX.Element => (
+							<img
+								src={src}
+								srcSet={srcSetData.srcSet}
+								sizes={srcSetData.sizes}
+								alt="Hydrotik About City Scene"
+								className="object-cover w-full"
+							/>
+						)}
+					</ProgressiveImage>
 				</div>
 			</div>
 		</main>
