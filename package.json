@@ -5,14 +5,16 @@
   "main": "index.js",
   "scripts": {
     "dev": "next",
-    "build": "cross-env ZEIT_ENV=true next build",
+    "build:zeit": "cross-env ZEIT_ENV=true next build",
+    "build:preview": "cross-env NODE_ENV=false next build && next export && cross-env NODE_ENV=false next start",
+    "build:gh-pages": "rm -rf node_modules/.cache && rimraf out && cross-env GHPAGES_ENV=true next build && cross-env GHPAGES_ENV=true next export && touch out/.nojekyll && gh-pages -d out -t true",
     "start": "next start",
-    "deploy-gh-pages": "rm -rf node_modules/.cache && rimraf out && cross-env GHPAGES_ENV=true next build && cross-env GHPAGES_ENV=true next export && touch out/.nojekyll && gh-pages -d out -t true",
     "test": "jest --forceExit --runInBand --detectOpenHandles",
     "test:watch": "jest --watch --runInBand --detectOpenHandles",
     "test:coverage": "jest --coverage --forceExit --runInBand --detectOpenHandles",
     "coverage": "nyc --reporter=lcov --reporter=text npm run test",
     "lighthouse:dev": "mkdir -p .lighthouse-reports && cd .lighthouse-reports && lighthouse http://localhost:3000 --config-path=../.lighthouse.js",
+    "lighthouse:preview": "mkdir -p .lighthouse-reports && cd .lighthouse-reports && lighthouse http://localhost:3000 --config-path=../.lighthouse.js",
     "lighthouse:prod": "mkdir -p .lighthouse-reports && cd .lighthouse-reports && lighthouse https://hydrotik.github.io/hydrotik/ --config-path=../.lighthouse.js"
   },
   "repository": {
