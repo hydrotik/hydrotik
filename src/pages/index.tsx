@@ -41,7 +41,7 @@ const Home: NextPage<{ dynProp: string }> = ({
 
 		<main className="flex-1 w-full max-w-4xl p-4 mx-auto md:px-8 md:py-16 text-white">
 			<div className="flex flex-col md:items-left md:justify-left">
-				<h1 className="font-bold my-8 text-lg md:text-2xl">
+				<h1 className="my-8 text-lg md:text-2xl">
 					Now more than ever,
 					{` ${dynProp} `}
 					bring us together.
