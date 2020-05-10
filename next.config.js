@@ -17,6 +17,8 @@ module.exports = {
 		'/': { page: '/' },
 		'/about': { page: '/about' },
 		'/visualization': { page: '/visualization' },
+		'/terms': { page: '/terms' },
+		'/privacy': { page: '/privacy' },
 
 	}),
 	assetPrefix: assetPrefix,
