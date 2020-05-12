@@ -1,4 +1,4 @@
-import '../css/index.css';
+import '../css/index.scss';
 import React from 'react';
 import App from 'next/app';
 

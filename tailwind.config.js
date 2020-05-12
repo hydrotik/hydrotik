@@ -4,6 +4,7 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 // const defaultTheme = require("tailwindcss/defaultTheme");
 const indentTheme = require("tailwindcss-text-indent");
+const plugin = require('tailwindcss/plugin');
 
 module.exports = {
 	theme: {
@@ -26,5 +27,18 @@ module.exports = {
 	},
 	plugins: [
 		indentTheme(),
+		plugin(({ addBase, config }) => {
+			addBase({
+				h1: {
+					fontSize: config('theme.fontSize.2xl'),
+					fontWeight: config('theme.fontWeight.bold'),
+				},
+				h2: {
+					fontSize: config('theme.fontSize.xl'),
+					fontWeight: config('theme.fontWeight.bold'),
+				},
+				// h3: { fontSize: config('theme.fontSize.lg') },
+			});
+		}),
 	],
 };

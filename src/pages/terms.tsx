@@ -9,14 +9,14 @@ export default function TermsOfService(): JSX.Element {
 		<Layout>
 			<main className="flex-1 w-full max-w-4xl p-4 mx-auto md:px-8 md:py-16">
 				<div className="flex flex-col md:items-left md:justify-left text-xs">
-					<h1 className="font-bold text-xl mb-5">Terms Of Service for {companyName}</h1>
+					<h1 className="mb-5">Terms Of Service for {companyName}</h1>
 					<p className="my-2">These terms of service outline the rules and regulations for the use of {companyName}&apos;s Website.</p>
 					<p className="my-2">By accessing this website we assume you accept these terms of service in full. Do not continue to use {companyName}&apos;s website if you do not accept all of the terms of service stated on this page.</p>
 					<p className="my-2">The following terminology applies to these Terms of Service, Privacy Statement and Disclaimer Notice and any or all Agreements: &quot;Client&quot;, &quot;You&quot; and &quot;Your&quot; refers to you, the person accessing this website and accepting the Company&apos;s terms of service. &quot;The Company&quot;, &quot;Ourselves&quot;, &quot;We&quot;, &quot;Our&quot; and &quot;Us&quot;, refers to our Company. &quot;Party&quot;, &quot;Parties&quot;, or &quot;Us&quot;, refers to both the Client and ourselves, or either the Client or ourselves. All terms refer to the offer, acceptance and consideration of payment necessary to undertake the process of our assistance to the Client in the most appropriate manner, whether by formal meetings of a fixed duration, or any other means, for the express purpose of meeting the Client&apos;s needs in respect of provision of the Company&apos;s stated services/products, in accordance with and subject to, prevailing law of. Any use of the above terminology or other words in the singular, plural, capitalisation and/or he/she or they, are taken as interchangeable and therefore as referring to same.</p>
-					<h2 className="font-bold text-l my-4">Cookies</h2>
+					<h2 className="my-4">Cookies</h2>
 					<p className="my-2">We employ the use of cookies. By using {companyName}&apos;s website you consent to the use of cookies in accordance with {companyName}&apos;s privacy policy.</p>
 					<p className="my-2">Most of the modern day interactive web sites use cookies to enable us to retrieve user details for each visit. Cookies are used in some areas of our site to enable the functionality of this area and ease of use for those people visiting. Some of our affiliate/advertising partners may also use cookies.</p>
-					<h2 className="font-bold text-l my-4">License</h2>
+					<h2 className="my-4">License</h2>
 					<p className="my-2">Unless otherwise stated, {companyName} and/or it&apos;s licensors own the intellectual property rights for all material on {companyName}. All intellectual property rights are reserved. You may view and/or print pages from {companyURL} for your own personal use subject to restrictions set in these terms of service.</p>
 					<ol className="list-outside my-4">
 						<li>You must not:
@@ -28,7 +28,7 @@ export default function TermsOfService(): JSX.Element {
 						</li>
 					</ol>
 					<p className="my-2">Redistribute content from {companyName} (unless content is specifically made for redistribution).</p>
-					<h2 className="font-bold text-l my-4">Hyperlinking to our Content</h2>
+					<h2 className="my-4">Hyperlinking to our Content</h2>
 					<ol className="list-outside my-4">
 						<li>
 							The following organizations may link to our Web site without prior written approval:
@@ -73,16 +73,16 @@ export default function TermsOfService(): JSX.Element {
 						</li>
 					</ol>
 					<p className="my-2">No use of {companyName}&apos;s logo or other artwork will be allowed for linking absent a trademark license agreement.</p>
-					<h2 className="font-bold text-l my-4">Iframes</h2>
+					<h2 className="my-4">Iframes</h2>
 					<p className="my-2">Without prior approval and express written permission, you may not create frames around our Web pages or use other techniques that alter in any way the visual presentation or appearance of our Web site.</p>
-					<h2 className="font-bold text-l my-4">Reservation of Rights</h2>
+					<h2 className="my-4">Reservation of Rights</h2>
 					<p className="my-2">We reserve the right at any time and in its sole discretion to request that you remove all links or any particular link to our Web site. You agree to immediately remove all links to our Web site upon such request. We also reserve the right to amend these terms of service and its linking policy at any time. By continuing to link to our Web site, you agree to be bound to and abide by these linking terms of service.</p>
-					<h2 className="font-bold text-l my-4">Removal of links from our website</h2>
+					<h2 className="my-4">Removal of links from our website</h2>
 					<p className="my-2">If you find any link on our Web site or any linked web site objectionable for any reason, you may contact us about this. We will consider requests to remove links but will have no obligation to do so or to respond directly to you.</p>
 					<p className="my-2">Whilst we endeavour to ensure that the information on this website is correct, we do not warrant its completeness or accuracy; nor do we commit to ensuring that the website remains available or that the material on the website is kept up to date.</p>
-					<h2 className="font-bold text-l my-4">Content Liability</h2>
+					<h2 className="my-4">Content Liability</h2>
 					<p className="my-2">We shall have no responsibility or liability for any content appearing on your Web site. You agree to indemnify and defend us against all claims arising out of or based upon your Website. No link(s) may appear on any page on your Web site or within any context containing content or materials that may be interpreted as libelous, obscene or criminal, or which infringes, otherwise violates, or advocates the infringement or other violation of, any third party rights.</p>
-					<h2 className="font-bold text-l my-4">Disclaimer</h2>
+					<h2 className="my-4">Disclaimer</h2>
 					<ol className="my-4">
 						To the maximum extent permitted by applicable law, we exclude all representations, warranties and conditions relating to our website and the use of this website (including, without limitation, any warranties implied by law in respect of satisfactory quality, fitness for purpose and/or the use of reasonable care and skill). Nothing in this disclaimer will:
 						<li>
