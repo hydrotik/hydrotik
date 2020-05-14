@@ -43,7 +43,7 @@ function Header(): JSX.Element {
 					{[
 						{ title: 'Home', route: `${process.env.BACKEND_URL}/` },
 						{ title: 'About', route: `${process.env.BACKEND_URL}/about` },
-						{ title: 'COVID-19 Visualization', route: `${process.env.BACKEND_URL}/visualization` },
+						{ title: 'COVID-19 in NYC', route: `${process.env.BACKEND_URL}/visualization` },
 					].map((navigationItem) => (
 						<li className="mt-3 md:mt-0 md:ml-6" key={navigationItem.title}>
 							<Link href={navigationItem.route}>

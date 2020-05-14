@@ -1,7 +1,6 @@
 import React from 'react';
 import Papa from 'papaparse';
 import fetch from 'node-fetch';
-import moment from 'moment';
 
 import {
 	VictoryChart,
@@ -134,7 +133,7 @@ class Chart extends React.Component<ChartProps, ChartState> implements ChartInte
 						/>
 					)}
 					//	new Date() for https://momentjs.com/guides/#/warnings/js-date/ [CLEANUP]
-					tickFormat={(t): string => moment(new Date(t)).format('M/D/YY')}
+					// tickFormat={(t): string => moment(new Date(t)).format('M/D/YY')}
 					fixLabelOverlap
 				/>
 				<VictoryAxis
@@ -170,7 +169,7 @@ class Chart extends React.Component<ChartProps, ChartState> implements ChartInte
 							parent: { border: '1px solid #ccc' },
 						}}
 						data={data}
-						x={(d): string => moment(d.DATE_OF_INTEREST, 'MM/DD/YY').toDate().toString()}
+						x="DATE_OF_INTEREST"
 						y="CASE_COUNT"
 					/>
 					<VictoryArea
@@ -179,7 +178,7 @@ class Chart extends React.Component<ChartProps, ChartState> implements ChartInte
 							parent: { border: '1px solid #ccc' },
 						}}
 						data={data}
-						x={(d): string => moment(d.DATE_OF_INTEREST, 'MM/DD/YY').toDate().toString()}
+						x="DATE_OF_INTEREST"
 						y="HOSPITALIZED_COUNT"
 					/>
 					<VictoryArea
@@ -188,7 +187,7 @@ class Chart extends React.Component<ChartProps, ChartState> implements ChartInte
 							parent: { border: '1px solid #ccc' },
 						}}
 						data={data}
-						x={(d): string => moment(d.DATE_OF_INTEREST, 'MM/DD/YY').toDate().toString()}
+						x="DATE_OF_INTEREST"
 						y="DEATH_COUNT"
 					/>
 				</VictoryGroup>
