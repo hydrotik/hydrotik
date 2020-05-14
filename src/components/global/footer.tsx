@@ -12,15 +12,15 @@ const Footer: React.FunctionComponent<Props> = ({ footerTitle = `\u00A9 ${(new D
 				{ footerTitle }
 			</li>
 			<li>
-				<Link href="/privacy">
-					{/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-					<a className="block text-white" href="">Privacy Policy</a>
-				</Link>
-			</li>
-			<li>
 				<Link href="/terms">
 					{/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
 					<a className="block text-white" href="">Terms and Conditions</a>
+				</Link>
+			</li>
+			<li>
+				<Link href="/privacy">
+					{/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+					<a className="block text-white" href="">Privacy Policy</a>
 				</Link>
 			</li>
 			<li>
