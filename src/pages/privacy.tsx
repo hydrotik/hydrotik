@@ -22,39 +22,39 @@ export default function TermsOfService(): JSX.Element {
 					<h2 className="my-4">Gathering of Personally-Identifying Information</h2>
 					<p>Certain visitors to {companyName}&apos;s websites choose to interact with {companyName} in ways that require {companyName} to gather personally-identifying information. The amount and type of information that {companyName} gathers depends on the nature of the interaction. For example, we ask visitors who sign up for a blog at {companyURL} to provide a username and email address.</p>
 
-					<h2>Security</h2>
+					<h2 className="my-4">Security</h2>
 					<p>The security of your Personal Information is important to us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While we strive to use commercially acceptable means to protect your Personal Information, we cannot guarantee its absolute security.</p>
 
-					<h2>Advertisements</h2>
+					<h2 className="my-4">Advertisements</h2>
 					<p>Ads appearing on our website may be delivered to users by advertising partners, who may set cookies. These cookies allow the ad server to recognize your computer each time they send you an online advertisement to compile information about you or others who use your computer. This information allows ad networks to, among other things, deliver targeted advertisements that they believe will be of most interest to you. This Privacy Policy covers the use of cookies by {companyName} and does not cover the use of cookies by any advertisers.</p>
 
-					<h2>Links To External Sites</h2>
+					<h2 className="my-4">Links To External Sites</h2>
 					<p>Our Service may contain links to external sites that are not operated by us. If you click on a third party link, you will be directed to that third party&apos;s site. We strongly advise you to review the Privacy Policy and terms of service of every site you visit.</p>
 					<p>We have no control over, and assume no responsibility for the content, privacy policies or practices of any third party sites, products or services.</p>
 
 
-					<h2>Protection of Certain Personally-Identifying Information</h2>
+					<h2 className="my-4">Protection of Certain Personally-Identifying Information</h2>
 					<p>{companyName} discloses potentially personally-identifying and personally-identifying information only to those of its employees, contractors and affiliated organizations that (i) need to know that information in order to process it on {companyName}&apos;s behalf or to provide services available at {companyName}&apos;s website, and (ii) that have agreed not to disclose it to others. Some of those employees, contractors and affiliated organizations may be located outside of your home country; by using {companyName}&apos;s website, you consent to the transfer of such information to them. {companyName} will not rent or sell potentially personally-identifying and personally-identifying information to anyone. Other than to its employees, contractors and affiliated organizations, as described above, {companyName} discloses potentially personally-identifying and personally-identifying information only in response to a subpoena, court order or other governmental request, or when {companyName} believes in good faith that disclosure is reasonably necessary to protect the property or rights of {companyName}, third parties or the public at large.</p>
 					<p>If you are a registered user of {companyURL} and have supplied your email address, {companyName} may occasionally send you an email to tell you about new features, solicit your feedback, or just keep you up to date with what&apos;s going on with {companyName} and our products. We primarily use our blog to communicate this type of information, so we expect to keep this type of email to a minimum. If you send us a request (for example via a support email or via one of our feedback mechanisms), we reserve the right to publish it in order to help us clarify or respond to your request or to help us support other users. {companyName} takes all measures reasonably necessary to protect against the unauthorized access, use, alteration or destruction of potentially personally-identifying and personally-identifying information.</p>
 
-					<h2>Aggregated Statistics</h2>
+					<h2 className="my-4">Aggregated Statistics</h2>
 					<p>{companyName} may collect statistics about the behavior of visitors to its website. {companyName} may display this information publicly or provide it to others. However, {companyName} does not disclose your personally-identifying information.</p>
 
-					<h2>Affiliate Disclosure</h2>
+					<h2 className="my-4">Affiliate Disclosure</h2>
 					<p>This site uses affiliate links and does earn a commission from certain links. This does not affect your purchases or the price you may pay.</p>
 
-					<h2>Cookies</h2>
+					<h2 className="my-4">Cookies</h2>
 					<p>To enrich and perfect your online experience, {companyName} uses &quot;Cookies&quot;, similar technologies and services provided by others to display personalized content, appropriate advertising and store your preferences on your computer.</p>
 					<p>A cookie is a string of information that a website stores on a visitor&apos;s computer, and that the visitor&apos;s browser provides to the website each time the visitor returns. {companyName} uses cookies to help {companyName} identify and track visitors, their usage of {companyURL}, and their website access preferences. {companyName} visitors who do not wish to have cookies placed on their computers should set their browsers to refuse cookies before using {companyName}&apos;s websites, with the drawback that certain features of {companyName}&apos;s websites may not function properly without the aid of cookies.</p>
 					<p>By continuing to navigate our website without changing your cookie settings, you hereby acknowledge and agree to {companyName}&apos;s use of cookies.</p>
 
-					<h2>E-commerce</h2>
+					<h2 className="my-4">E-commerce</h2>
 					<p>Those who engage in transactions with {companyName} – by purchasing {companyName}&apos;s services or products, are asked to provide additional information, including as necessary the personal and financial information required to process those transactions. In each case, {companyName} collects such information only insofar as is necessary or appropriate to fulfill the purpose of the visitor&apos;s interaction with {companyName}. {companyName} does not disclose personally-identifying information other than as described below. And visitors can always refuse to supply personally-identifying information, with the caveat that it may prevent them from engaging in certain website-related activities.</p>
 
-					<h2>Business Transfers</h2>
+					<h2 className="my-4">Business Transfers</h2>
 					<p>If {companyName}, or substantially all of its assets, were acquired, or in the unlikely event that {companyName} goes out of business or enters bankruptcy, user information would be one of the assets that is transferred or acquired by a third party. You acknowledge that such transfers may occur, and that any acquirer of {companyName} may continue to use your personal information as set forth in this policy.</p>
 
-					<h2>Privacy Policy Changes</h2>
+					<h2 className="my-4">Privacy Policy Changes</h2>
 					<p>Although most changes are likely to be minor, {companyName} may change its Privacy Policy from time to time, and in {companyName}&apos;s sole discretion. {companyName} encourages visitors to frequently check this page for any changes to its Privacy Policy. Your continued use of this site after any change in this Privacy Policy will constitute your acceptance of such change.</p>
 				</div>
 			</main>
