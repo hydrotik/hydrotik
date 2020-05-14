@@ -5119,7 +5119,7 @@ var Footer = function Footer(_ref) {
       columnNumber: 4
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/privacy",
+    href: "/terms",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
@@ -5135,7 +5135,7 @@ var Footer = function Footer(_ref) {
       lineNumber: 17,
       columnNumber: 6
     }
-  }, "Privacy Policy"))), __jsx("li", {
+  }, "Terms and Conditions"))), __jsx("li", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
@@ -5143,7 +5143,7 @@ var Footer = function Footer(_ref) {
       columnNumber: 4
     }
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
-    href: "/terms",
+    href: "/privacy",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
@@ -5159,7 +5159,7 @@ var Footer = function Footer(_ref) {
       lineNumber: 23,
       columnNumber: 6
     }
-  }, "Terms and Conditions"))), __jsx("li", {
+  }, "Privacy Policy"))), __jsx("li", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
@@ -5422,7 +5422,7 @@ function Header() {
     title: 'About',
     route: "".concat("", "/about")
   }, {
-    title: 'COVID-19 Visualization',
+    title: 'COVID-19 in NYC',
     route: "".concat("", "/visualization")
   }].map(function (navigationItem) {
     return __jsx("li", {
