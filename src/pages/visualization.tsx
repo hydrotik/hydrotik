@@ -81,7 +81,7 @@ function DataResults(props: DataResultsProps): JSX.Element {
 				value.map((item: string[]) => (
 					<div key={item[0]}>
 						<strong>{item[0]}</strong>
-						{hasColon ? ' ' : ': '}
+						{hasColon || !item[0] ? ' ' : ': '}
 						<NumberValue value={item[1]} />
 					</div>
 				))
