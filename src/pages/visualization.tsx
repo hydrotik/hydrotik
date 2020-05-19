@@ -130,7 +130,12 @@ class Visualization extends React.Component<MyProps, MyState> {
 			})
 			.then((result) => {
 				const { data } = (result as unknown) as DataProps;
-				const noAsteriks: Array<Array<string>> = JSON.parse(JSON.stringify(data).replace(/\*/g, ''));
+				const noAsteriks: Array<Array<string>> = JSON.parse(JSON.stringify(data).replace(/\*/g, ''))
+					.map((arr: string[]) => {
+						const delta = arr;
+						delta[0] = delta[0].replace('NYC_', '').split('_').join(' ').replace(/\w\S*/g, (txt: string) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
+						return delta;
+					});
 				this.setState({
 					totals: noAsteriks,
 					totalsLoading: false,
@@ -241,12 +246,12 @@ class Visualization extends React.Component<MyProps, MyState> {
 							<h2 className="font-bold text-xl">Case Rate By Sex:</h2>
 							<DataResults value={sex} loading={sexLoading} />
 							<br />
-							<Button className="mt-6" href="https://github.com/nychealth/coronavirus-data">NYC Health Github</Button>
+							<Button className="mt-6" href="https://github.com/nychealth/coronavirus-data" target="_blank">NYC Health Github</Button>
 						</div>
 						<div className="md:w-1/3">
 							<h2 className="font-bold mb-3 text-xl">New York City:</h2>
 							<div className="mb-6">
-								<DataResults value={totals} loading={totalsLoading} hasColon />
+								<DataResults value={totals} loading={totalsLoading} />
 							</div>
 						</div>
 					</div>
