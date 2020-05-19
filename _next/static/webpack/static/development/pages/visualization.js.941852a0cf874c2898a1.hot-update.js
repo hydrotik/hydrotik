@@ -89,16 +89,14 @@ function DataResults(props) {
         columnNumber: 10
       }
     }, "Loading Data...");
-  } // const v = value.splice(-1, 1);
+  }
 
-
-  console.log(value);
   return __jsx("div", {
     className: "mb-3",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83,
+      lineNumber: 79,
       columnNumber: 3
     }
   }, value.map(function (item) {
@@ -107,22 +105,22 @@ function DataResults(props) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 86,
+        lineNumber: 82,
         columnNumber: 6
       }
     }, __jsx("strong", {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 87,
+        lineNumber: 83,
         columnNumber: 7
       }
-    }, item[0]), hasColon ? ' ' : ': ', __jsx(NumberValue, {
+    }, item[0]), hasColon || !item[0] ? ' ' : ': ', __jsx(NumberValue, {
       value: item[1],
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 89,
+        lineNumber: 85,
         columnNumber: 7
       }
     }));
@@ -178,7 +176,13 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
       }).then(function (result) {
         var _ref = result,
             data = _ref.data;
-        var noAsteriks = JSON.parse(JSON.stringify(data).replace(/\*/g, ''));
+        var noAsteriks = JSON.parse(JSON.stringify(data).replace(/\*/g, '')).map(function (arr) {
+          var delta = arr;
+          delta[0] = "".concat(delta[0].replace('NYC_', '').split('_').join(' ').replace(/\w\S*/g, function (txt) {
+            return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+          }), ":");
+          return delta;
+        });
 
         _this3.setState({
           totals: noAsteriks,
@@ -265,7 +269,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 231,
+          lineNumber: 232,
           columnNumber: 4
         }
       }, __jsx("main", {
@@ -273,7 +277,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 232,
+          lineNumber: 233,
           columnNumber: 5
         }
       }, __jsx("h1", {
@@ -281,7 +285,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 233,
+          lineNumber: 234,
           columnNumber: 6
         }
       }, "COVID-19 Visualization"), __jsx("div", {
@@ -289,14 +293,14 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 234,
+          lineNumber: 235,
           columnNumber: 6
         }
       }, __jsx(_components_ui_Chart__WEBPACK_IMPORTED_MODULE_10__["default"], {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 235,
+          lineNumber: 236,
           columnNumber: 7
         }
       })), __jsx("div", {
@@ -304,7 +308,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 237,
+          lineNumber: 238,
           columnNumber: 6
         }
       }, __jsx("div", {
@@ -312,7 +316,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 238,
+          lineNumber: 239,
           columnNumber: 7
         }
       }, __jsx("h2", {
@@ -320,7 +324,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 239,
+          lineNumber: 240,
           columnNumber: 8
         }
       }, "New Covid cases by day in NYC"), __jsx("p", {
@@ -328,7 +332,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 240,
+          lineNumber: 241,
           columnNumber: 8
         }
       }, github), __jsx("h2", {
@@ -336,7 +340,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 241,
+          lineNumber: 242,
           columnNumber: 8
         }
       }, "Borough Totals:"), __jsx(DataResults, {
@@ -345,7 +349,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 242,
+          lineNumber: 243,
           columnNumber: 8
         }
       }), __jsx("h2", {
@@ -353,7 +357,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 243,
+          lineNumber: 244,
           columnNumber: 8
         }
       }, "Case Rate By Age:"), __jsx(DataResults, {
@@ -362,7 +366,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 244,
+          lineNumber: 245,
           columnNumber: 8
         }
       }), __jsx("h2", {
@@ -370,7 +374,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 245,
+          lineNumber: 246,
           columnNumber: 8
         }
       }, "Case Rate By Sex:"), __jsx(DataResults, {
@@ -379,23 +383,24 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 246,
+          lineNumber: 247,
           columnNumber: 8
         }
       }), __jsx("br", {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 247,
+          lineNumber: 248,
           columnNumber: 8
         }
       }), __jsx(_components_ui_Button__WEBPACK_IMPORTED_MODULE_11__["default"], {
         className: "mt-6",
         href: "https://github.com/nychealth/coronavirus-data",
+        target: "_blank",
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 248,
+          lineNumber: 249,
           columnNumber: 8
         }
       }, "NYC Health Github")), __jsx("div", {
@@ -403,7 +408,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 250,
+          lineNumber: 251,
           columnNumber: 7
         }
       }, __jsx("h2", {
@@ -411,7 +416,7 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 251,
+          lineNumber: 252,
           columnNumber: 8
         }
       }, "New York City:"), __jsx("div", {
@@ -419,17 +424,16 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 252,
+          lineNumber: 253,
           columnNumber: 8
         }
       }, __jsx(DataResults, {
         value: totals,
         loading: totalsLoading,
-        hasColon: true,
         __self: this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 253,
+          lineNumber: 254,
           columnNumber: 9
         }
       }))))));
@@ -444,4 +448,4 @@ var Visualization = /*#__PURE__*/function (_React$Component) {
 /***/ })
 
 })
-//# sourceMappingURL=visualization.js.d2e477f0bcdf566b8749.hot-update.js.map
+//# sourceMappingURL=visualization.js.941852a0cf874c2898a1.hot-update.js.map
