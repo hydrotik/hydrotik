@@ -133,7 +133,11 @@ class Visualization extends React.Component<MyProps, MyState> {
 				const noAsteriks: Array<Array<string>> = JSON.parse(JSON.stringify(data).replace(/\*/g, ''))
 					.map((arr: string[]) => {
 						const delta = arr;
-						delta[0] = delta[0].replace('NYC_', '').split('_').join(' ').replace(/\w\S*/g, (txt: string) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
+						// eslint-disable-next-line no-console
+						console.log(delta);
+						if (delta[0]) {
+							delta[0] = delta[0].replace('NYC_', '').split('_').join(' ').replace(/\w\S*/g, (txt: string) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
+						}
 						return delta;
 					});
 				this.setState({
